@@ -14,7 +14,7 @@ def home_page():
             st.error("Logo image not found.")
 
     with col2:
-        st.title("APP NAME - PCOS Care")
+        st.title("PCOS Care")
 
     # Description and introductory text
     st.markdown("""
