@@ -18,97 +18,70 @@ def pcos_info_page():
 
     with col2:
         # Display the app title
-        st.title("APP NAME")
+        st.title("PCOS Information")
+
+    # Section: What is PCOS?
+    st.markdown("""
+        ## What is PCOS?  
+        Polycystic Ovary Syndrome (PCOS) is a **hormonal disorder** that affects women of reproductive age.  
+        It can lead to **irregular periods, excessive hair growth, acne, weight gain, and fertility issues**.  
         
-    st.subheader("PCOS Information")
-    st.markdown("""
-        ### What is PCOS?  
-        Polycystic Ovary Syndrome (PCOS) is a hormonal disorder common among women of reproductive age.  
-        Symptoms include:
-        - Irregular menstrual cycles
-        - Excessive hair growth (hirsutism)
-        - Acne or oily skin
-        - Difficulty in conceiving
+        🔬 *PCOS is linked to insulin resistance and hormonal imbalances.*  
     """)
 
-    with st.expander("Learn more about PCOS causes and management strategies"):
-        st.markdown("""
-            - **Causes**: The exact cause of PCOS is not known, but factors such as genetics, insulin resistance, and inflammation may play a role.
-            - **Management**: Lifestyle changes, medications like birth control pills, and insulin-sensitizing drugs are often prescribed to manage symptoms.
-        """)
+    # PCOS Symptoms
+    st.markdown("## Common Symptoms")
+    symptoms = [
+        "📉 **Irregular menstrual cycles**",
+        "⚖️ **Unexplained weight gain**",
+        "🔴 **Acne and oily skin**",
+        "🧑‍🦰 **Thinning hair or hair loss**",
+        "🌪 **Mood swings and fatigue**",
+        "⚠️ **Dark patches of skin** (especially around the neck or underarms)"
+    ]
+    for symptom in symptoms:
+        st.markdown(f"- {symptom}")
 
-    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
-    # Symptoms section 
-    st.markdown("### Symptoms")
+    # Section: Why Early Detection Matters?
+    st.markdown("## Why Early Detection Matters?")
     st.markdown("""
-        Common symptoms of PCOS include:
-        - Irregular or absent menstrual cycles
-        - Excessive hair growth on the face or body (hirsutism)
-        - Acne or oily skin
-        - Weight gain or difficulty losing weight
-        - Thinning hair or hair loss on the scalp
-        - Fertility challenges or difficulty conceiving
-        - Dark patches of skin, especially around the neck or underarms
-        - Fatigue and mood changes
-    """)  
-
-    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
-    # Management tips with expanders
-    st.markdown("### Management Tips")
-    with st.expander("Lifestyle Changes"):
-        st.markdown("""
-            - Regular exercise (yoga, strength training).
-            - Stress management techniques (meditation, therapy).
-            - Prioritize sleep hygiene.
-        """)
-
-    with st.expander("Medical Treatments"):
-        st.markdown("""
-            - Hormonal treatments (birth control pills).
-            - Insulin-sensitizing drugs (Metformin).
-        """)
-
-    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
-    # Diet tips section
-    st.markdown("### Diet Tips")
-    st.markdown("""
-        Focus on a balanced diet with low-glycemic-index (GI) foods:
-        - **Breakfast**: Oatmeal with nuts and berries.
-        - **Lunch**: Grilled chicken with quinoa and steamed vegetables.
-        - **Snack**: Greek yogurt with seeds.
-        - **Dinner**: Baked salmon with a side of roasted vegetables.
-    """)
-    st.info("Tip: Avoid processed foods and excessive sugar for better symptom management.")
-
-    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
-    # Useful resources with links
-    st.markdown("### Useful Resources")
-    st.markdown("""
-        - [PCOS Awareness](https://www.example.com)
-        - [Link](https://www.example.com)
-        - [Healthy Recipes for PCOS](https://www.example.com)
-        - [Link](https://www.example.com)
+        Early detection and lifestyle changes can **help manage symptoms and prevent long-term complications**.  
+        
+        🚨 **Without treatment, PCOS can increase the risk of:**  
+        - Type 2 **Diabetes**  
+        - **Heart Disease** & High Blood Pressure  
+        - **Infertility** or Pregnancy Complications  
+        - Depression & Anxiety  
+        
+        _Taking action early helps improve overall health and quality of life._  
     """)
 
+    # Section: How PCOS Affects Health
+    st.markdown("## How PCOS Affects Health?")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("""
+            PCOS affects multiple systems in the body, leading to:
+            - ⚠️ **Hormonal imbalances**  
+            - 🍔 **Metabolic issues (insulin resistance, weight gain)**  
+            - 💔 **Increased risk of cardiovascular disease**  
+            - 🏥 **Complications in pregnancy and fertility**  
+        """)
+    with col2:
+        # Placeholder for an infographic or flowchart
+        st.image("images/logo.png", use_column_width=True, caption="PCOS Effects on Health")  
+
+    # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-    
-    # Example Chart
+
+    # Example Chart: PCOS Symptom and Lifestyle Relationship
     st.markdown("### PCOS Symptom and Lifestyle Habit Relationship")
 
     # Data
     data = {
         "Symptoms": [
-            "Weight Gain",
-            "Hair Growth",
-            "Skin Darkening",
-            "Hair Loss",
-            "Pimples",
-            "Fast Food",
-            "No Regular Exercise"
+            "Weight Gain", "Hair Growth", "Skin Darkening",
+            "Hair Loss", "Pimples", "Fast Food", "No Regular Exercise"
         ],
         "Prevalence (%)": [68.36, 57.06, 62.15, 57.63, 69.49, 78.53, 71.18]
     }
@@ -130,5 +103,13 @@ def pcos_info_page():
     st.pyplot(fig)
     
     st.markdown("""
-        *Data from a sample of 177 PCOS patients, in Kerala. add the link.* 
+        *Data from a sample of 177 PCOS patients in Kerala.*  
+        📌 [Source Link](https://www.example.com)  
     """)
+
+    # Call to Action
+    st.markdown("## Take the Next Step")
+
+    
+    if st.button("⚠️ Take the Simple Assessment"):
+        st.switch_page("Simple_Risk_Assessment")  # Adjust based on your routing
