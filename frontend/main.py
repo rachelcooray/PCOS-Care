@@ -1,0 +1,23 @@
+import streamlit as st
+from home import home_page
+from pcos_info import pcos_info_page
+from simple_risk_assessment import simple_risk_assessment_page
+from enhanced_risk_assessment import enhanced_risk_assessment_page
+from results import results_page
+from contact_help import contact_help_page
+
+def main():
+    st.sidebar.title("Navigation")
+    pages = {
+        "Home": home_page,
+        "PCOS Information": pcos_info_page,
+        "Simple Risk Assessment": simple_risk_assessment_page,
+        "Enhanced Risk Assessment": enhanced_risk_assessment_page,
+        "Results Visualization": results_page,
+        "Contact/Help": contact_help_page,
+    }
+    selected_page = st.sidebar.radio("Go to", list(pages.keys()))
+    pages[selected_page]()
+
+if __name__ == "__main__":
+    main()
