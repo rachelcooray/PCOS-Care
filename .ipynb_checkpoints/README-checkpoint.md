@@ -28,4 +28,3 @@ PCOS Care is a web-based application that predicts the likelihood of Polycystic 
 ## **To-Do List**  
 - [ ] Improve appearance of the frontend
 - [ ] Improve result visualization  
-- [ ] Deploy app online (Heroku/Streamlit Cloud)  
