@@ -15,7 +15,7 @@ def results_page():
             st.error("Logo image not found.")
 
     with col2:
-        st.title("PCOS Prediction Results")
+        st.title("PCOS Care")
 
     st.subheader("Your PCOS Prediction")
 

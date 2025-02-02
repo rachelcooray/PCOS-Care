@@ -83,7 +83,7 @@ def enhanced_risk_assessment_page():
             st.error("Logo image not found.")
 
     with col2:
-        st.title("PCOS Risk Assessment Tool")
+        st.title("PCOS Care")
         
     st.subheader("Enhanced Risk Assessment")
     st.markdown("""

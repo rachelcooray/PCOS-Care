@@ -13,7 +13,7 @@ def contact_help_page():
             st.error("Logo image not found.")
 
     with col2:
-        st.title("APP NAME")
+        st.title("PCOS Care")
 
     st.subheader("Contact & Help")
     st.markdown("""

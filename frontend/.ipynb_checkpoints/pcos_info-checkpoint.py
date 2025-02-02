@@ -18,7 +18,7 @@ def pcos_info_page():
 
     with col2:
         # Display the app title
-        st.title("PCOS Information")
+        st.title("PCOS Care")
 
     # Section: What is PCOS?
     st.markdown("""
