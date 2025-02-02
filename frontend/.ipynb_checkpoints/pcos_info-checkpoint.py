@@ -26,18 +26,18 @@ def pcos_info_page():
         Polycystic Ovary Syndrome (PCOS) is a **hormonal disorder** that affects women of reproductive age.  
         It can lead to **irregular periods, excessive hair growth, acne, weight gain, and fertility issues**.  
         
-        🔬 *PCOS is linked to insulin resistance and hormonal imbalances.*  
+        *PCOS is linked to insulin resistance and hormonal imbalances.*  
     """)
 
     # PCOS Symptoms
     st.markdown("## Common Symptoms")
     symptoms = [
-        "📉 **Irregular menstrual cycles**",
-        "⚖️ **Unexplained weight gain**",
-        "🔴 **Acne and oily skin**",
-        "🧑‍🦰 **Thinning hair or hair loss**",
-        "🌪 **Mood swings and fatigue**",
-        "⚠️ **Dark patches of skin** (especially around the neck or underarms)"
+        "**Irregular menstrual cycles**",
+        "**Unexplained weight gain**",
+        "**Acne and oily skin**",
+        "**Thinning hair or hair loss**",
+        "**Mood swings and fatigue**",
+        "**Dark patches of skin** (especially around the neck or underarms)"
     ]
     for symptom in symptoms:
         st.markdown(f"- {symptom}")
@@ -47,11 +47,11 @@ def pcos_info_page():
     st.markdown("""
         Early detection and lifestyle changes can **help manage symptoms and prevent long-term complications**.  
         
-        🚨 **Without treatment, PCOS can increase the risk of:**  
-        - Type 2 **Diabetes**  
-        - **Heart Disease** & High Blood Pressure  
-        - **Infertility** or Pregnancy Complications  
-        - Depression & Anxiety  
+        **Without treatment, PCOS can increase the risk of:**  
+        - **Type 2 Diabetes**  
+        - **Heart Disease & High Blood Pressure** 
+        - **Infertility or Pregnancy Complications** 
+        - **Depression & Anxiety**  
         
         _Taking action early helps improve overall health and quality of life._  
     """)
@@ -62,14 +62,15 @@ def pcos_info_page():
     with col1:
         st.markdown("""
             PCOS affects multiple systems in the body, leading to:
-            - ⚠️ **Hormonal imbalances**  
-            - 🍔 **Metabolic issues (insulin resistance, weight gain)**  
-            - 💔 **Increased risk of cardiovascular disease**  
-            - 🏥 **Complications in pregnancy and fertility**  
+            - **Hormonal imbalances**  
+            - **Metabolic issues (insulin resistance, weight gain)**  
+            - **Increased risk of cardiovascular disease**  
+            - **Complications in pregnancy and fertility**  
         """)
     with col2:
         # Placeholder for an infographic or flowchart
-        st.image("images/logo.png", use_column_width=True, caption="PCOS Effects on Health")  
+        st.image("images/pcos.jpg", use_column_width=True, caption="PCOS Effects on Health")  
+        # GIVE REF TO THE IMAGE
 
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
@@ -104,12 +105,12 @@ def pcos_info_page():
     
     st.markdown("""
         *Data from a sample of 177 PCOS patients in Kerala.*  
-        📌 [Source Link](https://www.example.com)  
+        [Source Link](https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos)  
     """)
 
     # Call to Action
     st.markdown("## Take the Next Step")
 
     
-    if st.button("⚠️ Take the Simple Assessment"):
+    if st.button("Take the Simple Assessment"):
         st.switch_page("Simple_Risk_Assessment")  # Adjust based on your routing

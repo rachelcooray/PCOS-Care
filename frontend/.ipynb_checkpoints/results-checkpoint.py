@@ -15,23 +15,22 @@ def results_page():
             st.error("Logo image not found.")
 
     with col2:
-        st.title("PCOS Risk Assessment Results")
+        st.title("PCOS Prediction Results")
 
-    st.subheader("Your Risk Level")
+    st.subheader("Your PCOS Prediction")
 
     # Ensure risk assessment data is available
     if "risk_assessment_data" in st.session_state:
         user_data = st.session_state.risk_assessment_data
         
-        # Placeholder for ML-based risk prediction
-        predicted_risk = user_data.get("predicted_risk", "Unknown")  # Assume the model prediction is stored
+        # ML-based prediction: Yes (PCOS) or No (No PCOS)
+        predicted_pcos = user_data.get("predicted_pcos", "Unknown")  
         
-        # Display Risk Level
+        # Display Prediction
         st.markdown(f"""
-            ## Your estimated PCOS risk is **{predicted_risk}**  
-            { "⚠️ *We strongly recommend seeking medical advice.*" if predicted_risk == "High" else 
-               "🔍 *Consider tracking your symptoms over time.*" if predicted_risk == "Moderate" else
-               "✅ *Maintain a healthy lifestyle and monitor symptoms.*"
+            ## **Prediction: {predicted_pcos}**  
+            { "⚠️ *This suggests a possibility of PCOS. Please consult a healthcare professional for further evaluation.*" if predicted_pcos == "Yes" else 
+               "✅ *No PCOS detected based on this assessment. However, if symptoms persist, consider consulting a doctor.*"
             }
         """, unsafe_allow_html=True)
 
@@ -39,35 +38,32 @@ def results_page():
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
         # Detailed Breakdown of Factors
-        st.subheader("Detailed Breakdown of Factors Contributing to Your Risk")
+        st.subheader("Detailed Breakdown of Your Symptoms")
         st.dataframe(pd.DataFrame(user_data.get("symptom_analysis", [])))
-
-        # Risk Contribution Breakdown (Example Visualization)
-        st.subheader("How Your Symptoms Compare to PCOS Risk Levels")
-        
-        # Example data (Replace with real user data)
-        
-
-        # Plot
-        
 
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-        # Next Steps Based on Risk Level
-        st.subheader("Next Steps Based on Your Risk Level")
-        if predicted_risk == "High":
-            st.warning("⚠️ We strongly recommend seeking medical advice as soon as possible.")
-        elif predicted_risk == "Moderate":
-            st.info("🔍 Consider tracking your symptoms over time and consulting a doctor if symptoms persist.")
+        # Next Steps Based on Prediction
+        st.subheader("Next Steps")
+        if predicted_pcos == "Yes":
+            st.warning("⚠️ We strongly recommend seeking medical advice for further evaluation.")
         else:
-            st.success("✅ Maintain a healthy lifestyle and monitor symptoms.")
+            st.success("✅ Maintain a healthy lifestyle and monitor symptoms over time.")
+
+        # Disclaimer Section
+        st.markdown("### Disclaimer")
+        st.info("""
+        - This prediction is based on a dataset of **541 patients from Kerala, India**.
+        - **This is not a medical diagnosis.** It is a preliminary assessment and should not be used as a substitute for clinical evaluation.
+        - The accuracy of predictions is **limited by the dataset's scope and quality**, and results may not generalize to all populations.
+        """)
 
         # Call to Action
         col1, col2 = st.columns(2)
         with col1:
             if st.button("📖 Get Lifestyle Recommendations"):
-                st.switch_page("PCOS Information")  # Adjust based on routing
+                st.switch_page("PCOS Information")  
 
     else:
-        st.error("No risk assessment data found. Please complete the assessment first.")
+        st.error("No assessment data found. Please complete the assessment first.")

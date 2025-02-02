@@ -96,12 +96,12 @@ def enhanced_risk_assessment_page():
     st.write("### General Information")
     age = st.text_input(
         "Age (years):", 
-        placeholder="Enter your age (e.g., 25, whole number between 18-60)", 
-        help="Enter your age as a whole number between 18 and 60."
+        placeholder="Enter your age (e.g., 25, whole number between 18-50)", 
+        help="Enter your age as a whole number between 18 and 50."
     )
     weight = st.text_input(
         "Weight (Kg):", 
-        placeholder="Enter your weight in Kg (e.g., 60.5)", 
+        placeholder="Enter your weight in kg (e.g., 60.5)", 
         help="Enter your weight in kilograms. Decimals are allowed."
     )
     height = st.text_input(
@@ -117,7 +117,7 @@ def enhanced_risk_assessment_page():
     blood_group = st.selectbox(
         "Blood Group:", 
         ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"], 
-        placeholder="Enter your blood group",
+        placeholder="Enter your Blood Group",
         help="Select your blood group."
     )
 
@@ -144,14 +144,14 @@ def enhanced_risk_assessment_page():
 
     st.write("### Menstrual Cycle")
     cycle = st.radio(
-        "Cycle Regularity (R/I):", 
+        "How regular is your menstrual cycle?", 
         ["Regular", "Irregular"], 
         index=None, 
         help="Select your menstrual cycle regularity."
     )
     cycle_length = st.text_input(
         "Cycle Length (days):", 
-        placeholder="Enter cycle length in days (e.g., 28)", 
+        placeholder="Enter cycle length in days (e.g., 5)", 
         help="Enter your average menstrual cycle length in days."
     )
     
@@ -198,46 +198,34 @@ def enhanced_risk_assessment_page():
 
     st.write("### Symptoms")
     weight_gain = st.radio(
-        "Weight Gain (Y/N):", 
+        "Have you experienced unusual or excessive weight gain recently?", 
         ["Yes", "No"], 
         index=None, 
-        help="Select 'Yes' if you have experienced unusual weight gain."
+        help="Select 'Yes' if you have experienced unusual or excessive weight gain recently."
     )
     hair_growth = st.radio(
-        "Excessive Hair Growth (Y/N):", 
+        "Have you observed abnormal or excessive hair growth?", 
         ["Yes", "No"], 
         index=None, 
-        help="Select 'Yes' if you have noticed excessive hair growth."
+        help="Select 'Yes' if you have observed abnormal or excessive hair growth."
     )
     skin_darkening = st.radio(
-        "Skin Darkening (Y/N):", 
+        "Have you experienced any skin darkening?", 
         ["Yes", "No"], 
         index=None, 
-        help="Select 'Yes' if your skin has darkened."
-    )
-    hair_loss = st.radio(
-        "Hair Loss (Y/N):", 
-        ["Yes", "No"], 
-        index=None, 
-        help="Select 'Yes' if you have experienced hair loss."
+        help="Select 'Yes' if you have noticed dark patches on your skin."
     )
     pimples = st.radio(
-        "Pimples (Y/N):", 
-        ["Yes", "No"],
-        index=None, 
-        help="Select 'Yes' if you have had frequent pimples."
-    )
-    fast_food = st.radio(
-        "Frequent Fast Food Consumption (Y/N):", 
+        "Do you have frequent or severe acne outbreaks?", 
         ["Yes", "No"], 
         index=None, 
-        help="Select 'Yes' if you often consume fast food."
+        help="Select 'Yes' if you have frequent or severe acne outbreaks."
     )
     reg_exercise = st.radio(
-        "Regular Exercise (Y/N):", 
+        "Do you exercise regularly?", 
         ["Yes", "No"], 
         index=None, 
-        help="Select 'Yes' if you exercise regularly."
+        help="Select 'Yes' if you exercise regularly (at least 3 times a week)."
     )
 
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)

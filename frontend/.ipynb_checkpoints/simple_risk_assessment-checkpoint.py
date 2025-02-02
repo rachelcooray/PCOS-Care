@@ -87,7 +87,7 @@ def simple_risk_assessment_page():
 
     st.subheader("Simple Risk Assessment")
     st.markdown("""
-    Provide basic health data and symptoms for a quick PCOS risk analysis. Enter the details as per the guidelines provided for each field.
+    Provide basic health data and symptoms for a quick PCOS risk analysis. Enter the details according to the guidelines provided for each field.
     """)
     
     # Section breaker
@@ -97,8 +97,8 @@ def simple_risk_assessment_page():
     st.write("### General Information")
     age = st.text_input(
         "Age (years):", 
-        placeholder="Enter your age (e.g., 25, whole number between 18-75)", 
-        help="Enter your age as a whole number between 18 and 75."
+        placeholder="Enter your age (e.g., 25, whole number between 18-50)", 
+        help="Enter your age as a whole number between 18 and 50."
     )
     weight = st.text_input(
         "Weight (Kg):", 
@@ -126,31 +126,31 @@ def simple_risk_assessment_page():
 
     st.write("### Symptoms")
     weight_gain = st.radio(
-        "Weight Gain (Yes/No):", 
+        "Have you experienced unusual or excessive weight gain recently?", 
         ["Yes", "No"], 
         index=None, 
         help="Select 'Yes' if you have experienced unusual or excessive weight gain recently."
     )
     hair_growth = st.radio(
-        "Excessive Hair Growth (Yes/No):", 
+        "Have you observed abnormal or excessive hair growth?", 
         ["Yes", "No"], 
         index=None, 
         help="Select 'Yes' if you have observed abnormal or excessive hair growth."
     )
     skin_darkening = st.radio(
-        "Skin Darkening (Yes/No):", 
+        "Have you experienced any skin darkening?", 
         ["Yes", "No"], 
         index=None, 
         help="Select 'Yes' if you have noticed dark patches on your skin."
     )
     pimples = st.radio(
-        "Pimples (Yes/No):", 
+        "Do you have frequent or severe acne outbreaks?", 
         ["Yes", "No"], 
         index=None, 
         help="Select 'Yes' if you have frequent or severe acne outbreaks."
     )
     reg_exercise = st.radio(
-        "Regular Exercise (Yes/No):", 
+        "Do you exercise regularly?", 
         ["Yes", "No"], 
         index=None, 
         help="Select 'Yes' if you exercise regularly (at least 3 times a week)."
