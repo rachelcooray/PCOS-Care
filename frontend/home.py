@@ -1,14 +1,31 @@
 import streamlit as st
 import os
+from PIL import Image
 
-logo_path = "images/logo.png"  # App Logo
+logo_path = "images/logo.png"
+hero_image_path = "images/hero.png"
+
+feature_images = {
+    "info": "images/info.png",
+    "assessment": "images/assessment.png",
+    "enhanced": "images/enhanced.png",
+    "results": "images/results.png"
+}
+
+def load_and_resize_image(image_path, size=(150, 150)):
+    """Load an image and resize it to a fixed size."""
+    if os.path.exists(image_path):
+        image = Image.open(image_path)
+        image = image.resize(size)  # Resize to fixed dimensions
+        return image
+    else:
+        return None  # Return None if the image does not exist
 
 def home_page():
     # Layout for logo and title
     col1, col2 = st.columns([1, 4]) 
 
     with col1:
-        # Display the logo
         if os.path.exists(logo_path):
             st.image(logo_path, width=100)  
         else:
@@ -37,50 +54,58 @@ def home_page():
     """)
 
     # Call to Action
-    st.markdown(
-        "<h3 style='text-align: center;'>Start your journey towards better health!</h3>", 
-        unsafe_allow_html=True
-    )
+    st.markdown("<h3 style='text-align: center;'>Start your journey towards better health!</h3>", unsafe_allow_html=True)
 
-    # Navigation Buttons
     col1, col2 = st.columns(2)
+    with col1:
+        if st.button("📚 Learn More About PCOS"):
+            st.session_state.page = "PCOS Information"
 
-    # with col1:
-    #     if st.button("📚 Learn More About PCOS"):
-    #         st.switch_page("PCOS_Info") 
+    with col2:
+        if st.button("⚠️ Take the Risk Assessment"):
+            st.session_state.page = "Simple Risk Assessment"
 
-    # with col2:
-    #     if st.button("⚠️ Take the Risk Assessment"):
-    #         st.switch_page("simple_risk_assessment_page")  
+    # Hero Image
+    st.markdown("<br>", unsafe_allow_html=True)
+    if os.path.exists(hero_image_path):
+        st.image(hero_image_path, use_column_width=True, caption="Take Control of Your Health")
+    else:
+        st.error("Hero image not found.")
 
-    # Engaging Visuals - Hero Section
-    st.image("images/logo.png", use_column_width=True, caption="Take Control of Your Health")  # Replace with an actual image
-
-    # Section Breaker
-    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)  
+    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
     # Features Overview Section
     st.subheader("🔎 Overview of the Features")
 
-    # Create columns for feature highlights
     col1, col2, col3, col4 = st.columns(4)
 
+    # Define a uniform height for the expanders
+    expander_height_style = "min-height: 140px; padding: 10px; text-align: center;"
+
     with col1:
-        st.image(logo_path, caption="PCOS Information", use_column_width=True)
+        img = load_and_resize_image(feature_images["info"])
+        if img:
+            st.image(img, caption="PCOS Information", use_column_width=True)
         with st.expander("📚 PCOS Information"):
-            st.markdown("Learn about PCOS, its symptoms, causes, and management strategies.")
+            st.markdown(f"<div style='{expander_height_style}'>Learn about the symptoms, causes, and management strategies.</div>", unsafe_allow_html=True)
 
     with col2:
-        st.image(logo_path, caption="Simple Risk Assessment", use_column_width=True)
+        img = load_and_resize_image(feature_images["assessment"])
+        if img:
+            st.image(img, caption="Simple Risk Assessment", use_column_width=True)
         with st.expander("⚠️ Simple Risk Assessment"):
-            st.markdown("Quickly assess your risk based on key symptoms.")
+            st.markdown(f"<div style='{expander_height_style}'>Quickly assess your risk based on key symptoms.</div>", unsafe_allow_html=True)
 
     with col3:
-        st.image(logo_path, caption="Enhanced Risk Assessment", use_column_width=True)
+        img = load_and_resize_image(feature_images["enhanced"])
+        if img:
+            st.image(img, caption="Enhanced Risk Assessment", use_column_width=True)
         with st.expander("🔍 Enhanced Risk Assessment"):
-            st.markdown("Provide more detailed health data for an in-depth risk evaluation.")
+            st.markdown(f"<div style='{expander_height_style}'>Provide more detailed health data for an in-depth risk evaluation.</div>", unsafe_allow_html=True)
 
     with col4:
-        st.image(logo_path, caption="Results Visualization", use_column_width=True)
+        img = load_and_resize_image(feature_images["results"])
+        if img:
+            st.image(img, caption="Results Visualization", use_column_width=True)
         with st.expander("📊 Results Visualization"):
-            st.markdown("View your risk level with intuitive graphs and visualizations.")
+            st.markdown(f"<div style='{expander_height_style}'>View your risk level with intuitive graphs and visualizations.</div>", unsafe_allow_html=True)
