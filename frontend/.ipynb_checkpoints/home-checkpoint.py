@@ -45,13 +45,13 @@ def home_page():
     # Navigation Buttons
     col1, col2 = st.columns(2)
 
-    with col1:
-        if st.button("📚 Learn More About PCOS"):
-            st.switch_page("PCOS_Info") 
+    # with col1:
+    #     if st.button("📚 Learn More About PCOS"):
+    #         st.switch_page("PCOS_Info") 
 
-    with col2:
-        if st.button("⚠️ Take the Risk Assessment"):
-            st.switch_page("simple_risk_assessment_page")  
+    # with col2:
+    #     if st.button("⚠️ Take the Risk Assessment"):
+    #         st.switch_page("simple_risk_assessment_page")  
 
     # Engaging Visuals - Hero Section
     st.image("images/logo.png", use_column_width=True, caption="Take Control of Your Health")  # Replace with an actual image

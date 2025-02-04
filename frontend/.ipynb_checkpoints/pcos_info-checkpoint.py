@@ -25,8 +25,7 @@ def pcos_info_page():
         ## What is PCOS?  
         Polycystic Ovary Syndrome (PCOS) is a **hormonal disorder** that affects women of reproductive age.  
         It can lead to **irregular periods, excessive hair growth, acne, weight gain, and fertility issues**.  
-        
-        *PCOS is linked to insulin resistance and hormonal imbalances.*  
+        PCOS is also linked to insulin resistance and hormonal imbalances.  
     """)
 
     # PCOS Symptoms
