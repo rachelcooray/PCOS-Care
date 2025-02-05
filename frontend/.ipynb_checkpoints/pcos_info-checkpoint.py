@@ -100,7 +100,7 @@ def pcos_info_page():
     plt.xticks(rotation=45, ha='right')  
     plt.tight_layout()
 
-    st.pyplot(fig)
+    # st.pyplot(fig)
     
     st.markdown("""
         *Data from a sample of 177 PCOS patients in Kerala.*  
