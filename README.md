@@ -17,6 +17,17 @@ PCOS Care is a web-based application that predicts the likelihood of Polycystic 
 
 ## **Installation**  
 
+1. **Download the ZIP file** of the project and extract it.  
+2. Open a terminal and navigate to the frontend folder:  
+   ```bash
+   cd PCOS-Care/frontend
+   ```
+3. Run the Streamlit application:  
+   ```bash
+   streamlit run main.py
+   ```
+
+This will launch the web application in your browser.
 
 ## **Usage**  
 1. Open the web application in your browser.  
@@ -28,3 +39,4 @@ PCOS Care is a web-based application that predicts the likelihood of Polycystic 
 ## **To-Do List**  
 - [ ] Improve appearance of the frontend
 - [ ] Improve result visualization  
+
