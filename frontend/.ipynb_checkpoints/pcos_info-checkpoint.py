@@ -41,7 +41,7 @@ def pcos_info_page():
     for symptom in symptoms:
         st.markdown(f"- {symptom}")
 
-    # Section: Why Early Detection Matters?
+    # Section - Early Detection 
     st.markdown("## Why Early Detection Matters?")
     st.markdown("""
         Early detection and lifestyle changes can **help manage symptoms and prevent long-term complications**.  
@@ -55,7 +55,7 @@ def pcos_info_page():
         _Taking action early helps improve overall health and quality of life._  
     """)
 
-    # Section: How PCOS Affects Health
+    # Section - How PCOS Affects Health
     st.markdown("## How PCOS Affects Health?")
     col1, col2 = st.columns(2)
     with col1:

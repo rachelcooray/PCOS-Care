@@ -23,13 +23,13 @@ def results_page():
     if "risk_assessment_data" in st.session_state:
         user_data = st.session_state.risk_assessment_data
         
-        # ML-based prediction: Yes (PCOS) or No (No PCOS)
+        # ML-based prediction: Yes or No 
         predicted_pcos = user_data.get("predicted_pcos", "Unknown")  
         
         # Display Prediction
         st.markdown(f"""
             ## **Prediction: {predicted_pcos}**  
-            { "⚠️ *This suggests a possibility of PCOS. Please consult a healthcare professional for further evaluation.*" if predicted_pcos == "Yes" else 
+            { "⚠️ *This suggests a possibility of PCOS. Please consult a healthcare professional for further evaluation.*" if predicted_pcos == "Yes"  else 
                "✅ *No PCOS detected based on this assessment. However, if symptoms persist, consider consulting a doctor.*"
             }
         """, unsafe_allow_html=True)
@@ -37,7 +37,7 @@ def results_page():
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-        # Detailed Breakdown of Factors
+        # Detailed Breakdown 
         st.subheader("Detailed Breakdown of Your Symptoms")
         st.dataframe(pd.DataFrame(user_data.get("symptom_analysis", [])))
 
