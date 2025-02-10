@@ -16,10 +16,10 @@ def load_and_resize_image(image_path, size=(150, 150)):
     """Load an image and resize it to a fixed size."""
     if os.path.exists(image_path):
         image = Image.open(image_path)
-        image = image.resize(size)  # Resize to fixed dimensions
+        image = image.resize(size)  
         return image
     else:
-        return None  # Return None if the image does not exist
+        return None  
 
 def home_page():
     # Layout for logo and title
