@@ -320,9 +320,7 @@ def enhanced_risk_assessment_page():
                 "Weight Gain": weight_gain,
                 "Excessive Hair Growth": hair_growth,
                 "Skin Darkening": skin_darkening,
-                "Hair Loss": hair_loss,
                 "Pimples": pimples,
-                "Fast Food": fast_food,
                 "Regular Exercise": reg_exercise,
                 "BP Systolic": bp_systolic,
                 "BP Diastolic": bp_diastolic
