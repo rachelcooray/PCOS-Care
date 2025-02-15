@@ -1,5 +1,23 @@
 import streamlit as st
 import os
+import requests
+import json
+
+# Function to send data to Flask API and get prediction
+def get_prediction(input_data):
+    url = "http://127.0.0.1:5000/predict-simple"  # Flask API endpoint
+    headers = {'Content-Type': 'application/json'}
+    
+    try:
+        response = requests.post(url, json=input_data, headers=headers)
+        
+        if response.status_code == 200:
+            prediction = response.json().get('prediction')
+            return prediction
+        else:
+            return f"Error: {response.json().get('error')}"
+    except Exception as e:
+        return f"Exception: {str(e)}"
 
 logo_path = "images/logo.png"
 
@@ -55,6 +73,9 @@ def validate_respiratory_rate(rr_rate):
 def validate_hemoglobin(hb):
     return is_valid_number(hb, 8, 18)
 
+def validate_cycle(cycle):
+    return cycle in ["R", "I"]
+
 def validate_cycle_length(cycle_length):
     return is_valid_number(cycle_length, 21, 35)
 
@@ -72,6 +93,25 @@ def validate_waist(waist):
 
 def validate_waist_hip_ratio(waist_hip_ratio):
     return is_valid_number(waist_hip_ratio, 0.4, 1.0)
+
+def convert_yes_no(value):
+    return 1 if value == "Yes" else 0
+
+def convert_cycle(value):
+    return 2 if value == "R" else 4
+
+def convert_blood_group(value):
+    blood_group_mapping = {
+        "A+": 11,
+        "A-": 12,
+        "B+": 13,
+        "B-": 14,
+        "O+": 15,
+        "O-": 16,
+        "AB+": 17,
+        "AB-": 18
+    }
+    return blood_group_mapping.get(value, None)
     
 def simple_risk_assessment_page():
     col1, col2 = st.columns([1, 4])  
@@ -121,6 +161,11 @@ def simple_risk_assessment_page():
         placeholder="Enter your Blood Group",
         help="Select your blood group."
     )
+    pulse_rate = st.text_input(
+        "Pulse rate(bpm):", 
+        placeholder="Enter your pulse rate in bpm (e.g., 72.0)", 
+        help="Enter your pulse rate in beats per minute. Decimals are allowed."
+    )
 
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
@@ -143,11 +188,23 @@ def simple_risk_assessment_page():
         index=None, 
         help="Select 'Yes' if you have noticed dark patches on your skin."
     )
+    hair_loss = st.radio(
+        "Have you observed abnormal or excessive hair loss?", 
+        ["Yes", "No"], 
+        index=None, 
+        help="Select 'Yes' if you have observed abnormal or excessive hair loss."
+    )
     pimples = st.radio(
         "Do you have frequent or severe acne outbreaks?", 
         ["Yes", "No"], 
         index=None, 
         help="Select 'Yes' if you have frequent or severe acne outbreaks."
+    )
+    fast_food = st.radio(
+        "Do you eat alot of fast food", 
+        ["Yes", "No"], 
+        index=None, 
+        help="Select 'Yes' if you eat alot of fast food."
     )
     reg_exercise = st.radio(
         "Do you exercise regularly?", 
@@ -156,6 +213,65 @@ def simple_risk_assessment_page():
         help="Select 'Yes' if you exercise regularly (at least 3 times a week)."
     )
 
+    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
+
+    st.write("### Additional Information")
+    
+    rr_rate = st.text_input(
+        "RR (breaths/min):", 
+        placeholder="Enter your respiratory rate (e.g., 18)", 
+        help="Enter your respiratory rate in breaths per minute."
+    )
+    
+    cycle = st.selectbox(
+        "Cycle (R/I):", ["R", "I"], 
+        help="Select the cycle type (R for regular, I for irregular)."
+    )
+    
+    cycle_length = st.text_input(
+        "Cycle length (days):", 
+        placeholder="Enter cycle length in days (e.g., 28)", 
+        help="Enter the length of your cycle in days."
+    )
+    
+    marriage_years = st.text_input(
+        "Marriage Status (Yrs):", 
+        placeholder="Enter years of marriage", 
+        help="Enter the number of years of marriage."
+    )
+    
+    pregnancy_status = st.radio(
+        "Have you ever been pregnant?", 
+        ["Yes", "No"], 
+        index=None, 
+        help="Select if pregnant (Y) or not (N)."
+    )
+
+    no_of_abortions = st.text_input(
+        "No. of Abortions:", 
+        placeholder="Enter number of abortions", 
+        help="Enter the number of abortions (if any)."
+    )
+    
+    hip = st.text_input(
+        "Hip (inch):", 
+        placeholder="Enter your hip measurement in inches", 
+        help="Enter the hip measurement in inches."
+    )
+    
+    waist = st.text_input(
+        "Waist (inch):", 
+        placeholder="Enter your waist measurement in inches", 
+        help="Enter the waist measurement in inches."
+    )
+    
+    waist_hip_ratio = st.text_input(
+        "Waist:Hip Ratio:", 
+        placeholder="Enter your waist to hip ratio (e.g., 0.8)", 
+        help="Enter your waist-to-hip ratio."
+    )
+
+    
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
     st.write("### Blood Pressure")
@@ -178,45 +294,70 @@ def simple_risk_assessment_page():
         bmi_valid = validate_bmi(bmi)
         bp_systolic_valid = validate_bp_systolic(bp_systolic)
         bp_diastolic_valid = validate_bp_diastolic(bp_diastolic)
+        pulse_rate_valid = validate_pulse_rate(pulse_rate)
+        rr_valid = validate_respiratory_rate(rr_rate)
+        cycle_valid = validate_cycle(cycle)
+        cycle_length_valid = validate_cycle_length(cycle_length)
+        marriage_years_valid = validate_marriage_years(marriage_years)
+        no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
+        hip_valid = validate_hip(hip)
+        waist_valid = validate_waist(waist)
+        waist_hip_ratio_valid = validate_waist_hip_ratio(waist_hip_ratio)
 
-        if not age_valid:
-            st.error("Age must be a number between 18 and 75.")
-        if not weight_valid:
-            st.error("Weight must be a number between 30 and 200 Kg.")
-        if not height_valid:
-            st.error("Height must be a number between 100 and 250 cm.")
-        if not bmi_valid:
-            st.error("BMI must be a number between 10 and 50.")
-        if not bp_systolic_valid:
-            st.error("Systolic BP must be a number between 80 and 200 mmHg.")
-        if not bp_diastolic_valid:
-            st.error("Diastolic BP must be a number between 50 and 120 mmHg.")
-        if not all([weight_gain, hair_growth, skin_darkening, pimples, reg_exercise]):
-            st.error("Please answer all symptom-related questions.")
+        # Collect errors
+        errors = []
+        if not age_valid: errors.append("Age must be between 18 and 75.")
+        if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
+        if not height_valid: errors.append("Height must be between 100 and 250 cm.")
+        if not bmi_valid: errors.append("BMI must be between 10 and 50.")
+        if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
+        if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
+        if not pulse_rate_valid: errors.append("Pulse rate must be between 40 and 200 bpm.")
+        if not rr_valid: errors.append("Respiratory rate must be between 12 and 30 breaths per minute.")
+        if not cycle_valid: errors.append("Cycle must be either 'R' (regular) or 'I' (irregular).")
+        if not cycle_length_valid: errors.append("Cycle length must be between 21 and 35 days.")
+        if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 60.")
+        if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 10.")
+        if not hip_valid: errors.append("Hip measurement must be between 20 and 70 inches.")
+        if not waist_valid: errors.append("Waist measurement must be between 20 and 60 inches.")
+        if not waist_hip_ratio_valid: errors.append("Waist to hip ratio must be between 0.4 and 1.0.")
 
-        # If all inputs are valid
-        if all([
-            age_valid, weight_valid, height_valid, bmi_valid,
-            bp_systolic_valid, bp_diastolic_valid,
-            weight_gain, hair_growth, skin_darkening, pimples, reg_exercise
-        ]):
-            st.session_state.risk_assessment_data = {
-                "Age": age,
-                "Weight": weight,
-                "Height": height,
+        # Show errors if any
+        if errors:
+            for error in errors:
+                st.error(error)
+        else:
+            st.success("All inputs are valid! Form submitted successfully.")
+            
+            data = {
+                " Age (yrs)": age,
+                "Weight (Kg)": weight,
+                "Height(Cm) ": height,
                 "BMI": bmi,
-                "Weight Gain": weight_gain,
-                "Excessive Hair Growth": hair_growth,
-                "Skin Darkening": skin_darkening,
-                "Pimples": pimples,
-                "Regular Exercise": reg_exercise,
-                "BP Systolic": bp_systolic,
-                "BP Diastolic": bp_diastolic
+                "Blood Group": convert_blood_group(blood_group),
+                "Pulse rate(bpm) ": pulse_rate,
+                "Weight gain(Y/N)": convert_yes_no(weight_gain),
+                "hair growth(Y/N)": convert_yes_no(hair_growth),
+                "Skin darkening (Y/N)": convert_yes_no(skin_darkening),
+                "Hair loss(Y/N)": convert_yes_no(hair_loss),
+                "Pimples(Y/N)": convert_yes_no(pimples),
+                "Fast food (Y/N)": convert_yes_no(fast_food),
+                "Reg.Exercise(Y/N)": convert_yes_no(reg_exercise),
+                "RR (breaths/min)": rr_rate,
+                "Cycle(R/I)": convert_cycle(cycle),
+                "Cycle length(days)": cycle_length,
+                "Marraige Status (Yrs)": marriage_years,
+                "Pregnant(Y/N)": convert_yes_no(pregnancy_status),
+                "No. of aborptions": no_of_abortions,
+                "Hip(inch)": hip,
+                "Waist(inch)": waist,
+                "Waist:Hip Ratio": waist_hip_ratio,
+                "BP _Systolic (mmHg)": bp_systolic,
+                "BP _Diastolic (mmHg)": bp_diastolic
+
             }
+            
+            st.json(data)
 
-            st.markdown("#### Collected Data Summary:")
-            st.json(st.session_state.risk_assessment_data)
-
-            with st.spinner("Processing your data..."):
-                st.progress(50)
-                st.success("Simple risk assessment complete!")
+        prediction = get_prediction(data)
+        st.write(f"Prediction: {prediction}")
