@@ -357,7 +357,17 @@ def simple_risk_assessment_page():
 
             }
             
-            st.json(data)
+            # st.json(data)
 
-        prediction = get_prediction(data)
-        st.write(f"Prediction: {prediction}")
+        try:
+            prediction = get_prediction(data)
+            st.write(f"Prediction: {prediction}")
+        except Exception as e:
+            st.error(f"Failed to get prediction: {str(e)}")
+
+        st.session_state.risk_assessment_data = {
+            "predicted_pcos": prediction,
+            "symptom_analysis": data  
+        }
+
+        st.switch_page("results.py") 

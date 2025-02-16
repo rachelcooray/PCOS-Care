@@ -112,4 +112,4 @@ def pcos_info_page():
 
     
     if st.button("Take the Simple Assessment"):
-        st.switch_page("Simple_Risk_Assessment")  # Adjust based on your routing
+        st.switch_page("simple_risk_assessment.py")  

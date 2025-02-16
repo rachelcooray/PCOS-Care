@@ -21,7 +21,7 @@ def results_page():
 
     # Ensure risk assessment data is available
     if "risk_assessment_data" in st.session_state:
-        user_data = st.session_state.risk_assessment_data
+        user_data = st.session_state.risk_assessment_data[0]
         
         # ML-based prediction: Yes or No 
         predicted_pcos = user_data.get("predicted_pcos", "Unknown")  
