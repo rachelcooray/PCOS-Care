@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import pickle
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 
@@ -8,15 +9,10 @@ app = Flask(__name__)
 with open("best_svm_model.pkl", "rb") as model_file:
     loaded_svm = pickle.load(model_file)
 
-with open("scaler_svm.pkl", "rb") as scaler_file:
-    loaded_scaler_svm = pickle.load(scaler_file)
-
 # Load the trained Random Forest model and scaler
 with open("best_random_forest_model.pkl", "rb") as model_file:
     loaded_random_forest = pickle.load(model_file)
 
-with open("scaler_random_forest.pkl", "rb") as scaler_file:
-    loaded_scaler_rf = pickle.load(scaler_file)
 
 # Features
 features_general_public = [
@@ -43,6 +39,35 @@ features_scan = [
        'Avg. F size (L) (mm)', 'Avg. F size (R) (mm)', 'Endometrium (mm)'
 ]
 
+numerical_columns_gen = [
+    ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 'Pulse rate(bpm) ', 
+    'RR (breaths/min)', 'Cycle(R/I)', 'Cycle length(days)', 
+    'Marraige Status (Yrs)', 'No. of aborptions', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 
+    'BP _Systolic (mmHg)', 'BP _Diastolic (mmHg)'
+]
+
+categorical_columns_gen = [
+    'Blood Group', 'Pregnant(Y/N)', 'Weight gain(Y/N)', 'hair growth(Y/N)', 'Skin darkening (Y/N)', 
+    'Hair loss(Y/N)', 'Pimples(Y/N)', 'Fast food (Y/N)', 'Reg.Exercise(Y/N)'
+]
+
+numerical_columns_scan = [
+    ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 'Pulse rate(bpm) ', 
+    'RR (breaths/min)', 'Hb(g/dl)', 'Cycle(R/I)', 'Cycle length(days)', 
+    'Marraige Status (Yrs)', 'No. of aborptions', 
+    '  I   beta-HCG(mIU/mL)', 'II    beta-HCG(mIU/mL)', 'FSH(mIU/mL)', 'LH(mIU/mL)', 
+    'FSH/LH', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 'TSH (mIU/L)', 
+    'AMH(ng/mL)', 'PRL(ng/mL)', 'Vit D3 (ng/mL)', 'PRG(ng/mL)', 'RBS(mg/dl)', 
+    'BP _Systolic (mmHg)', 'BP _Diastolic (mmHg)', 'Follicle No. (L)', 
+    'Follicle No. (R)', 'Avg. F size (L) (mm)', 'Avg. F size (R) (mm)', 'Endometrium (mm)'
+]
+
+categorical_columns_scan = [
+    'Blood Group', 'Pregnant(Y/N)', 'Weight gain(Y/N)', 'hair growth(Y/N)', 'Skin darkening (Y/N)', 
+    'Hair loss(Y/N)', 'Pimples(Y/N)', 'Fast food (Y/N)', 'Reg.Exercise(Y/N)'
+]
+
+
 # Endpoint for simple prediction
 @app.route("/predict-simple", methods=["POST"])
 def predict_simple():
@@ -52,27 +77,46 @@ def predict_simple():
         
         data = request.json
 
-        for feature in features_general_public:
-            if feature not in data:
-                return jsonify({"error": f"Missing feature: {feature}"}), 400
+        # Get user input for numerical columns
+        user_inputs = []
+        for col in numerical_columns_gen:
+            if col in data:
+                user_inputs.append(data[col])
+            else:
+                return jsonify({"error": f"Missing feature: {col}"}), 400
 
-        user_input_df = pd.DataFrame([data], columns=features_general_public)
+        # Prepare the DataFrame with numerical inputs (before scaling)
+        numerical_inputs_df = pd.DataFrame([user_inputs], columns=numerical_columns_gen)
 
-        for feature in [' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 
-                        'Pulse rate(bpm) ', 'RR (breaths/min)', 'Cycle length(days)', 
-                        'Marraige Status (Yrs)', 'No. of aborptions', 
-                        'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 
-                        'BP _Systolic (mmHg)', 'BP _Diastolic (mmHg)']:
-            if isinstance(data[feature], (int, float)) and data[feature] < 0:
-                return jsonify({"error": f"Invalid input: {feature} cannot be negative."}), 422
+        # Scale only numerical features using StandardScaler
+        scaler = StandardScaler()
+        scaled_numerical_inputs = scaler.fit_transform(numerical_inputs_df)
 
-        user_input_scaled = loaded_scaler_svm.transform(user_input_df)
-        prediction = loaded_svm.predict(user_input_scaled)
+        # Get user input for categorical columns and append them
+        categorical_inputs = []
+        for col in categorical_columns_gen:
+            if col in data:
+                categorical_inputs.append(data[col])
+            else:
+                return jsonify({"error": f"Missing feature: {col}"}), 400
+
+        # Combine scaled numerical inputs and categorical inputs into a final DataFrame
+        final_inputs = pd.DataFrame(scaled_numerical_inputs, columns=numerical_columns_gen)
+        final_inputs[categorical_columns_gen] = categorical_inputs
+
+        # Ensure the column order matches the model's expectation
+        final_inputs = final_inputs[features_general_public]
+
+        # Make prediction using the trained SVM model
+        prediction = loaded_svm.predict(final_inputs)
+
+        # Output the prediction result
         result = "Positive for PCOS" if prediction[0] == 1 else "Negative for PCOS"
         return jsonify({"prediction": result})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 # Endpoint for enhanced prediction
 @app.route("/predict-enhanced", methods=["POST"])
@@ -83,23 +127,38 @@ def predict_enhanced():
         
         data = request.json
 
-        for feature in features_scan:
-            if feature not in data:
-                return jsonify({"error": f"Missing feature: {feature}"}), 400
+        user_inputs = []
+        for col in numerical_columns_scan:
+            if col in data:
+                user_inputs.append(data[col])
+            else:
+                return jsonify({"error": f"Missing feature: {col}"}), 400
 
-        user_input_df = pd.DataFrame([data], columns=features_scan)
+        numerical_inputs_df = pd.DataFrame([user_inputs], columns=numerical_columns_scan)
 
-        for feature in features_scan:
-            if isinstance(data[feature], (int, float)) and data[feature] < 0:
-                return jsonify({"error": f"Invalid input: {feature} cannot be negative."}), 422
+        scaler = StandardScaler()
+        scaled_numerical_inputs = scaler.fit_transform(numerical_inputs_df)
 
-        user_input_scaled = loaded_scaler_rf.transform(user_input_df)
-        prediction = loaded_random_forest.predict(user_input_scaled)
+        categorical_inputs = []
+        for col in categorical_columns_scan:
+            if col in data:
+                categorical_inputs.append(data[col])
+            else:
+                return jsonify({"error": f"Missing feature: {col}"}), 400
+
+        final_inputs = pd.DataFrame(scaled_numerical_inputs, columns=numerical_columns_scan)
+        final_inputs[categorical_columns_scan] = categorical_inputs
+
+        final_inputs = final_inputs[features_scan]
+
+        prediction = loaded_random_forest.predict(final_inputs)
+
         result = "Positive for PCOS" if prediction[0] == 1 else "Negative for PCOS"
         return jsonify({"prediction": result})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @app.errorhandler(404)
 def not_found(error):
