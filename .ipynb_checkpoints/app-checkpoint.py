@@ -113,7 +113,7 @@ def predict_simple():
         prediction = loaded_svm.predict(final_inputs)
 
         # Output the prediction result
-        result = "Positive for PCOS" if prediction[0] == 1 else "Negative for PCOS"
+        result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
         return jsonify({"prediction": result})
 
     except Exception as e:
@@ -155,7 +155,7 @@ def predict_enhanced():
 
         prediction = loaded_random_forest.predict(final_inputs)
 
-        result = "Positive for PCOS" if prediction[0] == 1 else "Negative for PCOS"
+        result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
         return jsonify({"prediction": result})
 
     except Exception as e:
