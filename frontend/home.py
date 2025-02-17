@@ -59,7 +59,7 @@ def home_page():
     col1, col2 = st.columns(2)
     with col1:
         if st.button("📚 Learn More About PCOS"):
-            st.session_state.page = "PCOS Information"
+            st.switch_page('pages/pcos_info.py') 
 
     with col2:
         if st.button("⚠️ Take the Risk Assessment"):

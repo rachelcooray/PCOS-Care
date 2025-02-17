@@ -24,7 +24,7 @@ def results_page():
         user_data = st.session_state.risk_assessment_data[0]
         
         # ML-based prediction: Yes or No 
-        predicted_pcos = user_data.get("predicted_pcos", "Unknown")  
+        predicted_pcos = user_data.get("predicted_pcos", "Unknown")  # result from assessment
         
         # Display Prediction
         st.markdown(f"""

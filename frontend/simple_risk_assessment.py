@@ -35,7 +35,7 @@ def is_valid_number(value, min_value=None, max_value=None):
 
 # Individual validation functions
 def validate_age(age):
-    if is_valid_number(age, 18, 75):
+    if is_valid_number(age, 18, 55):
         return True
     return False
 
@@ -45,7 +45,7 @@ def validate_weight(weight):
     return False
 
 def validate_height(height):
-    if is_valid_number(height, 100, 250):
+    if is_valid_number(height, 90, 250):
         return True
     return False
 
@@ -65,40 +65,37 @@ def validate_bp_diastolic(bp_diastolic):
     return False
 
 def validate_pulse_rate(pulse_rate):
-    return is_valid_number(pulse_rate, 40, 200)
+    return is_valid_number(pulse_rate, 15, 120)
 
 def validate_respiratory_rate(rr_rate):
     return is_valid_number(rr_rate, 12, 30)
 
-def validate_hemoglobin(hb):
-    return is_valid_number(hb, 8, 18)
-
 def validate_cycle(cycle):
-    return cycle in ["R", "I"]
+    return cycle in ["Regular", "Irregular"]
 
 def validate_cycle_length(cycle_length):
-    return is_valid_number(cycle_length, 21, 35)
+    return is_valid_number(cycle_length, 0, 14)
 
 def validate_marriage_years(marriage_years):
-    return is_valid_number(marriage_years, 0, 60)
+    return is_valid_number(marriage_years, 0, 37)
 
 def validate_number_of_abortions(no_of_abortions):
-    return is_valid_number(no_of_abortions, 0, 10)
+    return is_valid_number(no_of_abortions, 0, 5)
 
 def validate_hip(hip):
-    return is_valid_number(hip, 20, 70)
+    return is_valid_number(hip, 20, 60)
 
 def validate_waist(waist):
-    return is_valid_number(waist, 20, 60)
+    return is_valid_number(waist, 25, 55)
 
 def validate_waist_hip_ratio(waist_hip_ratio):
-    return is_valid_number(waist_hip_ratio, 0.4, 1.0)
+    return is_valid_number(waist_hip_ratio, 0.5, 1.0)
 
 def convert_yes_no(value):
     return 1 if value == "Yes" else 0
 
 def convert_cycle(value):
-    return 2 if value == "R" else 4
+    return 2 if value == "Regular" else 4
 
 def convert_blood_group(value):
     blood_group_mapping = {
@@ -112,6 +109,16 @@ def convert_blood_group(value):
         "AB-": 18
     }
     return blood_group_mapping.get(value, None)
+
+def calculate_bmi(weight, height):
+    weight = float(weight) 
+    height = float(height)
+    return (weight / ((height/100) ** 2))
+
+def calculate_waist_hip_ratio(waist, hip):
+    waist = float(waist)
+    hip = float(hip)
+    return (waist / hip)
     
 def simple_risk_assessment_page():
     col1, col2 = st.columns([1, 4])  
@@ -127,7 +134,9 @@ def simple_risk_assessment_page():
 
     st.subheader("Simple Risk Assessment")
     st.markdown("""
-    Provide basic health data and symptoms for a quick PCOS risk analysis. Enter the details according to the guidelines provided for each field.
+    Provide basic health data and symptoms for a quick PCOS risk analysis. Enter the details in the feilds below.
+    
+    Guidelines have been provided for each field.
     """)
     
     # Section breaker
@@ -137,24 +146,24 @@ def simple_risk_assessment_page():
     st.write("### General Information")
     age = st.text_input(
         "Age (years):", 
-        placeholder="Enter your age (e.g., 25, whole number between 18-50)", 
+        placeholder="25", 
         help="Enter your age as a whole number between 18 and 50."
     )
     weight = st.text_input(
         "Weight (Kg):", 
-        placeholder="Enter your weight in kg (e.g., 60.5)", 
+        placeholder="60.5", 
         help="Enter your weight in kilograms. Decimals are allowed."
     )
     height = st.text_input(
         "Height (Cm):", 
-        placeholder="Enter your height in cm (e.g., 160.0)", 
+        placeholder="160.5", 
         help="Enter your height in centimeters. Decimals are allowed."
     )
-    bmi = st.text_input(
-        "BMI:", 
-        placeholder="Enter your BMI (e.g., 22.0)", 
-        help="Enter your Body Mass Index (BMI). Decimals are allowed."
-    )
+    # bmi = st.text_input(
+    #     "BMI:", 
+    #     placeholder="22.8", 
+    #     help="Enter your Body Mass Index (BMI). Decimals are allowed."
+    # )
     blood_group = st.selectbox(
         "Blood Group:", 
         ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"], 
@@ -163,7 +172,7 @@ def simple_risk_assessment_page():
     )
     pulse_rate = st.text_input(
         "Pulse rate(bpm):", 
-        placeholder="Enter your pulse rate in bpm (e.g., 72.0)", 
+        placeholder="72.0", 
         help="Enter your pulse rate in beats per minute. Decimals are allowed."
     )
 
@@ -219,24 +228,24 @@ def simple_risk_assessment_page():
     
     rr_rate = st.text_input(
         "RR (breaths/min):", 
-        placeholder="Enter your respiratory rate (e.g., 18)", 
+        placeholder="18", 
         help="Enter your respiratory rate in breaths per minute."
     )
     
     cycle = st.selectbox(
-        "Cycle (R/I):", ["R", "I"], 
-        help="Select the cycle type (R for regular, I for irregular)."
+        "Cycle (R/I):", ["Regular", "Irregular"], 
+        help="Select the cycle type as regular or irregular."
     )
     
     cycle_length = st.text_input(
         "Cycle length (days):", 
-        placeholder="Enter cycle length in days (e.g., 28)", 
-        help="Enter the length of your cycle in days."
+        placeholder="7", 
+        help="Enter the number of days your menstrual period typically lasts."
     )
     
     marriage_years = st.text_input(
         "Marriage Status (Yrs):", 
-        placeholder="Enter years of marriage", 
+        placeholder="0", 
         help="Enter the number of years of marriage."
     )
     
@@ -249,27 +258,27 @@ def simple_risk_assessment_page():
 
     no_of_abortions = st.text_input(
         "No. of Abortions:", 
-        placeholder="Enter number of abortions", 
+        placeholder="0", 
         help="Enter the number of abortions (if any)."
     )
     
     hip = st.text_input(
         "Hip (inch):", 
-        placeholder="Enter your hip measurement in inches", 
+        placeholder="36", 
         help="Enter the hip measurement in inches."
     )
     
     waist = st.text_input(
         "Waist (inch):", 
-        placeholder="Enter your waist measurement in inches", 
+        placeholder="32", 
         help="Enter the waist measurement in inches."
     )
     
-    waist_hip_ratio = st.text_input(
-        "Waist:Hip Ratio:", 
-        placeholder="Enter your waist to hip ratio (e.g., 0.8)", 
-        help="Enter your waist-to-hip ratio."
-    )
+    # waist_hip_ratio = st.text_input(
+    #     "Waist:Hip Ratio:", 
+    #     placeholder="0.8", 
+    #     help="Enter your waist-to-hip ratio."
+    # )
 
     
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
@@ -277,17 +286,20 @@ def simple_risk_assessment_page():
     st.write("### Blood Pressure")
     bp_systolic = st.text_input(
         "BP Systolic (mmHg):", 
-        placeholder="Enter systolic BP (e.g., 120)", 
+        placeholder="120", 
         help="Enter your systolic blood pressure as a whole number between 80 and 200."
     )
     bp_diastolic = st.text_input(
         "BP Diastolic (mmHg):", 
-        placeholder="Enter diastolic BP (e.g., 80)", 
+        placeholder="80", 
         help="Enter your diastolic blood pressure as a whole number between 50 and 120."
     )
     
     # Validate inputs
     if st.button("Submit"):
+        bmi = calculate_bmi(weight, height)
+        waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
+    
         age_valid = validate_age(age)
         weight_valid = validate_weight(weight)
         height_valid = validate_height(height)
@@ -306,21 +318,21 @@ def simple_risk_assessment_page():
 
         # Collect errors
         errors = []
-        if not age_valid: errors.append("Age must be between 18 and 75.")
+        if not age_valid: errors.append("Age must be between 18 and 55.")
         if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
-        if not height_valid: errors.append("Height must be between 100 and 250 cm.")
-        if not bmi_valid: errors.append("BMI must be between 10 and 50.")
+        if not height_valid: errors.append("Height must be between 90 and 250 cm.")
+        # if not bmi_valid: errors.append("BMI must be between 10 and 50.")
         if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
         if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
-        if not pulse_rate_valid: errors.append("Pulse rate must be between 40 and 200 bpm.")
+        if not pulse_rate_valid: errors.append("Pulse rate must be between 15 and 120 bpm.")
         if not rr_valid: errors.append("Respiratory rate must be between 12 and 30 breaths per minute.")
-        if not cycle_valid: errors.append("Cycle must be either 'R' (regular) or 'I' (irregular).")
-        if not cycle_length_valid: errors.append("Cycle length must be between 21 and 35 days.")
-        if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 60.")
-        if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 10.")
-        if not hip_valid: errors.append("Hip measurement must be between 20 and 70 inches.")
-        if not waist_valid: errors.append("Waist measurement must be between 20 and 60 inches.")
-        if not waist_hip_ratio_valid: errors.append("Waist to hip ratio must be between 0.4 and 1.0.")
+        if not cycle_valid: errors.append("Cycle must be either 'Regular' or 'Irregular'.")
+        if not cycle_length_valid: errors.append("Cycle length must be between 0 and 14 days.")
+        if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 37.")
+        if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 5.")
+        if not hip_valid: errors.append("Hip measurement must be between 20 and 60 inches.")
+        if not waist_valid: errors.append("Waist measurement must be between 20 and 55 inches.")
+        # if not waist_hip_ratio_valid: errors.append("Waist to hip ratio must be between 0.5 and 1.0.")
 
         # Show errors if any
         if errors:
@@ -354,10 +366,9 @@ def simple_risk_assessment_page():
                 "Waist:Hip Ratio": waist_hip_ratio,
                 "BP _Systolic (mmHg)": bp_systolic,
                 "BP _Diastolic (mmHg)": bp_diastolic
-
             }
             
-            # st.json(data)
+            st.json(data)
 
         try:
             prediction = get_prediction(data)
@@ -370,4 +381,4 @@ def simple_risk_assessment_page():
             "symptom_analysis": data  
         }
 
-        st.switch_page("results.py") 
+        # st.switch_page("results.py") 

@@ -5,6 +5,8 @@ from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 
+## https://flask.palletsprojects.com/en/stable/errorhandling/
+
 # Load the trained SVM model and scaler
 with open("best_svm_model.pkl", "rb") as model_file:
     loaded_svm = pickle.load(model_file)
