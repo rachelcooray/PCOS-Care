@@ -6,7 +6,7 @@ import json
 # Function to send data to Flask API and get prediction
 def get_prediction(input_data):
     # url = "http://127.0.0.1:5000/predict-enhanced"  # Flask API endpoint - localhost
-    url = "https://pcos-care.onrender.com/predict-enhanced"
+    url = "https://pcos-care.onrender.com/predict-enhanced" # render
     headers = {'Content-Type': 'application/json'}
     
     try:

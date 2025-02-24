@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from PIL import Image
 
-logo_path = "images/logo.png"
+logo_path = "frontend/images/logo.png"
 hero_image_path = "images/hero.png"
 
 feature_images = {
