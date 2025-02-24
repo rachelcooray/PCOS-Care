@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-logo_path = "images/logo.png"
+logo_path = "frontend/images/logo.png"
 
 def results_page():
     col1, col2 = st.columns([1, 4]) 

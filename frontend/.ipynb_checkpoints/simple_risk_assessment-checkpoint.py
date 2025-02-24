@@ -20,7 +20,7 @@ def get_prediction(input_data):
     except Exception as e:
         return f"Exception: {str(e)}"
 
-logo_path = "images/logo.png"
+logo_path = "frontend/images/logo.png"
 
 # Function to validate numeric inputs
 def is_valid_number(value, min_value=None, max_value=None):
