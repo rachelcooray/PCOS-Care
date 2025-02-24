@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-logo_path = "frontend/images/logo.png"
+logo_path = "images/logo.png"
 
 def pcos_info_page():
     
@@ -68,7 +68,7 @@ def pcos_info_page():
         """)
     with col2:
         # Placeholder for an infographic or flowchart
-        st.image("frontend/images/pcos.jpg", use_column_width=True, caption="PCOS Effects on Health")  
+        st.image("images/pcos.jpg", use_column_width=True, caption="PCOS Effects on Health")  
         # GIVE REF TO THE IMAGE
 
     # Section Break

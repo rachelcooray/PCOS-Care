@@ -2,14 +2,14 @@ import streamlit as st
 import os
 from PIL import Image
 
-logo_path = "frontend/images/logo.png"
-hero_image_path = "frontend/images/hero.png"
+logo_path = "images/logo.png"
+hero_image_path = "images/hero.png"
 
 feature_images = {
-    "info": "frontend/images/info.png",
-    "assessment": "frontend/images/assessment.png",
-    "enhanced": "frontend/images/enhanced.png",
-    "results": "frontend/images/results.png"
+    "info": "images/info.png",
+    "assessment": "images/assessment.png",
+    "enhanced": "images/enhanced.png",
+    "results": "images/results.png"
 }
 
 def load_and_resize_image(image_path, size=(150, 150)):

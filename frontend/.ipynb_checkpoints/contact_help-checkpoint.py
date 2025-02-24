@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-logo_path = "frontend/images/logo.png"
+logo_path = "images/logo.png"
 
 def contact_help_page():
     col1, col2 = st.columns([1, 4])  
