@@ -7,7 +7,7 @@ import json
 def get_prediction(input_data):
     # url = "http://127.0.0.1:5000/predict-simple"  # Flask API endpoint - localhost
     # url = "https://pcos-care.onrender.com/predict-simple" # render
-    url = "rachelcooray.pythonanywhere.com/predict-simple"
+    url = "https://rachelcooray.pythonanywhere.com/predict-simple"
     headers = {'Content-Type': 'application/json'}
     
     try:
