@@ -2,8 +2,12 @@ import streamlit as st
 import os
 from PIL import Image
 
-logo_path = "./images/logo.png"
-hero_image_path = "./images/hero.png"
+current_directory = os.path.dirname(__file__)
+logo_path = os.path.join(current_directory, "images/logo.png")
+hero_image_path = os.path.join(current_directory, "images/hero.png")
+
+# logo_path = "./images/logo.png"
+# hero_image_path = "./images/hero.png"
 
 feature_images = {
     "info": "./images/info.png",
