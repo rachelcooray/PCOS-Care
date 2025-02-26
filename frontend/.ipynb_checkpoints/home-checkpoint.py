@@ -2,6 +2,7 @@ import streamlit as st
 import os
 from PIL import Image
 
+# Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 hero_image_path = os.path.join(current_directory, "images/hero.png")
@@ -24,16 +25,16 @@ def load_and_resize_image(image_path, size=(150, 150)):
 
 def home_page():
     # Layout for logo and title
-    col1, col2 = st.columns([1, 4]) 
+    st.markdown("<div style='text-align: center; margin-bottom: 20px;'>", unsafe_allow_html=True)
+    if os.path.exists(logo_path):
+        logo_image = load_and_resize_image(logo_path, size=(120, 120))
+        if logo_image:
+            st.image(logo_image, use_column_width=False, caption="", output_format="PNG", width=120)
+    else:
+        st.error("Logo image not found.")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    with col1:
-        if os.path.exists(logo_path):
-            st.image(logo_path, width=100)  
-        else:
-            st.error("Logo image not found.")
-
-    with col2:
-        st.title("PCOS Care")
+    st.markdown("<h1 style='text-align: center; color: #6a0dad;'>PCOS Care</h1>", unsafe_allow_html=True)
 
     # Welcome Message
     st.markdown(
@@ -43,24 +44,22 @@ def home_page():
 
     # Introduction
     st.markdown("""
-        ### Welcome to PCOS Care  
-        Our AI-driven **PCOS Risk Assessment tool** helps women understand their health better through data-driven insights.  
-        This tool **does not provide a medical diagnosis**, but it serves as an informative resource.  
-        
-        💡 **Early detection and awareness are key to managing PCOS effectively.** 
-        
-        📌 **Use this platform to assess your risk, gain knowledge, and take informed actions.**  
-        
-        _Always consult a healthcare professional for medical advice._  
-    """)
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+            <h3>Welcome to PCOS Care</h3>
+            <p>Our AI-driven <strong>PCOS Risk Assessment tool</strong> helps women understand their health better through data-driven insights. This tool <strong>does not provide a medical diagnosis</strong>, but it serves as an informative resource.</p>
+            <p>💡 <strong>Early detection and awareness are key to managing PCOS effectively.</strong></p>
+            <p>📌 <strong>Use this platform to assess your risk, gain knowledge, and take informed actions.</strong></p>
+            <p><em>Always consult a healthcare professional for medical advice.</em></p>
+        </div>
+    """, unsafe_allow_html=True)
 
     # Call to Action
-    st.markdown("<h3 style='text-align: center;'>Start your journey towards better health!</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Start your journey towards better health!</h3>", unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
     with col1:
         if st.button("📚 Learn More About PCOS"):
-            st.switch_page('pages/pcos_info.py') 
+            st.switch_page('pcos_info.py') 
 
     with col2:
         if st.button("⚠️ Take the Risk Assessment"):
@@ -110,3 +109,7 @@ def home_page():
             st.image(img, caption="Results Visualization", use_column_width=True)
         with st.expander("📊 Results Visualization"):
             st.markdown(f"<div style='{expander_height_style}'>View your risk level with intuitive graphs and visualizations.</div>", unsafe_allow_html=True)
+
+# Run the home page function when the script is executed
+if __name__ == "__main__":
+    home_page()
