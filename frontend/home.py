@@ -6,14 +6,11 @@ current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 hero_image_path = os.path.join(current_directory, "images/hero.png")
 
-# logo_path = "./images/logo.png"
-# hero_image_path = "./images/hero.png"
-
 feature_images = {
-    "info": "./images/info.png",
-    "assessment": "./images/assessment.png",
-    "enhanced": "./images/enhanced.png",
-    "results": "./images/results.png"
+    "info": os.path.join(current_directory, "images/info.png"),
+    "assessment": os.path.join(current_directory, "images/assessment.png"),
+    "enhanced": os.path.join(current_directory, "images/enhanced.png"),
+    "results": os.path.join(current_directory, "images/results.png")
 }
 
 def load_and_resize_image(image_path, size=(150, 150)):
