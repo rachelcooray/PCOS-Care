@@ -21,7 +21,9 @@ def get_prediction(input_data):
     except Exception as e:
         return f"Exception: {str(e)}"
 
-logo_path = "./images/logo.png"
+# Update paths to be relative to the current file location
+current_directory = os.path.dirname(__file__)
+logo_path = os.path.join(current_directory, "images/logo.png")
 
 # Function to validate numeric inputs
 def is_valid_number(value, min_value=None, max_value=None):

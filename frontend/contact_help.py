@@ -1,7 +1,9 @@
 import streamlit as st
 import os
 
-logo_path = "./images/logo.png"
+# Update paths to be relative to the current file location
+current_directory = os.path.dirname(__file__)
+logo_path = os.path.join(current_directory, "images/logo.png")
 
 def contact_help_page():
     col1, col2 = st.columns([1, 4])  

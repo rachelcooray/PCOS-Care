@@ -3,7 +3,10 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-logo_path = "./images/logo.png"
+# Update paths to be relative to the current file location
+current_directory = os.path.dirname(__file__)
+logo_path = os.path.join(current_directory, "images/logo.png")
+pcos_image_path = os.path.join(current_directory, "images/pcos.jpg")
 
 def pcos_info_page():
     
@@ -67,9 +70,10 @@ def pcos_info_page():
             - **Complications in pregnancy and fertility**  
         """)
     with col2:
-        # Placeholder for an infographic or flowchart
-        st.image("./images/pcos.jpg", use_column_width=True, caption="PCOS Effects on Health")  
-        # GIVE REF TO THE IMAGE
+        if os.path.exists(pcos_image_path):
+            st.image(pcos_image_path, use_column_width=True, caption="PCOS Effects on Health")  
+        else:
+            st.error("PCOS image not found.")
 
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)

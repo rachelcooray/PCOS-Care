@@ -45,7 +45,7 @@ def home_page():
     # Introduction
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
-            <h3>Welcome to PCOS Care</h3>
+            <h3 style='text-align: center;'>Welcome to PCOS Care</h3>
             <p>Our AI-driven <strong>PCOS Risk Assessment tool</strong> helps women understand their health better through data-driven insights. This tool <strong>does not provide a medical diagnosis</strong>, but it serves as an informative resource.</p>
             <p>💡 <strong>Early detection and awareness are key to managing PCOS effectively.</strong></p>
             <p>📌 <strong>Use this platform to assess your risk, gain knowledge, and take informed actions.</strong></p>
