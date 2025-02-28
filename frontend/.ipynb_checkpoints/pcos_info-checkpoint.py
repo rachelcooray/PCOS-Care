@@ -133,8 +133,15 @@ def pcos_info_page():
             <p>Ready to take control of your health? Start by taking the Simple Assessment.</p>
     """, unsafe_allow_html=True)
 
-    if st.button("Take the Simple Assessment"):
-         st.session_state.page = "Simple Risk Assessment"
+    # Add space between markdown and button
+    st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space
+
+    col1, col2, col3 = st.columns([1, 1, 1])
+
+    # Place the buttons in the center column
+    with col2:
+        if st.button("Try the Simple Risk Assessment"):
+            st.session_state.page = "Simple Risk Assessment"
 
     st.markdown("</div>", unsafe_allow_html=True)
 

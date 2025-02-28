@@ -53,18 +53,6 @@ def home_page():
         </div>
     """, unsafe_allow_html=True)
 
-    # Call to Action
-    st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Start your journey towards better health!</h3>", unsafe_allow_html=True)
-
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("📚 Learn More About PCOS"):
-            st.session_state.page = "PCOS Information" 
-
-    with col2:
-        if st.button("⚠️ Take the Risk Assessment"):
-            st.session_state.page = "Simple Risk Assessment"
-
     # Hero Image
     st.markdown("<br>", unsafe_allow_html=True)
     if os.path.exists(hero_image_path):
@@ -109,6 +97,24 @@ def home_page():
             st.image(img, caption="Results Visualization", use_column_width=True)
         with st.expander("📊 Results Visualization"):
             st.markdown(f"<div style='{expander_height_style}'>View your risk level with intuitive graphs and visualizations.</div>", unsafe_allow_html=True)
+
+    # Call to Action
+    st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Start your journey towards better health!</h3>", unsafe_allow_html=True)
+
+    # Add space between markdown and button
+    st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space
+
+    col1, col2, col3 = st.columns([1, 1, 1])
+
+    # Place the buttons in the center column
+    with col1:
+        if st.button("📚 Learn More About PCOS"):
+            st.session_state.page = "PCOS Information"
+    
+    with col3:    
+        if st.button("⚠️ Take the Risk Assessment"):
+            st.session_state.page = "Simple Risk Assessment"
+            
 
 # Run the home page function when the script is executed
 if __name__ == "__main__":
