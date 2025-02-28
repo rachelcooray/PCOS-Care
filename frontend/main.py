@@ -16,7 +16,14 @@ def main():
         "Results Visualization": results_page,
         "Contact/Help": contact_help_page,
     }
-    selected_page = st.sidebar.radio("Go to", list(pages.keys()))
+    
+    if "page" not in st.session_state:
+        st.session_state.page = "Home"
+    
+    selected_page = st.sidebar.radio("Go to", list(pages.keys()), index=list(pages.keys()).index(st.session_state.page))
+    st.session_state.page = selected_page
+
+    # Run the selected page function
     pages[selected_page]()
 
 if __name__ == "__main__":

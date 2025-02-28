@@ -134,7 +134,7 @@ def pcos_info_page():
     """, unsafe_allow_html=True)
 
     if st.button("Take the Simple Assessment"):
-        st.switch_page("simple_risk_assessment.py")
+         st.session_state.page = "Simple Risk Assessment"
 
     st.markdown("</div>", unsafe_allow_html=True)
 
