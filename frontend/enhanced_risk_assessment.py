@@ -604,6 +604,10 @@ def enhanced_risk_assessment_page():
         except Exception as e:
             st.error(f"Failed to get prediction: {str(e)}")
 
+        st.session_state.risk_assessment_data = {
+            "predicted_pcos": prediction,
+            "symptom_analysis": data  
+        }
         
         download_pdf(data, prediction)
 
