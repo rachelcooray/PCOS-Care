@@ -89,37 +89,6 @@ def pcos_info_page():
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-    # Example Chart: PCOS Symptom and Lifestyle Relationship
-    st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
-            <h2 style='color: #6a0dad;'>PCOS Symptom and Lifestyle Habit Relationship</h2>
-    """, unsafe_allow_html=True)
-
-    # Data
-    data = {
-        "Symptoms": [
-            "Weight Gain", "Hair Growth", "Skin Darkening",
-            "Hair Loss", "Pimples", "Fast Food", "No Regular Exercise"
-        ],
-        "Prevalence (%)": [68.36, 57.06, 62.15, 57.63, 69.49, 78.53, 71.18]
-    }
-
-    # Create a DataFrame
-    df = pd.DataFrame(data)
-
-    st.bar_chart(df.set_index("Symptoms")["Prevalence (%)"])
-
-    # Plotting with Matplotlib
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.bar(df["Symptoms"], df["Prevalence (%)"], color="skyblue")
-    ax.set_title("PCOS Symptom and Lifestyle Habit Relationship", fontsize=14)
-    ax.set_xlabel("Symptoms", fontsize=12)
-    ax.set_ylabel("Prevalence (%)", fontsize=12)
-    plt.xticks(rotation=45, ha='right')
-    plt.tight_layout()
-
-    st.pyplot(fig)
-
     st.markdown("""
         <p><em>Data from a sample of 177 PCOS patients in Kerala.</em></p>
         <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>

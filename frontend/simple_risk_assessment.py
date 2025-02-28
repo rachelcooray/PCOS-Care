@@ -412,11 +412,12 @@ def simple_risk_assessment_page():
         except Exception as e:
             st.error(f"Failed to get prediction: {str(e)}")
 
-        # st.session_state.risk_assessment_data = {
-        #     "predicted_pcos": prediction,
-        #     "symptom_analysis": data  
-        # }
+        st.session_state.risk_assessment_data = {
+            "predicted_pcos": prediction,
+            "symptom_analysis": data  
+        }
 
         download_pdf(data, prediction)
 
-        # st.switch_page("results.py") 
+        st.session_state.page = "Results Visualization"
+        
