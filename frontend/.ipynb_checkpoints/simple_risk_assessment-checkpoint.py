@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import requests
 import json
+from fpdf import FPDF
 
 # Function to send data to Flask API and get prediction
 def get_prediction(input_data):
@@ -24,6 +25,37 @@ def get_prediction(input_data):
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
+
+
+# PDF Version of all data and result
+def generate_pdf(data, prediction):
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+    pdf.set_font("Arial", style='B', size=16)
+    pdf.cell(200, 10, "PCOS Simple Risk Assessment Report", ln=True, align='C')
+    pdf.ln(10)
+    
+    pdf.set_font("Arial", size=12)
+    pdf.cell(200, 10, "User Input Data:", ln=True)
+    pdf.ln(5)
+    
+    for key, value in data.items():
+        pdf.cell(200, 8, f"{key}: {value}", ln=True)
+    pdf.ln(5)
+    
+    pdf.set_font("Arial", style='B', size=12)
+    pdf.cell(200, 10, f"Prediction: {prediction}", ln=True)
+    
+    pdf_file_path = "pcos_simple_assessment_report.pdf"
+    pdf.output(pdf_file_path)
+    return pdf_file_path
+
+def download_pdf(data, prediction):
+    pdf_path = generate_pdf(data, prediction)
+    with open(pdf_path, "rb") as file:
+        st.download_button(label="Download Report as PDF", data=file, file_name="PCOS_Simple_Risk_Assessment.pdf", mime="application/pdf")
+
 
 # Function to validate numeric inputs
 def is_valid_number(value, min_value=None, max_value=None):
@@ -380,9 +412,11 @@ def simple_risk_assessment_page():
         except Exception as e:
             st.error(f"Failed to get prediction: {str(e)}")
 
-        st.session_state.risk_assessment_data = {
-            "predicted_pcos": prediction,
-            "symptom_analysis": data  
-        }
+        # st.session_state.risk_assessment_data = {
+        #     "predicted_pcos": prediction,
+        #     "symptom_analysis": data  
+        # }
+
+        download_pdf(data, prediction)
 
         # st.switch_page("results.py") 
