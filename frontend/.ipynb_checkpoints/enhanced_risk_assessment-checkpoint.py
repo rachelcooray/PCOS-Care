@@ -606,3 +606,5 @@ def enhanced_risk_assessment_page():
 
         
         download_pdf(data, prediction)
+
+        st.session_state.page = "Results Visualization"
