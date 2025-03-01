@@ -90,6 +90,12 @@ def results_page():
     
         st.pyplot(fig)
 
+        st.markdown("""
+        <p><em>Data from a sample of 177 PCOS patients in Kerala.</em></p>
+        <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
+        </div>
+    """, unsafe_allow_html=True)
+
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 

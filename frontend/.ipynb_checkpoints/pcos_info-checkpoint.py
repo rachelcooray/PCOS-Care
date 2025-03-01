@@ -89,12 +89,6 @@ def pcos_info_page():
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-    st.markdown("""
-        <p><em>Data from a sample of 177 PCOS patients in Kerala.</em></p>
-        <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
-        </div>
-    """, unsafe_allow_html=True)
-
     # Call to Action
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;'>
