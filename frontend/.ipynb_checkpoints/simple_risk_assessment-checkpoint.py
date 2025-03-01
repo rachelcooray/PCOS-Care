@@ -392,6 +392,7 @@ def simple_risk_assessment_page():
                 "BP _Diastolic (mmHg)": bp_diastolic
             }
             
+            st.markdown("for testing purposes")
             st.json(data)
 
         try:

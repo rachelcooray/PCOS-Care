@@ -576,6 +576,7 @@ def enhanced_risk_assessment_page():
                 "Hb(g/dl)": hemoglobin
             }
             
+            st.markdown("for testing purposes")
             st.json(data)
 
         try:
