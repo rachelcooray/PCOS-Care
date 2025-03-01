@@ -107,7 +107,7 @@ def validate_respiratory_rate(rr_rate):
     return is_valid_number(rr_rate, 12, 30)
 
 def validate_hemoglobin(hb):
-    return is_valid_number(hb, 8, 18)
+    return is_valid_number(hb, 5, 20)
 
 def validate_cycle(cycle):
     return cycle in ["Regular", "Irregular"]
@@ -131,37 +131,37 @@ def validate_waist_hip_ratio(waist_hip_ratio):
     return is_valid_number(waist_hip_ratio, 0.4, 1.0)
 
 def validate_beta_hcg_1(value):
-    return is_valid_number(value, 0, 1000)
+    return is_valid_number(value, 0, 35000)
 
 def validate_beta_hcg_2(value):
-    return is_valid_number(value, 0, 1000)
+    return is_valid_number(value, 0, 30000)
 
 def validate_fsh(value):
-    return is_valid_number(value, 1, 30)
+    return is_valid_number(value, 0, 5000)
 
 def validate_lh(value):
-    return is_valid_number(value, 1, 30)
+    return is_valid_number(value, 0, 2500)
 
 def validate_fsh_lh_ratio(value):
-    return is_valid_number(value, 0.1, 3.0)
+    return is_valid_number(value, 0, 1500)
 
 def validate_tsh(value):
-    return is_valid_number(value, 0.1, 10.0)
+    return is_valid_number(value, 0.0, 70.0)
 
 def validate_amh(value):
-    return is_valid_number(value, 0.1, 10.0)
+    return is_valid_number(value, 0.0, 70.0)
 
 def validate_prl(value):
-    return is_valid_number(value, 0.1, 100.0)
+    return is_valid_number(value, 0.0, 130.0)
 
 def validate_vit_d3(value):
-    return is_valid_number(value, 1, 100)
+    return is_valid_number(value, 1, 6500)
 
 def validate_prg(value):
-    return is_valid_number(value, 0.1, 50.0)
+    return is_valid_number(value, 0.1, 90.0)
 
 def validate_rbs(value):
-    return is_valid_number(value, 50, 300)
+    return is_valid_number(value, 50, 400)
 
 def validate_follicle_number(value):
     return is_valid_number(value, 1, 50)
@@ -200,6 +200,11 @@ def calculate_waist_hip_ratio(waist, hip):
     waist = float(waist)
     hip = float(hip)
     return (waist / hip)
+
+def calculate_fsh_lh_ratio(fsh, lh):
+    fsh = float(fsh)
+    lh = float(lh)
+    return (fsh / lh)
     
 def enhanced_risk_assessment_page():
     col1, col2 = st.columns([1, 4])  
@@ -238,11 +243,6 @@ def enhanced_risk_assessment_page():
         placeholder="160.5", 
         help="Enter your height in centimeters. Decimals are allowed."
     )
-    # bmi = st.text_input(
-    #     "BMI:", 
-    #     placeholder="22.8", 
-    #     help="Enter your Body Mass Index (BMI). Decimals are allowed."
-    # )
     blood_group = st.selectbox(
         "Blood Group:", 
         ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"], 
@@ -353,13 +353,6 @@ def enhanced_risk_assessment_page():
         placeholder="32", 
         help="Enter the waist measurement in inches."
     )
-    
-    # waist_hip_ratio = st.text_input(
-    #     "Waist:Hip Ratio:", 
-    #     placeholder="0.8", 
-    #     help="Enter your waist-to-hip ratio."
-    # )
-
     hemoglobin = st.text_input(
         "Hemoglobin level",
         placeholder="12", 
@@ -408,11 +401,11 @@ def enhanced_risk_assessment_page():
         help="Enter the luteinizing hormone level in mIU/mL. Decimals are allowed."
     )
     
-    fsh_lh_ratio = st.text_input(
-        "FSH/LH Ratio:",
-        placeholder="1.2",
-        help="Enter the ratio of FSH to LH. Decimals are allowed."
-    )
+    # fsh_lh_ratio = st.text_input(
+    #     "FSH/LH Ratio:",
+    #     placeholder="1.2",
+    #     help="Enter the ratio of FSH to LH. Decimals are allowed."
+    # )
     
     tsh = st.text_input(
         "TSH (mIU/L):",
@@ -489,6 +482,7 @@ def enhanced_risk_assessment_page():
     if st.button("Submit"):
         bmi = calculate_bmi(weight, height)
         waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
+        fsh_lh_ratio = calculate_fsh_lh_ratio(fsh, lh)
         
         age_valid = validate_age(age)
         weight_valid = validate_weight(weight)
@@ -504,14 +498,11 @@ def enhanced_risk_assessment_page():
         hip_valid = validate_hip(hip)
         waist_valid = validate_waist(waist)
 
-        # add the new ones
-
         # Collect errors
         errors = []
         if not age_valid: errors.append("Age must be between 18 and 75.")
         if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
         if not height_valid: errors.append("Height must be between 100 and 250 cm.")
-        # if not bmi_valid: errors.append("BMI must be between 10 and 50.")
         if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
         if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
         if not pulse_rate_valid: errors.append("Pulse rate must be between 40 and 200 bpm.")
@@ -522,28 +513,24 @@ def enhanced_risk_assessment_page():
         if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 10.")
         if not hip_valid: errors.append("Hip measurement must be between 20 and 70 inches.")
         if not waist_valid: errors.append("Waist measurement must be between 20 and 60 inches.")
-        # if not waist_hip_ratio_valid: errors.append("Waist to hip ratio must be between 0.4 and 1.0.")
 
-        if not validate_beta_hcg_1(beta_hcg_1): errors.append("Beta-HCG (I) must be between 0 and 1000 mIU/mL.")
-        if not validate_beta_hcg_2(beta_hcg_2): errors.append("Beta-HCG (II) must be between 0 and 1000 mIU/mL.")
-        if not validate_fsh(fsh): errors.append("FSH must be between 1 and 30 mIU/mL.")
-        if not validate_lh(lh): errors.append("LH must be between 1 and 30 mIU/mL.")
-        if not validate_fsh_lh_ratio(fsh_lh_ratio): errors.append("FSH/LH Ratio must be between 0.1 and 3.0.")
-        if not validate_tsh(tsh): errors.append("TSH must be between 0.1 and 10.0 mIU/L.")
-        if not validate_amh(amh): errors.append("AMH must be between 0.1 and 10.0 ng/mL.")
-        if not validate_prl(prl): errors.append("PRL must be between 0.1 and 100.0 ng/mL.")
-        if not validate_vit_d3(vit_d3): errors.append("Vit D3 must be between 1 and 100 ng/mL.")
-        if not validate_prg(prg): errors.append("PRG must be between 0.1 and 50.0 ng/mL.")
-        if not validate_rbs(rbs): errors.append("RBS must be between 50 and 300 mg/dl.")
+        if not validate_beta_hcg_1(beta_hcg_1): errors.append("Beta-HCG (I) must be between 0 and 35000 mIU/mL.")
+        if not validate_beta_hcg_2(beta_hcg_2): errors.append("Beta-HCG (II) must be between 0 and 30000 mIU/mL.")
+        if not validate_fsh(fsh): errors.append("FSH must be between 0 and 5000 mIU/mL.")
+        if not validate_lh(lh): errors.append("LH must be between 0 and 2500 mIU/mL.")
+        # if not validate_fsh_lh_ratio(fsh_lh_ratio): errors.append("FSH/LH Ratio must be between 0 and 1500.")
+        if not validate_tsh(tsh): errors.append("TSH must be between 0 and 70 mIU/L.")
+        if not validate_amh(amh): errors.append("AMH must be between 0 and 70 ng/mL.")
+        if not validate_prl(prl): errors.append("PRL must be between 0 and 130 ng/mL.")
+        if not validate_vit_d3(vit_d3): errors.append("Vit D3 must be between 1 and 6500 ng/mL.")
+        if not validate_prg(prg): errors.append("PRG must be between 0.0 and 90.0 ng/mL.")
+        if not validate_rbs(rbs): errors.append("RBS must be between 50 and 400 mg/dl.")
         if not validate_follicle_number(follicle_number_left): errors.append("Follicle Number (Left) must be between 1 and 50.")
         if not validate_follicle_number(follicle_number_right): errors.append("Follicle Number (Right) must be between 1 and 50.")
         if not validate_follicle_size(follicle_size_left): errors.append("Average Follicle Size (Left) must be between 1 and 50 mm.")
         if not validate_follicle_size(follicle_size_right): errors.append("Average Follicle Size (Right) must be between 1 and 50 mm.")
         if not validate_endometrium_thickness(endometrium_thickness): errors.append("Endometrium Thickness must be between 1 and 20 mm.")
         if not validate_hemoglobin(hemoglobin): errors.append("Hemoglobin must be between 5 and 20.")
-        
-
-        # add the new ones
 
         # Show errors if any
         if errors:

@@ -195,11 +195,6 @@ def simple_risk_assessment_page():
         placeholder="160.5", 
         help="Enter your height in centimeters. Decimals are allowed."
     )
-    # bmi = st.text_input(
-    #     "BMI:", 
-    #     placeholder="22.8", 
-    #     help="Enter your Body Mass Index (BMI). Decimals are allowed."
-    # )
     blood_group = st.selectbox(
         "Blood Group:", 
         ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"], 
@@ -309,14 +304,7 @@ def simple_risk_assessment_page():
         placeholder="32", 
         help="Enter the waist measurement in inches."
     )
-    
-    # waist_hip_ratio = st.text_input(
-    #     "Waist:Hip Ratio:", 
-    #     placeholder="0.8", 
-    #     help="Enter your waist-to-hip ratio."
-    # )
 
-    
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
     st.write("### Blood Pressure")
