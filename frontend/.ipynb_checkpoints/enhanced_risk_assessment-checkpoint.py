@@ -401,12 +401,6 @@ def enhanced_risk_assessment_page():
         help="Enter the luteinizing hormone level in mIU/mL. Decimals are allowed."
     )
     
-    # fsh_lh_ratio = st.text_input(
-    #     "FSH/LH Ratio:",
-    #     placeholder="1.2",
-    #     help="Enter the ratio of FSH to LH. Decimals are allowed."
-    # )
-    
     tsh = st.text_input(
         "TSH (mIU/L):",
         placeholder="2.0",
@@ -518,7 +512,6 @@ def enhanced_risk_assessment_page():
         if not validate_beta_hcg_2(beta_hcg_2): errors.append("Beta-HCG (II) must be between 0 and 30000 mIU/mL.")
         if not validate_fsh(fsh): errors.append("FSH must be between 0 and 5000 mIU/mL.")
         if not validate_lh(lh): errors.append("LH must be between 0 and 2500 mIU/mL.")
-        # if not validate_fsh_lh_ratio(fsh_lh_ratio): errors.append("FSH/LH Ratio must be between 0 and 1500.")
         if not validate_tsh(tsh): errors.append("TSH must be between 0 and 70 mIU/L.")
         if not validate_amh(amh): errors.append("AMH must be between 0 and 70 ng/mL.")
         if not validate_prl(prl): errors.append("PRL must be between 0 and 130 ng/mL.")
