@@ -147,14 +147,24 @@ def convert_blood_group(value):
     return blood_group_mapping.get(value, None)
 
 def calculate_bmi(weight, height):
-    weight = float(weight) 
-    height = float(height)
-    return (weight / ((height/100) ** 2))
+    if not weight or not height:  # Check if inputs are empty
+        return None
+    try:
+        weight = float(weight)
+        height = float(height)
+        return weight / ((height / 100) ** 2)
+    except ValueError:
+        return None  # Return None if conversion fails
 
 def calculate_waist_hip_ratio(waist, hip):
-    waist = float(waist)
-    hip = float(hip)
-    return (waist / hip)
+    if not waist or not hip:
+        return None
+    try:
+        waist = float(waist)
+        hip = float(hip)
+        return waist / hip
+    except ValueError:
+        return None
     
 def simple_risk_assessment_page():
     col1, col2 = st.columns([1, 4])  
@@ -321,13 +331,23 @@ def simple_risk_assessment_page():
     
     # Validate inputs
     if st.button("Submit"):
-        bmi = calculate_bmi(weight, height)
-        waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
+        bmi = None
+        waist_hip_ratio = None
+
+        if weight and height:
+            bmi = calculate_bmi(weight, height)  
+        else:
+            st.error("Weight and Height are required and must be numeric.")
+        
+        if waist and hip:
+            waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
+        else:
+            st.error("Waist and Hip measurements are required and must be numeric.")
     
         age_valid = validate_age(age)
         weight_valid = validate_weight(weight)
         height_valid = validate_height(height)
-        bmi_valid = validate_bmi(bmi)
+        bmi_valid = validate_bmi(bmi) if bmi else False
         bp_systolic_valid = validate_bp_systolic(bp_systolic)
         bp_diastolic_valid = validate_bp_diastolic(bp_diastolic)
         pulse_rate_valid = validate_pulse_rate(pulse_rate)
@@ -338,7 +358,7 @@ def simple_risk_assessment_page():
         no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
         hip_valid = validate_hip(hip)
         waist_valid = validate_waist(waist)
-        waist_hip_ratio_valid = validate_waist_hip_ratio(waist_hip_ratio)
+        waist_hip_ratio_valid = validate_waist_hip_ratio(waist_hip_ratio) if waist_hip_ratio else False
 
         # Collect errors
         errors = []
@@ -398,15 +418,18 @@ def simple_risk_assessment_page():
         try:
             prediction = get_prediction(data)
             st.write(f"Prediction: {prediction}")
+            
+            st.session_state.risk_assessment_data = {
+                "predicted_pcos": prediction,
+                "symptom_analysis": data  
+            }
+
+            download_pdf(data, prediction)
+                
         except Exception as e:
             st.error(f"Failed to get prediction: {str(e)}")
 
-        st.session_state.risk_assessment_data = {
-            "predicted_pcos": prediction,
-            "symptom_analysis": data  
-        }
-
-        download_pdf(data, prediction)
-
         st.session_state.page = "Results Visualization"
+
+        
         
