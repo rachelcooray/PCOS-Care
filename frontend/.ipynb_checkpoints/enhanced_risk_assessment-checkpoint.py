@@ -220,7 +220,7 @@ def enhanced_risk_assessment_page():
 
     st.subheader("Enhanced Risk Assessment")
     st.markdown("""
-    Provide more detailed health data and symptoms for an in-depth analysis of your PCOS risk.
+    Provide more detailed health data and symptoms for an in-depth analysis of your PCOS risk. This form is ideal if you have access to hormonal data from blood tests or abdominal scans.
     """)
     
     # Section breaker
