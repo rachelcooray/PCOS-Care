@@ -51,6 +51,6 @@ Follow these steps to install and run the project:
 - [ ] Improve appearance of the frontend
 - [ ] Improve result visualization
 - [ ] Improve information page
-- [ ] Link frontend and backend
-- [ ] Hosting
+- [v] Link frontend and backend
+- [v] Hosting
 
