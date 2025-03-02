@@ -59,7 +59,20 @@ def results_page():
         - The accuracy of predictions is **limited by the dataset's scope and quality**, and results may not generalize to all populations.
         """)
 
-        # Symptom and Lifestyle Relationship Chart
+        st.markdown("""
+        <p><em>Data from a sample of 177 PCOS patients in Kerala.</em></p>
+        <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
+        </div>
+    """, unsafe_allow_html=True)
+
+        # Section Break
+        st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
+
+
+    else:
+        st.error("No assessment data found. Please complete the assessment first.")
+
+    # Symptom and Lifestyle Relationship Chart
         st.markdown("""
             <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
                 <h2 style='color: #6a0dad;'>PCOS Symptom and Lifestyle Habit Relationship</h2>
@@ -89,16 +102,7 @@ def results_page():
         plt.tight_layout()
     
         st.pyplot(fig)
-
-        st.markdown("""
-        <p><em>Data from a sample of 177 PCOS patients in Kerala.</em></p>
-        <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
-        </div>
-    """, unsafe_allow_html=True)
-
-        # Section Break
-        st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
+        
         # Detailed Breakdown 
         st.subheader("Detailed Breakdown of Your Symptoms")
         # st.dataframe(pd.DataFrame(user_data.get("symptom_analysis", [])))
@@ -122,7 +126,4 @@ def results_page():
 
         with col3:    
             if st.button("⚠️ Take the Enhanced Risk Assessment"):
-                st.session_state.page = "Enhanced Risk Assessment"
-
-    else:
-        st.error("No assessment data found. Please complete the assessment first.")
+                st.session_state.page = "Enhanced Risk Assessment"        
