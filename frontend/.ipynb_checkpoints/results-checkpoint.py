@@ -21,6 +21,30 @@ def results_page():
     with col2:
         st.title("PCOS Care")
 
+    st.subheader("Dashboard for visualisation")
+        
+    # Embed the images created with matplotlib using Streamlit's st.image function
+    image_files = [
+        "exercise_vs_pcos_symptoms.png",
+        "fast_food_vs_pcos_symptoms.png",
+        "pcos_distribution_donut_chart.png",
+        "pcos_symptoms_percentage.png",
+        "undiagnosed_pcos_distribution.png"
+    ]
+    
+    for image_file in image_files:
+        image_path = os.path.join(visuals_directory, image_file)
+        if os.path.exists(image_path):
+            st.image(image_path, use_column_width=True, caption=image_file.replace('_', ' ').title())
+        else:
+            st.error(f"Image {image_file} not found.")
+    
+    st.markdown("""
+                </div>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)    
+
     st.subheader("Your PCOS Prediction")
 
     # Ensure risk assessment data is available
@@ -61,7 +85,7 @@ def results_page():
         """)
 
         st.markdown("""
-        <p><em>Data from a sample of 177 PCOS patients in Kerala.</em></p>
+        <p><em>Data from a sample of 541 PCOS patients in Kerala.</em></p>
         <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
         </div>
     """, unsafe_allow_html=True)
@@ -72,31 +96,6 @@ def results_page():
 
     else:
         st.error("No assessment data found. Please complete the assessment first.")
-
-
-        st.subheader("Dashboard for visualisation")
-        
-        # Embed the images created with matplotlib using Streamlit's st.image function
-        image_files = [
-            "exercise_vs_pcos_symptoms.png",
-            "fast_food_vs_pcos_symptoms.png",
-            "pcos_distribution_donut_chart.png",
-            "pcos_symptoms_percentage.png",
-            "undiagnosed_pcos_distribution.png"
-        ]
-    
-        for image_file in image_files:
-            image_path = os.path.join(visuals_directory, image_file)
-            if os.path.exists(image_path):
-                st.image(image_path, use_column_width=True, caption=image_file.replace('_', ' ').title())
-            else:
-                st.error(f"Image {image_file} not found.")
-    
-        st.markdown("""
-                    </div>
-                </div>
-            </div>
-        """, unsafe_allow_html=True)
         
         # Detailed Breakdown 
         st.subheader("Detailed Breakdown of Your Symptoms")
