@@ -82,9 +82,9 @@ def pcos_info_page():
                         <li><strong>Complications in pregnancy and fertility</strong></li>
                     </ul>
                 </div>
+                
                 <div style='flex: 1;'>
                     """, unsafe_allow_html=True)
-
 
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
