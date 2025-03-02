@@ -8,6 +8,7 @@ current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 pcos_image_path = os.path.join(current_directory, "images/pcos.jpg")
 
+
 def pcos_info_page():
     # Layout for logo and title
     st.markdown("<div style='text-align: center; margin-bottom: 20px;'>", unsafe_allow_html=True)
@@ -82,9 +83,9 @@ def pcos_info_page():
                         <li><strong>Complications in pregnancy and fertility</strong></li>
                     </ul>
                 </div>
-                
                 <div style='flex: 1;'>
                     """, unsafe_allow_html=True)
+
 
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
