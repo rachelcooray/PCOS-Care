@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
-visuals_directory = os.path.join(current_directory, "../pcos_visuals")
 
 def results_page():
     # Layout for logo and title
@@ -20,30 +19,7 @@ def results_page():
 
     with col2:
         st.title("PCOS Care")
-
-    st.subheader("Dashboard for visualisation")
         
-    # Embed the images created with matplotlib using Streamlit's st.image function
-    image_files = [
-        "exercise_vs_pcos_symptoms.png",
-        "fast_food_vs_pcos_symptoms.png",
-        "pcos_distribution_donut_chart.png",
-        "pcos_symptoms_percentage.png",
-        "undiagnosed_pcos_distribution.png"
-    ]
-    
-    for image_file in image_files:
-        image_path = os.path.join(visuals_directory, image_file)
-        if os.path.exists(image_path):
-            st.image(image_path, use_column_width=True, caption=image_file.replace('_', ' ').title())
-        else:
-            st.error(f"Image {image_file} not found.")
-    
-    st.markdown("""
-                </div>
-            </div>
-        </div>
-    """, unsafe_allow_html=True)    
 
     st.subheader("Your PCOS Prediction")
 
@@ -76,6 +52,9 @@ def results_page():
         else:
             st.success("✅  Maintain a healthy lifestyle and monitor symptoms over time.")
 
+        
+        st.subheader("Insights gathered from your data")
+        
         # Disclaimer Section
         st.markdown("### Disclaimer")
         st.info("""
@@ -96,28 +75,24 @@ def results_page():
 
     else:
         st.error("No assessment data found. Please complete the assessment first.")
-        
-        # Detailed Breakdown 
-        st.subheader("Detailed Breakdown of Your Symptoms")
-        # st.dataframe(pd.DataFrame(user_data.get("symptom_analysis", [])))
 
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-        # Call to Action
-        st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Explore More</h3>", unsafe_allow_html=True)
+    # Call to Action
+    st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Explore More</h3>", unsafe_allow_html=True)
 
-        col1, col2, col3 = st.columns([1, 1, 1])
+    col1, col2, col3 = st.columns([1, 1, 1])
 
-        # Place the buttons in the center column
-        with col1:
-            if st.button("📚 Learn More About PCOS"):
-                st.session_state.page = "PCOS Information"
+    # Place the buttons in the center column
+    with col1:
+        if st.button("📚 Learn More About PCOS"):
+            st.session_state.page = "PCOS Information"
         
-        with col2:    
-            if st.button("⚠️ Take the Simple Risk Assessment"):
-                st.session_state.page = "Simple Risk Assessment"
+    with col2:    
+        if st.button("⚠️ Take the Simple Risk Assessment"):
+            st.session_state.page = "Simple Risk Assessment"
 
-        with col3:    
-            if st.button("⚠️ Take the Enhanced Risk Assessment"):
-                st.session_state.page = "Enhanced Risk Assessment"        
+    with col3:    
+        if st.button("⚠️ Take the Enhanced Risk Assessment"):
+            st.session_state.page = "Enhanced Risk Assessment"        

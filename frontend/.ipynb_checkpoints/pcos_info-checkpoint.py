@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 pcos_image_path = os.path.join(current_directory, "images/pcos.jpg")
+visuals_directory = os.path.join(current_directory, "../pcos_visuals")
 
 
 def pcos_info_page():
@@ -89,6 +90,30 @@ def pcos_info_page():
 
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
+
+    st.subheader("Dashboard of insights gathered for visualisation")
+        
+    # Embed the images created with matplotlib using Streamlit's st.image function
+    image_files = [
+        "exercise_vs_pcos_symptoms.png",
+        "fast_food_vs_pcos_symptoms.png",
+        "pcos_distribution_donut_chart.png",
+        "pcos_symptoms_percentage.png",
+        "undiagnosed_pcos_distribution.png"
+    ]
+    
+    for image_file in image_files:
+        image_path = os.path.join(visuals_directory, image_file)
+        if os.path.exists(image_path):
+            st.image(image_path, use_column_width=True, caption=image_file.replace('_', ' ').title())
+        else:
+            st.error(f"Image {image_file} not found.")
+    
+    st.markdown("""
+                </div>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
 
     # Call to Action
     st.markdown("""
