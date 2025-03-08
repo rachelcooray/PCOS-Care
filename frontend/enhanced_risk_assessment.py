@@ -474,9 +474,29 @@ def enhanced_risk_assessment_page():
     
     # Validate inputs
     if st.button("Submit"):
+        bmi = None
+        waist_hip_ratio = None
+        fsh_lh_ratio = None
+
+        if weight and height:
+            bmi = calculate_bmi(weight, height)  
+        else:
+            st.error("Weight and Height are required and must be numeric.")
+        
+        if waist and hip:
+            waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
+        else:
+            st.error("Waist and Hip measurements are required and must be numeric.")
+
+        if fsh and lh:
+            fsh_lh_ratio = calculate_fsh_lh_ratio(fsh, lh)
+        else:
+            st.error("Waist and Hip measurements are required and must be numeric.")
+        
         age_valid = validate_age(age)
         weight_valid = validate_weight(weight)
         height_valid = validate_height(height)
+        bmi_valid = validate_bmi(bmi) if bmi else False
         bp_systolic_valid = validate_bp_systolic(bp_systolic)
         bp_diastolic_valid = validate_bp_diastolic(bp_diastolic)
         pulse_rate_valid = validate_pulse_rate(pulse_rate)
@@ -487,10 +507,8 @@ def enhanced_risk_assessment_page():
         no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
         hip_valid = validate_hip(hip)
         waist_valid = validate_waist(waist)
-
-        bmi = calculate_bmi(weight, height)
-        waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
-        fsh_lh_ratio = calculate_fsh_lh_ratio(fsh, lh)
+        waist_hip_ratio_valid = validate_waist_hip_ratio(waist_hip_ratio) if waist_hip_ratio else False
+        fsh_lh_ratio_valid = validate_fsh_lh_ratio(fsh_lh_ratio) if fsh_lh_ratio else False
 
         # Collect errors
         errors = []
@@ -582,14 +600,15 @@ def enhanced_risk_assessment_page():
         try:
             prediction = get_prediction(data)
             st.write(f"Prediction: {prediction}")
+
+            st.session_state.risk_assessment_data = {
+                "predicted_pcos": prediction,
+                "symptom_analysis": data  
+            }
+            
+            download_pdf(data, prediction)
+            
         except Exception as e:
             st.error(f"Failed to get prediction: {str(e)}")
-
-        st.session_state.risk_assessment_data = {
-            "predicted_pcos": prediction,
-            "symptom_analysis": data  
-        }
-        
-        download_pdf(data, prediction)
 
         st.session_state.page = "Results Visualization"
