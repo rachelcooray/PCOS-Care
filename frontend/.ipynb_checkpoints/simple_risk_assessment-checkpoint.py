@@ -365,7 +365,7 @@ def simple_risk_assessment_page():
         if not age_valid: errors.append("Age must be between 18 and 55.")
         if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
         if not height_valid: errors.append("Height must be between 90 and 250 cm.")
-        # if not bmi_valid: errors.append("BMI must be between 10 and 50.")
+        
         if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
         if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
         if not pulse_rate_valid: errors.append("Pulse rate must be between 15 and 120 bpm.")
@@ -376,7 +376,7 @@ def simple_risk_assessment_page():
         if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 5.")
         if not hip_valid: errors.append("Hip measurement must be between 20 and 60 inches.")
         if not waist_valid: errors.append("Waist measurement must be between 20 and 55 inches.")
-        # if not waist_hip_ratio_valid: errors.append("Waist to hip ratio must be between 0.5 and 1.0.")
+       
 
         # Show errors if any
         if errors:
