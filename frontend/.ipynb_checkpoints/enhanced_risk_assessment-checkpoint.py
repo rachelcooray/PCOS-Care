@@ -474,10 +474,6 @@ def enhanced_risk_assessment_page():
     
     # Validate inputs
     if st.button("Submit"):
-        bmi = calculate_bmi(weight, height)
-        waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
-        fsh_lh_ratio = calculate_fsh_lh_ratio(fsh, lh)
-        
         age_valid = validate_age(age)
         weight_valid = validate_weight(weight)
         height_valid = validate_height(height)
@@ -491,6 +487,10 @@ def enhanced_risk_assessment_page():
         no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
         hip_valid = validate_hip(hip)
         waist_valid = validate_waist(waist)
+
+        bmi = calculate_bmi(weight, height)
+        waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
+        fsh_lh_ratio = calculate_fsh_lh_ratio(fsh, lh)
 
         # Collect errors
         errors = []
