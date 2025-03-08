@@ -32,21 +32,59 @@ def generate_pdf(data, prediction):
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
+    
+    # Title
     pdf.set_font("Arial", style='B', size=16)
     pdf.cell(200, 10, "PCOS Simple Risk Assessment Report", ln=True, align='C')
     pdf.ln(10)
     
-    pdf.set_font("Arial", size=12)
+    # Section: User Input Data
+    pdf.set_font("Arial", style='B', size=12)
     pdf.cell(200, 10, "User Input Data:", ln=True)
     pdf.ln(5)
+    pdf.set_font("Arial", size=10)
     
+    # Create Table
+    col_width = 80  # Column width
+    row_height = 7  # Row height
+    
+    # Convert 'Yes/No' answers from 1/0 to 'Yes'/'No' for display in the PDF
     for key, value in data.items():
-        pdf.cell(200, 8, f"{key}: {value}", ln=True)
+        display_value = value
+        if isinstance(value, int) and value == 1:
+            display_value = "Yes"
+        elif isinstance(value, int) and value == 0:
+            display_value = "No"
+        
+        pdf.set_font("Arial", style='B', size=10)
+        pdf.cell(col_width, row_height, f"{key}", border=1)
+        pdf.set_font("Arial", size=10)
+        pdf.cell(col_width, row_height, f"{display_value}", border=1)
+        pdf.ln(row_height)
     pdf.ln(5)
     
+    # Section: Prediction
     pdf.set_font("Arial", style='B', size=12)
-    pdf.cell(200, 10, f"Prediction: {prediction}", ln=True)
+    pdf.cell(200, 10, "Prediction:", ln=True)
+    pdf.ln(5)
+    pdf.set_font("Arial", style='B', size=14)
+    pdf.set_text_color(255, 0, 0)  # Red color for emphasis
+    pdf.cell(200, 10, f"{prediction}", ln=True)
     
+    # Disclaimer Section
+    pdf.ln(10)
+    pdf.set_font("Arial", size=10)
+    pdf.set_text_color(0, 0, 0)  # Reset text color to black
+    disclaimer_text = (
+        "Disclaimer: The PCOSCare web app provides a prediction based on the data you entered. "
+        "This prediction is derived from a dataset of 541 patients from Kerala, India, and is intended for informational purposes only. "
+        "It is not a medical diagnosis and should not be used as a substitute for clinical evaluation. "
+        "The accuracy of the prediction is limited by the dataset's scope and quality, and the results may not be applicable to all populations. "
+        "Always consult a healthcare professional for a comprehensive diagnosis."
+    )
+    pdf.multi_cell(0, 10, disclaimer_text)
+    
+    # Save PDF
     pdf_file_path = "pcos_simple_assessment_report.pdf"
     pdf.output(pdf_file_path)
     return pdf_file_path
