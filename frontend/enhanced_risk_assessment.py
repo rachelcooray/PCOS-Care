@@ -40,7 +40,7 @@ def generate_pdf(data, prediction):
     
     # Section: User Input Data
     pdf.set_font("Arial", style='B', size=12)
-    pdf.cell(200, 10, "User Input Data:", ln=True)
+    pdf.cell(200, 10, "Your Data:", ln=True)
     pdf.ln(5)
     pdf.set_font("Arial", size=10)
     
