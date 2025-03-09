@@ -2,10 +2,23 @@ import streamlit as st
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go  # For gauge charts
+import altair as alt  # For bar charts
+import numpy as np
 
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
+
+def create_gauge(value, title, min_val, max_val, color="blue"):
+    """ Creates a simple gauge chart using Plotly. """
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=value,
+        title={'text': title},
+        gauge={'axis': {'range': [min_val, max_val]},
+               'bar': {'color': color}}))
+    return fig
 
 def results_page():
     # Layout for logo and title
@@ -41,6 +54,73 @@ def results_page():
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
+        st.subheader("Insights gathered from your data")
+
+        # **1. Ratio-Based Visuals (BMI, Waist-Hip Ratio, FSH/LH)**
+        st.subheader("Key Health Ratios")
+
+        bmi = user_data["symptom_analysis"].get("BMI")
+        waist_hip_ratio = user_data["symptom_analysis"].get("Waist:Hip Ratio")
+        fsh_lh_ratio = user_data["symptom_analysis"].get("FSH/LH")
+
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
+        with col2:
+            st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
+        with col3:
+            st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
+
+
+        # **2. Cycle Irregularities (If Selected)**
+        cycle = user_data["symptom_analysis"].get("Cycle(R/I)")
+        if cycle == 4:  # Assuming 4 means Irregular
+            st.subheader("Cycle Irregularities")
+            
+            st.warning("🚨 Irregular cycles are commonly associated with PCOS due to hormonal imbalances.")
+            
+            # Retrieve FSH and LH values
+            fsh = float(user_data["symptom_analysis"].get("FSH(mIU/mL)", 0))
+            lh = float(user_data["symptom_analysis"].get("LH(mIU/mL)", 0))
+        
+            # Create a DataFrame for Altair
+            df = pd.DataFrame({
+                "Hormone": ["FSH (mIU/mL)", "LH (mIU/mL)"],
+                "Value": [fsh, lh]
+            })
+        
+            # Create a slimmer bar chart with Altair
+            chart = alt.Chart(df).mark_bar(width=40).encode(
+                x=alt.X("Hormone", sort=None),  # Keeps order as given
+                y="Value",
+                color=alt.Color("Hormone", legend=None)
+            ).properties(height=300)
+        
+            st.altair_chart(chart, use_container_width=True)
+        
+            # Display additional information based on LH/FSH ratio
+            if lh > fsh:
+                st.info("💡 Your LH is higher than FSH, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.")
+            elif lh == fsh:
+                st.info("🔍 Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.")
+            else:
+                st.info("✅ Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.")
+
+        # **3. Lifestyle Factors (Weight Gain, Fast Food, No Exercise)**
+        weight_gain = user_data["symptom_analysis"].get("Weight gain(Y/N)", 0)
+        fast_food = user_data["symptom_analysis"].get("Fast food (Y/N)", 0)
+        reg_exercise = user_data["symptom_analysis"].get("Reg.Exercise(Y/N)", 1)
+
+        if weight_gain == 1 or fast_food == 1 or reg_exercise == 0:
+            st.subheader("Lifestyle Factors")
+            
+            st.warning("⚠️ Lifestyle factors can significantly impact PCOS risk.")
+            st.info("""
+            - **Weight Gain:** Excess weight can worsen insulin resistance, a key PCOS factor.
+            - **Fast Food Consumption:** Processed foods may contribute to hormone imbalances.
+            - **Lack of Exercise:** Regular physical activity can help regulate hormones.
+            """)
+
         # Next Steps Based on Prediction
         st.subheader("Next Steps")
         if predicted_pcos == "You are likely to have PCOS":
@@ -52,8 +132,6 @@ def results_page():
         else:
             st.success("✅  Maintain a healthy lifestyle and monitor symptoms over time.")
 
-        
-        st.subheader("Insights gathered from your data")
         
         # Disclaimer Section
         st.markdown("### Disclaimer")
