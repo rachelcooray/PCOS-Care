@@ -8,3 +8,5 @@ pillow==10.4.0
 gunicorn==23.0.0
 flask==2.3.3
 fpdf
+plotly
+altair
