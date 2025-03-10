@@ -74,46 +74,73 @@ def pcos_info_page():
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>How PCOS Affects Health?</h2>
-            <div style='display: flex;'>
-                <div style='flex: 1; padding-right: 10px;'>
-                    <p>PCOS affects multiple systems in the body, leading to:</p>
+               <p>PCOS affects multiple systems in the body, leading to:</p>
                     <ul>
                         <li><strong>Hormonal imbalances</strong></li>
                         <li><strong>Metabolic issues (insulin resistance, weight gain)</strong></li>
                         <li><strong>Increased risk of cardiovascular disease</strong></li>
                         <li><strong>Complications in pregnancy and fertility</strong></li>
-                    </ul>
-                </div>
-                <div style='flex: 1;'>
+                    </ul> 
                     """, unsafe_allow_html=True)
 
 
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
-    st.subheader("Dashboard of insights gathered for visualisation")
-        
-    # Embed the images created with matplotlib using Streamlit's st.image function
-    image_files = [
-        "exercise_vs_pcos_symptoms.png",
-        "fast_food_vs_pcos_symptoms.png",
-        "pcos_distribution_donut_chart.png",
-        "pcos_symptoms_percentage.png",
-        "undiagnosed_pcos_distribution.png"
-    ]
-    
-    for image_file in image_files:
-        image_path = os.path.join(visuals_directory, image_file)
-        if os.path.exists(image_path):
-            st.image(image_path, use_column_width=True, caption=image_file.replace('_', ' ').title())
-        else:
-            st.error(f"Image {image_file} not found.")
     
     st.markdown("""
-                </div>
-            </div>
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>Visualizing Key Trends: Insights from PCOS Data Analysis</h2>
+            <p style='text-align: center;'>Explore key visualizations that provide insights into PCOS trends and factors.</p>
         </div>
     """, unsafe_allow_html=True)
+
+    # List of images with captions and descriptions in a box
+    image_details = [
+        ("undiagnosed_pcos_distribution.png", "Undiagnosed PCOS Cases Distribution", 
+         "This chart shows the percentage of people who have PCOS but remain undiagnosed, highlighting the need for better awareness and screening."),
+        
+        ("pcos_distribution_donut_chart.png", "PCOS Prevalence Donut Chart", 
+         "A donut chart representing the proportion of diagnosed versus undiagnosed PCOS cases among the surveyed population."),
+        
+        ("pcos_symptoms_percentage.png", "Common PCOS Symptoms Breakdown", 
+         "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."),
+        
+        ("exercise_vs_pcos_symptoms.png", "Impact of Exercise on PCOS Symptoms", 
+         "A comparative analysis of how different levels of physical activity influence the severity of PCOS symptoms."),
+        
+        ("fast_food_vs_pcos_symptoms.png", "Fast Food Consumption & PCOS Symptoms", 
+         "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS symptoms.")
+    ]
+    
+    # Display images with captions and descriptions inside a box
+    for image_file, caption, description in image_details:
+        image_path = os.path.join(visuals_directory, image_file)
+        if os.path.exists(image_path):
+            st.image(image_path, use_column_width=True, caption=caption)
+            
+            # Adding a box around the description
+            st.markdown(f"""
+                <div style='background-color: #f1f1f1; border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin-top: 5px;'>
+                    <p style='text-align: center; font-size: 14px; color: #555;'>{description}</p>
+                </div>
+            """, unsafe_allow_html=True)  # Description in a box
+            
+            st.markdown("<br>", unsafe_allow_html=True)  # Adds space between images
+            st.markdown("<br>", unsafe_allow_html=True) 
+        else:
+            st.error(f"⚠️ {image_file} not found.")
+    
+    # Expander for deeper insights
+    with st.expander("📌 Insights from Data", expanded=False):
+        st.markdown("""
+            - **PCOS Prevalence Distribution** – Shows the percentage of diagnosed vs undiagnosed cases.
+            - **Symptom Breakdown** – Visualizes the most commonly reported PCOS symptoms.
+            - **Undiagnosed PCOS Cases** – Highlights how many individuals have PCOS but remain undiagnosed (*Alda et al., 2024*).
+            - **Exercise vs PCOS Symptoms** – Demonstrates the effects of physical activity on symptom severity.
+            - **Fast Food Consumption & PCOS** – Analyzes the link between fast food intake and PCOS symptoms.
+        """, unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
 
     # Call to Action
     st.markdown("""
@@ -133,6 +160,8 @@ def pcos_info_page():
             st.session_state.page = "Simple Risk Assessment"
 
     st.markdown("</div>", unsafe_allow_html=True)
+
+    st.markdown("TO ADD - disclaimer, references")
 
 # Run the PCOS info page function when the script is executed
 if __name__ == "__main__":

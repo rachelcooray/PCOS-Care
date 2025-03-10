@@ -96,3 +96,5 @@ def contact_help_page():
         st.markdown("""
         No, this is a standalone web-based tool and currently does not integrate with any electronic medical records or healthcare systems.
         """)
+
+    st.markdown("TO ADD - disclaimer, references")

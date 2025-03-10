@@ -114,6 +114,8 @@ def home_page():
     with col3:    
         if st.button("⚠️ Take the Risk Assessment"):
             st.session_state.page = "Simple Risk Assessment"
+
+    st.markdown("TO ADD - disclaimer, references")
             
 
 # Run the home page function when the script is executed

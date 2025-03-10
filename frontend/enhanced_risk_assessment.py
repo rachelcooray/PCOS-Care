@@ -35,7 +35,7 @@ def generate_pdf(data, prediction):
     
     # Title
     pdf.set_font("Arial", style='B', size=16)
-    pdf.cell(200, 10, "PCOS Simple Risk Assessment Report", ln=True, align='C')
+    pdf.cell(200, 10, "PCOS Enhanced Risk Assessment Report", ln=True, align='C')
     pdf.ln(10)
     
     # Section: User Input Data
@@ -632,8 +632,8 @@ def enhanced_risk_assessment_page():
                 "Hb(g/dl)": hemoglobin
             }
             
-            st.markdown("for testing purposes")
-            st.json(data)
+            # st.markdown("for testing purposes")
+            # st.json(data)
 
         try:
             prediction = get_prediction(data)

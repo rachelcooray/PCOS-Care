@@ -66,10 +66,13 @@ def results_page():
         col1, col2, col3 = st.columns(3)
         with col1:
             st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
+            st.markdown("TO DO - Describe BMI")
         with col2:
             st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
+            st.markdown("TO DO - Describe ratio")
         with col3:
             st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
+            st.markdown("TO DO - Describe ratio")
 
 
         # **2. Cycle Irregularities (If Selected)**
@@ -173,4 +176,6 @@ def results_page():
 
     with col3:    
         if st.button("⚠️ Take the Enhanced Risk Assessment"):
-            st.session_state.page = "Enhanced Risk Assessment"        
+            st.session_state.page = "Enhanced Risk Assessment"  
+
+    st.markdown("TO ADD - disclaimer, references")
