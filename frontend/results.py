@@ -109,6 +109,8 @@ def results_page():
             else:
                 st.info("✅ Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.")
 
+            st.markdown("TO DO - Describe LH AND FSH")
+
         # **3. Lifestyle Factors (Weight Gain, Fast Food, No Exercise)**
         weight_gain = user_data["symptom_analysis"].get("Weight gain(Y/N)", 0)
         fast_food = user_data["symptom_analysis"].get("Fast food (Y/N)", 0)
