@@ -8,18 +8,18 @@ app = Flask(__name__)
 ## https://flask.palletsprojects.com/en/stable/errorhandling/
 
 # Load the trained SVM model and scaler
-with open("best_svm_model.pkl", "rb") as model_file:
+with open("best_logistic_reg_simple_smote.pkl", "rb") as model_file:
     loaded_svm = pickle.load(model_file)
 
 # Load the trained Random Forest model and scaler
-with open("best_random_forest_model.pkl", "rb") as model_file:
+with open("best_svm_enhanced.pkl", "rb") as model_file:
     loaded_random_forest = pickle.load(model_file)
 
 
 # Features
 features_general_public = [
     ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 'Blood Group', 'Pulse rate(bpm) ', 
-    'RR (breaths/min)', 'Cycle(R/I)', 'Cycle length(days)', 'Marraige Status (Yrs)', 
+    'RR (breaths/min)', 'Cycle(R/I)', 'Cycle length(days)', 
     'Pregnant(Y/N)', 'No. of aborptions', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio',  
     'Weight gain(Y/N)', 'hair growth(Y/N)', 'Skin darkening (Y/N)', 'Hair loss(Y/N)', 
     'Pimples(Y/N)', 'Fast food (Y/N)', 'Reg.Exercise(Y/N)', 'BP _Systolic (mmHg)', 
@@ -29,7 +29,7 @@ features_general_public = [
 features_scan = [
     ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI',
        'Blood Group', 'Pulse rate(bpm) ', 'RR (breaths/min)', 'Hb(g/dl)',
-       'Cycle(R/I)', 'Cycle length(days)', 'Marraige Status (Yrs)',
+       'Cycle(R/I)', 'Cycle length(days)',
        'Pregnant(Y/N)', 'No. of aborptions', '  I   beta-HCG(mIU/mL)',
        'II    beta-HCG(mIU/mL)', 'FSH(mIU/mL)', 'LH(mIU/mL)', 'FSH/LH',
        'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 'TSH (mIU/L)',
@@ -44,7 +44,7 @@ features_scan = [
 numerical_columns_gen = [
     ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 'Pulse rate(bpm) ', 
     'RR (breaths/min)', 'Cycle(R/I)', 'Cycle length(days)', 
-    'Marraige Status (Yrs)', 'No. of aborptions', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 
+    'No. of aborptions', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 
     'BP _Systolic (mmHg)', 'BP _Diastolic (mmHg)'
 ]
 
@@ -56,7 +56,7 @@ categorical_columns_gen = [
 numerical_columns_scan = [
     ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 'Pulse rate(bpm) ', 
     'RR (breaths/min)', 'Hb(g/dl)', 'Cycle(R/I)', 'Cycle length(days)', 
-    'Marraige Status (Yrs)', 'No. of aborptions', 
+    'No. of aborptions', 
     '  I   beta-HCG(mIU/mL)', 'II    beta-HCG(mIU/mL)', 'FSH(mIU/mL)', 'LH(mIU/mL)', 
     'FSH/LH', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 'TSH (mIU/L)', 
     'AMH(ng/mL)', 'PRL(ng/mL)', 'Vit D3 (ng/mL)', 'PRG(ng/mL)', 'RBS(mg/dl)', 
