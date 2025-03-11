@@ -150,8 +150,8 @@ def validate_cycle(cycle):
 def validate_cycle_length(cycle_length):
     return is_valid_number(cycle_length, 0, 14)
 
-def validate_marriage_years(marriage_years):
-    return is_valid_number(marriage_years, 0, 37)
+# def validate_marriage_years(marriage_years):
+#     return is_valid_number(marriage_years, 0, 37)
 
 def validate_number_of_abortions(no_of_abortions):
     return is_valid_number(no_of_abortions, 0, 5)
@@ -322,11 +322,11 @@ def simple_risk_assessment_page():
         help="Enter the number of days your menstrual period typically lasts."
     )
     
-    marriage_years = st.text_input(
-        "Marriage Status (Yrs):", 
-        placeholder="0", 
-        help="Enter the number of years of marriage."
-    )
+    # marriage_years = st.text_input(
+    #     "Marriage Status (Yrs):", 
+    #     placeholder="0", 
+    #     help="Enter the number of years of marriage."
+    # )
     
     pregnancy_status = st.radio(
         "Have you ever been pregnant?", 
@@ -392,7 +392,7 @@ def simple_risk_assessment_page():
         rr_valid = validate_respiratory_rate(rr_rate)
         cycle_valid = validate_cycle(cycle)
         cycle_length_valid = validate_cycle_length(cycle_length)
-        marriage_years_valid = validate_marriage_years(marriage_years)
+        # marriage_years_valid = validate_marriage_years(marriage_years)
         no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
         hip_valid = validate_hip(hip)
         waist_valid = validate_waist(waist)
@@ -410,7 +410,7 @@ def simple_risk_assessment_page():
         if not rr_valid: errors.append("Respiratory rate must be between 12 and 30 breaths per minute.")
         if not cycle_valid: errors.append("Cycle must be either 'Regular' or 'Irregular'.")
         if not cycle_length_valid: errors.append("Cycle length must be between 0 and 14 days.")
-        if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 37.")
+        # if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 37.")
         if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 5.")
         if not hip_valid: errors.append("Hip measurement must be between 20 and 60 inches.")
         if not waist_valid: errors.append("Waist measurement must be between 20 and 55 inches.")
@@ -440,7 +440,7 @@ def simple_risk_assessment_page():
                 "RR (breaths/min)": rr_rate,
                 "Cycle(R/I)": convert_cycle(cycle),
                 "Cycle length(days)": cycle_length,
-                "Marraige Status (Yrs)": marriage_years,
+                # "Marraige Status (Yrs)": marriage_years,
                 "Pregnant(Y/N)": convert_yes_no(pregnancy_status),
                 "No. of aborptions": no_of_abortions,
                 "Hip(inch)": hip,
