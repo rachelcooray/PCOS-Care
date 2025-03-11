@@ -115,7 +115,13 @@ def home_page():
         if st.button("⚠️ Take the Risk Assessment"):
             st.session_state.page = "Simple Risk Assessment"
 
-    st.markdown("TO ADD - disclaimer, references")
+    # Disclaimer Section
+    st.markdown("### Disclaimer")
+    st.info("""
+    - This prediction is based on a dataset of **541 patients from Kerala, India**.
+    - **This is not a medical diagnosis.** It is a preliminary assessment and should not be used as a substitute for clinical evaluation.
+    - The accuracy of predictions is **limited by the dataset's scope and quality**, and results may not generalize to all populations.
+    """)            
             
 
 # Run the home page function when the script is executed
