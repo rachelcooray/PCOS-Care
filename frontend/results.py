@@ -64,26 +64,31 @@ def results_page():
         fsh_lh_ratio = user_data["symptom_analysis"].get("FSH/LH")
 
         col1, col2, col3 = st.columns(3)
-        with col1:
-            if bmi is not None:
+        if fsh_lh_ratio is not None:
+            with col1:
                 st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-            else:
-                st.markdown("BMI data unavailable")
-            st.markdown("TO DO - Describe BMI")
-        
-        with col2:
-            if waist_hip_ratio is not None:
+                st.markdown("TO DO - Describe BMI")
+            with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-            else:
-                st.markdown("Waist-Hip Ratio data unavailable")
-            st.markdown("TO DO - Describe ratio")
-        
-        with col3:
-            if fsh_lh_ratio is not None:
+                st.markdown("TO DO - Describe ratio")
+            with col3:
                 st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
-            else:
-                st.markdown("FSH/LH ratio data unavailable")
-            st.markdown("TO DO - Describe ratio")
+                st.markdown("TO DO - Describe ratio")
+
+        else:
+            with col1:
+                if bmi is not None:
+                    st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
+                else:
+                    st.markdown("BMI data unavailable")
+                st.markdown("TO DO - Describe BMI")
+            
+            with col3:
+                if waist_hip_ratio is not None:
+                    st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
+                else:
+                    st.markdown("Waist-Hip Ratio data unavailable")
+                st.markdown("TO DO - Describe ratio")
 
 
         # **2. Cycle Irregularities (If Selected)**
