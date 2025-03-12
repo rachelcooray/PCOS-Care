@@ -120,13 +120,25 @@ def home_page():
         if st.button("⚠️ Take the Risk Assessment"):
             st.session_state.page = "Simple Risk Assessment"
 
-    # Disclaimer Section
-    st.markdown("### Disclaimer")
-    st.info("""
-    - The prediction given on this platform is based on a dataset of **541 patients from Kerala, India**.
-    - **This is not a medical diagnosis.** It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.
-    - The accuracy of predictions is **limited by the dataset's scope and quality**, and results may not generalize to all populations.
-    """)            
+    # # Disclaimer Section
+    # st.markdown("### Disclaimer")
+    # st.info("""
+    # - The prediction given on this platform is based on a dataset of **541 patients from Kerala, India**.
+    # - **This is not a medical diagnosis.** It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.
+    # - The accuracy of predictions is **limited by the dataset's scope and quality**, and results may not generalize to all populations.
+    # """)      
+
+    st.markdown("""
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+            <h3 style='text-align: center;'>Disclaimer</h3>
+            <ul style='list-style-type: disc; padding-left: 20px;'>
+                <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>
+                <li><strong>This is not a medical diagnosis.</strong> It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.</li>
+                <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not generalize to all populations.</li>
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+
             
 
 # Run the home page function when the script is executed
