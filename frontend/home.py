@@ -118,15 +118,7 @@ def home_page():
     
     with col3:    
         if st.button("⚠️ Take the Risk Assessment"):
-            st.session_state.page = "Simple Risk Assessment"
-
-    # # Disclaimer Section
-    # st.markdown("### Disclaimer")
-    # st.info("""
-    # - The prediction given on this platform is based on a dataset of **541 patients from Kerala, India**.
-    # - **This is not a medical diagnosis.** It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.
-    # - The accuracy of predictions is **limited by the dataset's scope and quality**, and results may not generalize to all populations.
-    # """)      
+            st.session_state.page = "Simple Risk Assessment"   
 
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
