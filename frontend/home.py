@@ -49,7 +49,7 @@ def home_page():
             <p>Our AI-driven <strong>PCOS Risk Assessment tool</strong> helps women understand their health better through data-driven insights. This tool <strong>does not provide a medical diagnosis</strong>, but it serves as an informative resource.</p>
             <p><strong>Early detection and awareness are key to managing PCOS effectively.</strong></p>
             <p><strong>Use this platform to assess your risk, gain knowledge, and take informed actions.</strong></p>
-            <p><em>Always consult a healthcare professional for medical advice.</em></p>
+            <p style='text-align: center;'><em>Always consult a healthcare professional for medical advice.</em></p>
         </div>
     """, unsafe_allow_html=True)
 
