@@ -56,7 +56,7 @@ def home_page():
     # Hero Image
     st.markdown("<br>", unsafe_allow_html=True)
     if os.path.exists(hero_image_path):
-        st.image(hero_image_path, use_column_width=False, caption="Take Control of Your Health", height=400) 
+        st.image(hero_image_path, use_column_width=False, caption="Take Control of Your Health", width=400) 
     else:
         st.error("Hero image not found.")
 
