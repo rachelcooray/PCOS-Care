@@ -55,12 +55,22 @@ def home_page():
 
     # Hero Image
     st.markdown("<br>", unsafe_allow_html=True)
+    # if os.path.exists(hero_image_path):
+    #     st.image(hero_image_path, use_column_width=False, caption="Take Control of Your Health", width=400) 
+    # else:
+    #     st.error("Hero image not found.")
+
+    # st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
+
     if os.path.exists(hero_image_path):
-        st.image(hero_image_path, use_column_width=False, caption="Take Control of Your Health", width=400) 
+        st.markdown(
+            f"""
+            <div style="display: flex; justify-content: center;">
+                <img src="{hero_image_path}" style="width: 80%; max-width: 800px; height: auto;"/>
+            </div>
+            """, unsafe_allow_html=True)
     else:
         st.error("Hero image not found.")
-
-    st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
     # Features Overview Section
     st.subheader("🔎 Overview of the Features")
