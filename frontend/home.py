@@ -62,15 +62,19 @@ def home_page():
 
     # st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-    if os.path.exists(hero_image_path):
-        st.markdown(
-            f"""
-            <div style="display: flex; justify-content: center;">
-                <img src="{hero_image_path}" style="width: 80%; max-width: 800px; height: auto;"/>
-            </div>
-            """, unsafe_allow_html=True)
-    else:
-        st.error("Hero image not found.")
+    # Hero Image Section with Centering in 3 Columns
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Create 3 columns, with equal width
+    col1, col2, col3 = st.columns([1, 2, 1])  # The middle column (col2) will be wider
+    
+    # Place the hero image in the center column (col2)
+    with col2:
+        if os.path.exists(hero_image_path):
+            st.image(hero_image_path, use_column_width=True, caption="Take Control of Your Health")
+        else:
+            st.error("Hero image not found.")
+
 
     # Features Overview Section
     st.subheader("🔎 Overview of the Features")
