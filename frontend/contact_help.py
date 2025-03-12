@@ -20,14 +20,14 @@ def contact_help_page():
 
     # Contact & Help Section with better formatting and structure
     st.markdown("<hr style='border: 1px solid #ccc;'>", unsafe_allow_html=True)
-    st.subheader("Contact & Help")
+    st.subheader("Help & Contact")
     
     st.markdown("""
     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
-        <h3 style='text-align: center;'>Need Assistance?</h3>
+        <h3 style='text-align: center; color: #6a0dad;'>Need Assistance?</h3>
         <p>If you have any questions or encounter issues while using the app, feel free to reach out to us:</p>
-        <p><strong>Email:</strong> <a href='mailto:example@email.com'>example@email.com</a></p>
-        <p><strong>Phone:</strong> +0123456789</p>
+        <p><strong>Email:</strong> <a href='mailto:w1956444@my.westminster.ac.uk'>w1956444@my.westminster.ac.uk</a></p>
+        <p><strong>Phone:</strong> +44 12 345 6789</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -36,9 +36,9 @@ def contact_help_page():
     # Feedback Section with a background color
     st.markdown("""
     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
-        <h3 style='text-align: center;'>Feedback & Suggestions</h3>
+        <h3 style='text-align: center; color: #6a0dad;'>Feedback & Suggestions</h3>
         <p>We value your feedback! Please share your experience or suggestions with us via email at:</p>
-        <p><strong>Email:</strong> <a href='mailto:example@email.com'>example@email.com</a></p>
+        <p><strong>Email:</strong> <a href='mailto:w1956444@my.westminster.ac.uk'>w1956444@my.westminster.ac.uk</a></p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -47,7 +47,7 @@ def contact_help_page():
     # Privacy and Data Handling Section
     st.markdown("""
     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
-        <h3 style='text-align: center;'>Privacy & Data Handling</h3>
+        <h3 style='text-align: center; color: #6a0dad;'>Privacy & Data Handling</h3>
         <p>We respect your privacy. All data provided will not be stored for future use or shared with third parties.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -55,7 +55,7 @@ def contact_help_page():
     st.markdown("<hr style='border: 1px solid #ccc;'>", unsafe_allow_html=True)
 
     # FAQ Section with Expanders
-    st.subheader("Frequently Asked Questions (FAQ)")
+    st.subheader("Frequently Asked Questions (FAQs)")
 
     with st.expander("How do I use the PCOS Risk Assessment Tool?"):
         st.markdown("""
@@ -100,7 +100,7 @@ def contact_help_page():
     # Disclaimer Section
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
-            <h3 style='text-align: center;'>Disclaimer</h3>
+            <h3 style='text-align: center; color: #6a0dad;'>Disclaimer</h3>
             <ul style='list-style-type: disc; padding-left: 20px;'>
                 <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>
                 <li><strong>This is not a medical diagnosis.</strong> It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.</li>

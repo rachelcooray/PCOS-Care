@@ -196,4 +196,4 @@ def results_page():
         if st.button("⚠️ Take the Enhanced Risk Assessment"):
             st.session_state.page = "Enhanced Risk Assessment"  
 
-    st.markdown("TO ADD - disclaimer, references")
+    # st.markdown("TO ADD - disclaimer, references")

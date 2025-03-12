@@ -13,8 +13,8 @@ def main():
         "PCOS Information": pcos_info_page,
         "Simple Risk Assessment": simple_risk_assessment_page,
         "Enhanced Risk Assessment": enhanced_risk_assessment_page,
-        "Results Visualization": results_page,
-        "Contact/Help": contact_help_page,
+        "Your Results": results_page,
+        "Help & Contact": contact_help_page,
     }
     
     if "page" not in st.session_state:

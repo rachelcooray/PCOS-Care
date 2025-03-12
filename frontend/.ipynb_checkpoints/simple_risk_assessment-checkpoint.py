@@ -450,12 +450,12 @@ def simple_risk_assessment_page():
                 "BP _Diastolic (mmHg)": bp_diastolic
             }
             
-            st.markdown("TO REMOVE - for testing purposes")
+            # st.markdown("TO REMOVE - for testing purposes")
             # st.json(data)
 
         try:
             prediction = get_prediction(data)
-            st.write(f"Prediction: {prediction}")
+            # st.write(f"Prediction: {prediction}")
             
             st.session_state.risk_assessment_data = {
                 "predicted_pcos": prediction,
@@ -467,7 +467,7 @@ def simple_risk_assessment_page():
         except Exception as e:
             st.error(f"Failed to get prediction: {str(e)}")
 
-        st.session_state.page = "Results Visualization"
+        st.session_state.page = "Your Results"
 
         
         
