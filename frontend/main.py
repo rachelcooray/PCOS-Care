@@ -6,6 +6,15 @@ from enhanced_risk_assessment import enhanced_risk_assessment_page
 from results import results_page
 from contact_help import contact_help_page
 
+# Custom CSS to hide the GitHub logo
+hide_github_logo = """
+    <style>
+    .viewerBadge_container__1QSob { 
+        display: none !important; 
+    }
+    </style>
+"""
+
 def main():
     st.sidebar.title("Navigation")
     pages = {
