@@ -6,6 +6,15 @@ from enhanced_risk_assessment import enhanced_risk_assessment_page
 from results import results_page
 from contact_help import contact_help_page
 
+hide_st_style = “”"
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+“”"
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 def main():
     st.sidebar.title("Navigation")
     pages = {
