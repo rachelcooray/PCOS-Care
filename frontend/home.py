@@ -2,16 +2,6 @@ import streamlit as st
 import os
 from PIL import Image
 
-st.set_page_config(page_title="PCOS Care", page_icon=":heart:", layout="wide")
-st.markdown(
-        """
-        <style>
-            .stDeployButton {visibility: hidden;}
-        </style>
-        """,
-        unsafe_allow_html=True
-)
-
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
