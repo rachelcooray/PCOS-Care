@@ -7,6 +7,7 @@ font = "sans serif"
 
 [server]
 headless = true
+show_github_banner = false
 
 [browser]
 gatherUsageStats = false
