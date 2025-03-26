@@ -46,14 +46,13 @@ def results_page():
         
         # Display Prediction
         st.markdown(f"""
-            <h3 style='text-align: center; color: {"#D9534F" if predicted_pcos == "You are likely to have PCOS" else "#5CB85C"};'>
-            Prediction: {predicted_pcos}</h3>  
+            <h3 style='text-align: center; color: #6a0dad;'>Prediction: {predicted_pcos}</h3>  
         """, unsafe_allow_html=True)
 
         if predicted_pcos == "You are likely to have PCOS":
-            st.warning("This suggests a possibility of PCOS. Please consult a healthcare professional.")
+            st.warning("⚠️ This suggests a possibility of PCOS. Please consult a healthcare professional.")
         else:
-            st.success("No PCOS detected. However, if symptoms persist, consider consulting a doctor.")
+            st.success("✅ No PCOS detected. However, if symptoms persist, consider consulting a doctor.")
 
 
         # Section Break
