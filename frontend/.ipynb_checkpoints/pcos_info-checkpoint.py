@@ -167,7 +167,7 @@ def pcos_info_page():
     # Disclaimer Section
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
-           <h3 style='text-align: center; color: #6a0dad;'>Disclaimer</h3>
+           <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
             <ul style='list-style-type: disc; padding-left: 20px;'>
                 <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>
                 <li><strong>This is not a medical diagnosis.</strong> It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.</li>
