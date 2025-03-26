@@ -50,9 +50,9 @@ def results_page():
         """, unsafe_allow_html=True)
 
         if predicted_pcos == "You are likely to have PCOS":
-            st.warning("⚠️ This suggests a possibility of PCOS. Please consult a healthcare professional.")
+            st.warning("This suggests a possibility of PCOS. Please consult a healthcare professional.")
         else:
-            st.success("✅ No PCOS detected. However, if symptoms persist, consider consulting a doctor.")
+            st.success("No PCOS detected. However, if symptoms persist, consider consulting a doctor.")
 
 
         # Section Break
@@ -71,13 +71,15 @@ def results_page():
         if fsh_lh_ratio is not None:
             with col1:
                 st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-                st.markdown("TO DO - Describe BMI")
+                st.info("A BMI over 25 may indicate a risk factor for PCOS.")
+                
             with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-                st.markdown("TO DO - Describe ratio")
+                st.info("A ratio above 0.85 suggests central obesity, linked to hormonal imbalance.")
+
             with col3:
                 st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
-                st.markdown("TO DO - Describe ratio")
+                st.info("A higher LH than FSH may indicate hormonal imbalance, a key PCOS marker.")
 
         else:
             with col1:
