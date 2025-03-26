@@ -34,7 +34,8 @@ def results_page():
         st.title("PCOS Care")
         
 
-    st.subheader("Your PCOS Prediction")
+    st.subheader("Your PCOS Risk Assessment Results")
+    st.markdown("<br>", unsafe_allow_html=True)
 
     # Ensure risk assessment data is available
     if "risk_assessment_data" in st.session_state:
@@ -45,11 +46,15 @@ def results_page():
         
         # Display Prediction
         st.markdown(f"""
-            <h3 style='text-align: center; color: #6a0dad;'>Prediction: {predicted_pcos}</h3>  
-            { "⚠️ This suggests a possibility of PCOS. Please consult a healthcare professional for further evaluation." if predicted_pcos == "You are likely to have PCOS"  else 
-               "✅ No PCOS detected based on this assessment. However, if symptoms persist, consider consulting a doctor."
-            }
+            <h3 style='text-align: center; color: {"#D9534F" if predicted_pcos == "You are likely to have PCOS" else "#5CB85C"};'>
+            Prediction: {predicted_pcos}</h3>  
         """, unsafe_allow_html=True)
+
+        if predicted_pcos == "You are likely to have PCOS":
+            st.warning("This suggests a possibility of PCOS. Please consult a healthcare professional.")
+        else:
+            st.success("No PCOS detected. However, if symptoms persist, consider consulting a doctor.")
+
 
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
