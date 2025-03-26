@@ -26,15 +26,16 @@ def load_and_resize_image(image_path, size=(150, 150)):
 def home_page():
     # Layout for logo and title
     st.markdown("<div style='text-align: center; margin-bottom: 20px;'>", unsafe_allow_html=True)
-    if os.path.exists(logo_path):
-        logo_image = load_and_resize_image(logo_path, size=(120, 120))
-        if logo_image:
-            st.image(logo_image, use_column_width=False, caption="", output_format="PNG", width=120)
-    else:
-        st.error("Logo image not found.")
-    st.markdown("</div>", unsafe_allow_html=True)
+    col1, col2 = st.columns([1, 4])  
 
-    st.markdown("<h1 style='text-align: center; color: #6a0dad;'>PCOS Care</h1>", unsafe_allow_html=True)
+    with col1:
+        if os.path.exists(logo_path):
+            st.image(logo_path, width=100)  
+        else:
+            st.error("Logo image not found.")
+
+    with col2:
+        st.title("PCOS Care")
 
     # Welcome Message
     st.markdown(

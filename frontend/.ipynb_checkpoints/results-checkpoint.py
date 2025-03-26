@@ -69,7 +69,7 @@ def results_page():
         st.subheader("Insights gathered from your data")
 
         # **1. Ratio-Based Visuals (BMI, Waist-Hip Ratio, FSH/LH)**
-        st.subheader("1. Key Health Ratios")
+        st.subheader("Key Health Ratios")
 
         bmi = user_data["symptom_analysis"].get("BMI")
         waist_hip_ratio = user_data["symptom_analysis"].get("Waist:Hip Ratio")
@@ -104,11 +104,14 @@ def results_page():
                     st.markdown("Waist-Hip Ratio data unavailable")
                     custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#5A9")   # Greenish-blue
 
+        # Adding the overall message
+        st.info("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.")
+
 
         # **2. Cycle Irregularities (If Selected)**
         cycle = user_data["symptom_analysis"].get("Cycle(R/I)")
         if cycle == 4:  # Assuming 4 means Irregular
-            st.subheader("2. Cycle Irregularities")
+            st.subheader("Cycle Irregularities")
             
             st.warning("Irregular cycles are commonly associated with PCOS due to hormonal imbalances.")
             
@@ -146,7 +149,7 @@ def results_page():
         reg_exercise = user_data["symptom_analysis"].get("Reg.Exercise(Y/N)", 1)
 
         if weight_gain == 1 or fast_food == 1 or reg_exercise == 0:
-            st.subheader("3. Lifestyle Factors")
+            st.subheader("Lifestyle Factors")
             
             st.warning("Lifestyle factors can significantly impact PCOS risk.")
             st.info("""
@@ -156,7 +159,7 @@ def results_page():
             """)
 
         # Next Steps Based on Prediction
-        st.subheader("4. Next Steps")
+        st.subheader("Next Steps")
         if predicted_pcos == "You are likely to have PCOS":
             st.warning("""
                 We strongly recommend seeking medical advice for further evaluation.
@@ -187,7 +190,6 @@ def results_page():
 
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
 
     else:
         st.error("No assessment data found. Please complete the assessment first.")
