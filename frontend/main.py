@@ -7,33 +7,33 @@ from enhanced_risk_assessment import enhanced_risk_assessment_page
 from results import results_page
 from contact_help import contact_help_page
 
-# Function to hide default Streamlit UI components
+# Hide default Streamlit UI components and custom styling
 hide_st_style = """
     <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
         header {visibility: hidden;}
         .stDeployButton {visibility: hidden !important;}
-        
-        /* Custom responsive layout */
+
+        /* Custom landscape layout */
         .block-container {
-            max-width: 100% !important;  /* Set width to 100% */
+            max-width: 90% !important;  /* Set width to 90% */
             padding-left: 2rem !important;
             padding-right: 2rem !important;
         }
 
-        /* Adjust the layout for mobile and tablet screens */
+        /* Adjust width for the entire app */
         .main {
             max-width: 100% !important;
             padding: 0 !important;
         }
 
-        /* Sidebar responsiveness */
+        /* Adjust the sidebar to take more space */
         .css-1d391kg {
-            max-width: 300px;  /* You can adjust this for more space on desktop */
+            max-width: 300px;  /* You can adjust this for more space */
         }
 
-        /* Responsive Navbar */
+        /* Horizontal Navigation Bar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -48,43 +48,19 @@ hide_st_style = """
             margin-right: 20px;
         }
 
-        /* Hamburger Menu Styling */
-        .navbar-toggler {
-            display: none;
-        }
-
         /* Media Queries for different screen sizes */
         @media (max-width: 768px) {
-            .block-container {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-
-            /* Mobile: Stack items vertically */
             .navbar {
                 flex-direction: column;
-                align-items: center;
-                padding: 15px;
-            }
-
-            .navbar .navbar-nav {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                display: none;  /* Initially hide the menu on small screens */
-            }
-
-            .navbar .navbar-nav.active {
-                display: block;  /* Show the menu when it's toggled */
+                align-items: flex-start;
             }
 
             .navbar a {
-                margin-bottom: 10px;
-                font-size: 18px;
+                padding: 10px 0;
+                font-size: 16px;
             }
 
-            /* Hamburger icon */
+            /* Mobile menu toggle button */
             .navbar-toggler {
                 display: block;
                 background-color: #ac7ccf;
@@ -97,14 +73,22 @@ hide_st_style = """
         }
 
         @media (max-width: 480px) {
-            .block-container {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
+            /* For very small screens (phones) */
+            .navbar a {
+                font-size: 14px;
+                padding: 8px 0;
             }
 
-            /* Mobile: Adjust menu item font size for small screens */
-            .navbar a {
-                font-size: 16px;
+            .navbar .navbar-nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                display: none;
+            }
+
+            .navbar .navbar-nav.active {
+                display: block;
             }
         }
     </style>
