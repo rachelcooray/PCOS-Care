@@ -12,7 +12,7 @@ with open("best_logistic_reg_simple_smote.pkl", "rb") as model_file:
     loaded_svm = pickle.load(model_file)
 
 # Load the trained Random Forest model and scaler
-with open("best_svm_enhanced.pkl", "rb") as model_file:
+with open("best_logistic_reg_enhanced_smote.pkl", "rb") as model_file:
     loaded_random_forest = pickle.load(model_file)
 
 
