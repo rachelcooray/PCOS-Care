@@ -369,6 +369,7 @@ def simple_risk_assessment_page():
         help="Enter your diastolic blood pressure as a whole number between 50 and 120. Diastolic is the bottom number of your blood pressure reading, measured between heartbeats."
     )
     
+    
     # Validate inputs
     if st.button("Submit"):
         with st.spinner("Processing your results..."):
@@ -466,11 +467,7 @@ def simple_risk_assessment_page():
                 }
     
                 download_pdf(data, prediction)
+                st.session_state.page = "Your Results"
                     
             except Exception as e:
-                st.error(f"Failed to get prediction: {str(e)}")
-    
-            st.session_state.page = "Your Results"
-
-        
-        
+                st.error("We encountered an issue while processing your request. Please try again later.")

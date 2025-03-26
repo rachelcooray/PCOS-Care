@@ -647,8 +647,7 @@ def enhanced_risk_assessment_page():
                 }
                 
                 download_pdf(data, prediction)
+                st.session_state.page = "Your Results"
                 
             except Exception as e:
-                st.error(f"Failed to get prediction: {str(e)}")
-    
-            st.session_state.page = "Your Results"
+                st.error("We encountered an issue while processing your request. Please try again later.")
