@@ -102,7 +102,7 @@ def results_page():
         if cycle == 4:  # Assuming 4 means Irregular
             st.subheader("Cycle Irregularities")
             
-            st.warning("🚨 Irregular cycles are commonly associated with PCOS due to hormonal imbalances.")
+            st.warning("Irregular cycles are commonly associated with PCOS due to hormonal imbalances.")
             
             # Retrieve FSH and LH values
             fsh = float(user_data["symptom_analysis"].get("FSH(mIU/mL)", 0))
@@ -125,13 +125,12 @@ def results_page():
         
             # Display additional information based on LH/FSH ratio
             if lh > fsh:
-                st.info("💡 Your LH is higher than FSH, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.")
+                st.info("Your LH is higher than FSH, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.")
             elif lh == fsh:
-                st.info("🔍 Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.")
+                st.info("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.")
             else:
-                st.info("✅ Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.")
+                st.info("Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.")
 
-            st.markdown("TO DO - Describe LH AND FSH")
 
         # **3. Lifestyle Factors (Weight Gain, Fast Food, No Exercise)**
         weight_gain = user_data["symptom_analysis"].get("Weight gain(Y/N)", 0)
@@ -141,7 +140,7 @@ def results_page():
         if weight_gain == 1 or fast_food == 1 or reg_exercise == 0:
             st.subheader("Lifestyle Factors")
             
-            st.warning("⚠️ Lifestyle factors can significantly impact PCOS risk.")
+            st.warning("Lifestyle factors can significantly impact PCOS risk.")
             st.info("""
             - **Weight Gain:** Excess weight can worsen insulin resistance, a key PCOS factor.
             - **Fast Food Consumption:** Processed foods may contribute to hormone imbalances.
@@ -152,12 +151,12 @@ def results_page():
         st.subheader("Next Steps")
         if predicted_pcos == "You are likely to have PCOS":
             st.warning("""
-                ⚠️  We strongly recommend seeking medical advice for further evaluation.
+                We strongly recommend seeking medical advice for further evaluation.
                 
-                ⚠️  You can download your data as a PDF to share with your healthcare provider.
+                You can download your data as a PDF to share with your healthcare provider.
             """)
         else:
-            st.success("✅  Maintain a healthy lifestyle and monitor symptoms over time.")
+            st.success("Maintain a healthy lifestyle and monitor symptoms over time.")
 
         
         # Disclaimer Section
@@ -191,15 +190,15 @@ def results_page():
 
     # Place the buttons in the center column
     with col1:
-        if st.button("📚 Learn More About PCOS"):
+        if st.button("Learn More About PCOS"):
             st.session_state.page = "PCOS Information"
         
     with col2:    
-        if st.button("⚠️ Take the Simple Risk Assessment"):
+        if st.button("Take the Simple Risk Assessment"):
             st.session_state.page = "Simple Risk Assessment"
 
     with col3:    
-        if st.button("⚠️ Take the Enhanced Risk Assessment"):
+        if st.button("Take the Enhanced Risk Assessment"):
             st.session_state.page = "Enhanced Risk Assessment"  
 
     # st.markdown("TO ADD - disclaimer, references")
