@@ -20,6 +20,14 @@ def create_gauge(value, title, min_val, max_val, color="blue"):
                'bar': {'color': color}}))
     return fig
 
+def custom_alert(message, color):
+    """Creates a custom-styled alert box."""
+    st.markdown(f"""
+        <div style='padding: 15px; border-radius: 10px; background-color: {color}; color: white; font-weight: bold;'>
+            {message}
+        </div>
+    """, unsafe_allow_html=True)
+
 def results_page():
     # Layout for logo and title
     col1, col2 = st.columns([1, 4]) 
@@ -76,6 +84,9 @@ def results_page():
             with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
                 st.info("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.")
+                custom_alert("This is a custom info message.", "#5A9")   # Greenish-blue
+    # custom_alert("This is a custom warning message.", "#FFB300")   # Orange
+    # custom_alert("This is a custom success message.", "#4CAF50")   # Dark green
 
             with col3:
                 st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))

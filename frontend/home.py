@@ -21,7 +21,7 @@ def load_and_resize_image(image_path, size=(150, 150)):
         image = image.resize(size)  
         return image
     else:
-        return None  
+        return None
 
 def home_page():
     # Layout for logo and title
