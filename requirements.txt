@@ -10,3 +10,4 @@ flask==2.3.3
 fpdf
 plotly
 altair
+streamlit_option_menu
