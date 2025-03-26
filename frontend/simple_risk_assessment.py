@@ -250,7 +250,7 @@ def simple_risk_assessment_page():
         help="Select your blood group."
     )
     pulse_rate = st.text_input(
-        "Pulse rate(bpm):", 
+        "Pulse Rate (bpm):", 
         placeholder="72.0", 
         help="Enter your pulse rate in beats per minute. Decimals are allowed."
     )
@@ -306,20 +306,21 @@ def simple_risk_assessment_page():
     st.write("### Additional Information")
     
     rr_rate = st.text_input(
-        "RR (breaths/min):", 
+        "Respiratory Rate (breaths/min):", 
         placeholder="18", 
-        help="Enter your respiratory rate in breaths per minute."
+        help="Enter your respiratory rate in breaths per minute. Typical adult respiratory rate is between 12–20 breaths per minute. Count how many times you breathe in 1 minute."
     )
     
     cycle = st.selectbox(
-        "Cycle (R/I):", ["Regular", "Irregular"], 
+        "Cycle Regularity:", 
+        ["Regular", "Irregular"], 
         help="Select the cycle type as regular or irregular."
     )
     
     cycle_length = st.text_input(
         "Cycle length (days):", 
         placeholder="7", 
-        help="Enter the number of days your menstrual period typically lasts."
+        help="Enter the number of days your menstrual period typically lasts (not the entire cycle)."
     )
     
     # marriage_years = st.text_input(
@@ -357,117 +358,119 @@ def simple_risk_assessment_page():
 
     st.write("### Blood Pressure")
     bp_systolic = st.text_input(
-        "BP Systolic (mmHg):", 
+        "Systolic Blood Pressure (mmHg):", 
         placeholder="120", 
-        help="Enter your systolic blood pressure as a whole number between 80 and 200."
+        help="Enter your systolic blood pressure as a whole number between 80 and 200. Systolic is the top number of your blood pressure reading, measured when the heart beats."
     )
+    
     bp_diastolic = st.text_input(
-        "BP Diastolic (mmHg):", 
+        "Diastolic Blood Pressure (mmHg):", 
         placeholder="80", 
-        help="Enter your diastolic blood pressure as a whole number between 50 and 120."
+        help="Enter your diastolic blood pressure as a whole number between 50 and 120. Diastolic is the bottom number of your blood pressure reading, measured between heartbeats."
     )
     
     # Validate inputs
     if st.button("Submit"):
-        bmi = None
-        waist_hip_ratio = None
-
-        if weight and height:
-            bmi = calculate_bmi(weight, height)  
-        else:
-            st.error("Weight and Height are required and must be numeric.")
-        
-        if waist and hip:
-            waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
-        else:
-            st.error("Waist and Hip measurements are required and must be numeric.")
+        with st.spinner("Processing your results..."):
+            bmi = None
+            waist_hip_ratio = None
     
-        age_valid = validate_age(age)
-        weight_valid = validate_weight(weight)
-        height_valid = validate_height(height)
-        bmi_valid = validate_bmi(bmi) if bmi else False
-        bp_systolic_valid = validate_bp_systolic(bp_systolic)
-        bp_diastolic_valid = validate_bp_diastolic(bp_diastolic)
-        pulse_rate_valid = validate_pulse_rate(pulse_rate)
-        rr_valid = validate_respiratory_rate(rr_rate)
-        cycle_valid = validate_cycle(cycle)
-        cycle_length_valid = validate_cycle_length(cycle_length)
-        # marriage_years_valid = validate_marriage_years(marriage_years)
-        no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
-        hip_valid = validate_hip(hip)
-        waist_valid = validate_waist(waist)
-        waist_hip_ratio_valid = validate_waist_hip_ratio(waist_hip_ratio) if waist_hip_ratio else False
-
-        # Collect errors
-        errors = []
-        if not age_valid: errors.append("Age must be between 18 and 55.")
-        if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
-        if not height_valid: errors.append("Height must be between 90 and 250 cm.")
+            if weight and height:
+                bmi = calculate_bmi(weight, height)  
+            else:
+                st.error("Weight and Height are required and must be numeric.")
+            
+            if waist and hip:
+                waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
+            else:
+                st.error("Waist and Hip measurements are required and must be numeric.")
         
-        if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
-        if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
-        if not pulse_rate_valid: errors.append("Pulse rate must be between 15 and 120 bpm.")
-        if not rr_valid: errors.append("Respiratory rate must be between 12 and 30 breaths per minute.")
-        if not cycle_valid: errors.append("Cycle must be either 'Regular' or 'Irregular'.")
-        if not cycle_length_valid: errors.append("Cycle length must be between 0 and 14 days.")
-        # if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 37.")
-        if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 5.")
-        if not hip_valid: errors.append("Hip measurement must be between 20 and 60 inches.")
-        if not waist_valid: errors.append("Waist measurement must be between 20 and 55 inches.")
-       
-
-        # Show errors if any
-        if errors:
-            for error in errors:
-                st.error(error)
-        else:
-            st.success("All inputs are valid! Form submitted successfully.")
+            age_valid = validate_age(age)
+            weight_valid = validate_weight(weight)
+            height_valid = validate_height(height)
+            bmi_valid = validate_bmi(bmi) if bmi else False
+            bp_systolic_valid = validate_bp_systolic(bp_systolic)
+            bp_diastolic_valid = validate_bp_diastolic(bp_diastolic)
+            pulse_rate_valid = validate_pulse_rate(pulse_rate)
+            rr_valid = validate_respiratory_rate(rr_rate)
+            cycle_valid = validate_cycle(cycle)
+            cycle_length_valid = validate_cycle_length(cycle_length)
+            # marriage_years_valid = validate_marriage_years(marriage_years)
+            no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
+            hip_valid = validate_hip(hip)
+            waist_valid = validate_waist(waist)
+            waist_hip_ratio_valid = validate_waist_hip_ratio(waist_hip_ratio) if waist_hip_ratio else False
+    
+            # Collect errors
+            errors = []
+            if not age_valid: errors.append("Age must be between 18 and 55.")
+            if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
+            if not height_valid: errors.append("Height must be between 90 and 250 cm.")
             
-            data = {
-                " Age (yrs)": age,
-                "Weight (Kg)": weight,
-                "Height(Cm) ": height,
-                "BMI": bmi,
-                "Blood Group": convert_blood_group(blood_group),
-                "Pulse rate(bpm) ": pulse_rate,
-                "Weight gain(Y/N)": convert_yes_no(weight_gain),
-                "hair growth(Y/N)": convert_yes_no(hair_growth),
-                "Skin darkening (Y/N)": convert_yes_no(skin_darkening),
-                "Hair loss(Y/N)": convert_yes_no(hair_loss),
-                "Pimples(Y/N)": convert_yes_no(pimples),
-                "Fast food (Y/N)": convert_yes_no(fast_food),
-                "Reg.Exercise(Y/N)": convert_yes_no(reg_exercise),
-                "RR (breaths/min)": rr_rate,
-                "Cycle(R/I)": convert_cycle(cycle),
-                "Cycle length(days)": cycle_length,
-                # "Marraige Status (Yrs)": marriage_years,
-                "Pregnant(Y/N)": convert_yes_no(pregnancy_status),
-                "No. of aborptions": no_of_abortions,
-                "Hip(inch)": hip,
-                "Waist(inch)": waist,
-                "Waist:Hip Ratio": waist_hip_ratio,
-                "BP _Systolic (mmHg)": bp_systolic,
-                "BP _Diastolic (mmHg)": bp_diastolic
-            }
-            
-            # st.markdown("TO REMOVE - for testing purposes")
-            # st.json(data)
-
-        try:
-            prediction = get_prediction(data)
-            # st.write(f"Prediction: {prediction}")
-            
-            st.session_state.risk_assessment_data = {
-                "predicted_pcos": prediction,
-                "symptom_analysis": data  
-            }
-
-            download_pdf(data, prediction)
+            if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
+            if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
+            if not pulse_rate_valid: errors.append("Pulse rate must be between 15 and 120 bpm.")
+            if not rr_valid: errors.append("Respiratory rate must be between 12 and 30 breaths per minute.")
+            if not cycle_valid: errors.append("Cycle must be either 'Regular' or 'Irregular'.")
+            if not cycle_length_valid: errors.append("Cycle length must be between 0 and 14 days.")
+            # if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 37.")
+            if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 5.")
+            if not hip_valid: errors.append("Hip measurement must be between 20 and 60 inches.")
+            if not waist_valid: errors.append("Waist measurement must be between 20 and 55 inches.")
+           
+    
+            # Show errors if any
+            if errors:
+                for error in errors:
+                    st.error(error)
+            else:
+                st.success("All inputs are valid! Form submitted successfully.")
                 
-        except Exception as e:
-            st.error(f"Failed to get prediction: {str(e)}")
-
-        st.session_state.page = "Your Results"
+                data = {
+                    " Age (yrs)": age,
+                    "Weight (Kg)": weight,
+                    "Height(Cm) ": height,
+                    "BMI": bmi,
+                    "Blood Group": convert_blood_group(blood_group),
+                    "Pulse rate(bpm) ": pulse_rate,
+                    "Weight gain(Y/N)": convert_yes_no(weight_gain),
+                    "hair growth(Y/N)": convert_yes_no(hair_growth),
+                    "Skin darkening (Y/N)": convert_yes_no(skin_darkening),
+                    "Hair loss(Y/N)": convert_yes_no(hair_loss),
+                    "Pimples(Y/N)": convert_yes_no(pimples),
+                    "Fast food (Y/N)": convert_yes_no(fast_food),
+                    "Reg.Exercise(Y/N)": convert_yes_no(reg_exercise),
+                    "RR (breaths/min)": rr_rate,
+                    "Cycle(R/I)": convert_cycle(cycle),
+                    "Cycle length(days)": cycle_length,
+                    # "Marraige Status (Yrs)": marriage_years,
+                    "Pregnant(Y/N)": convert_yes_no(pregnancy_status),
+                    "No. of aborptions": no_of_abortions,
+                    "Hip(inch)": hip,
+                    "Waist(inch)": waist,
+                    "Waist:Hip Ratio": waist_hip_ratio,
+                    "BP _Systolic (mmHg)": bp_systolic,
+                    "BP _Diastolic (mmHg)": bp_diastolic
+                }
+                
+                # st.markdown("TO REMOVE - for testing purposes")
+                # st.json(data)
+    
+            try:
+                prediction = get_prediction(data)
+                # st.write(f"Prediction: {prediction}")
+                
+                st.session_state.risk_assessment_data = {
+                    "predicted_pcos": prediction,
+                    "symptom_analysis": data  
+                }
+    
+                download_pdf(data, prediction)
+                    
+            except Exception as e:
+                st.error(f"Failed to get prediction: {str(e)}")
+    
+            st.session_state.page = "Your Results"
 
         
         
