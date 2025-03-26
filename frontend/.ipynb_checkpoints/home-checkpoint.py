@@ -26,6 +26,9 @@ def load_and_resize_image(image_path, size=(150, 150)):
 def home_page():
     # Layout for logo and title
     st.markdown("<div style='text-align: center; margin-bottom: 20px;'>", unsafe_allow_html=True)
+        
+    st.markdown("<div style='text-align: center; margin-bottom: 20px;'>", unsafe_allow_html=True)
+    
     col1, col2 = st.columns([1, 4])  
 
     with col1:
