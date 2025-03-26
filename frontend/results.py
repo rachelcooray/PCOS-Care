@@ -79,7 +79,7 @@ def results_page():
         if fsh_lh_ratio is not None:
             with col1:
                 st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-                custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#5A9")   # Greenish-blue
+                custom_alert("A Body Mass Index (BMI) of over 25 may indicate a risk factor for PCOS.", "#5A9")   # Greenish-blue
                 
             with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
