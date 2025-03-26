@@ -79,18 +79,15 @@ def results_page():
         if fsh_lh_ratio is not None:
             with col1:
                 st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-                st.info("A BMI over 25 may indicate a risk factor for PCOS.")
+                custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#5A9")   # Greenish-blue
                 
             with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-                st.info("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.")
-                custom_alert("This is a custom info message.", "#5A9")   # Greenish-blue
-    # custom_alert("This is a custom warning message.", "#FFB300")   # Orange
-    # custom_alert("This is a custom success message.", "#4CAF50")   # Dark green
+                custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#5A9")   # Greenish-blue
 
             with col3:
                 st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
-                st.info("A higher LH than FSH may indicate hormonal imbalance, a key PCOS marker.")
+                custom_alert("A higher LH than FSH may indicate hormonal imbalance, a key PCOS marker.", "#5A9")   # Greenish-blue
 
         else:
             with col1:
@@ -98,14 +95,14 @@ def results_page():
                     st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
                 else:
                     st.markdown("BMI data unavailable")
-                    st.info("A BMI over 25 may indicate a risk factor for PCOS.")
+                    custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#5A9")   # Greenish-blue
             
             with col3:
                 if waist_hip_ratio is not None:
                     st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
                 else:
                     st.markdown("Waist-Hip Ratio data unavailable")
-                    st.info("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.")
+                    custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#5A9")   # Greenish-blue
 
 
         # **2. Cycle Irregularities (If Selected)**
