@@ -61,7 +61,7 @@ def results_page():
         st.subheader("Insights gathered from your data")
 
         # **1. Ratio-Based Visuals (BMI, Waist-Hip Ratio, FSH/LH)**
-        st.subheader("Key Health Ratios")
+        st.subheader("1. Key Health Ratios")
 
         bmi = user_data["symptom_analysis"].get("BMI")
         waist_hip_ratio = user_data["symptom_analysis"].get("Waist:Hip Ratio")
@@ -75,7 +75,7 @@ def results_page():
                 
             with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-                st.info("A ratio above 0.85 suggests central obesity, linked to hormonal imbalance.")
+                st.info("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.")
 
             with col3:
                 st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
@@ -87,20 +87,20 @@ def results_page():
                     st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
                 else:
                     st.markdown("BMI data unavailable")
-                st.markdown("TO DO - Describe BMI")
+                    st.info("A BMI over 25 may indicate a risk factor for PCOS.")
             
             with col3:
                 if waist_hip_ratio is not None:
                     st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
                 else:
                     st.markdown("Waist-Hip Ratio data unavailable")
-                st.markdown("TO DO - Describe ratio")
+                    st.info("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.")
 
 
         # **2. Cycle Irregularities (If Selected)**
         cycle = user_data["symptom_analysis"].get("Cycle(R/I)")
         if cycle == 4:  # Assuming 4 means Irregular
-            st.subheader("Cycle Irregularities")
+            st.subheader("2. Cycle Irregularities")
             
             st.warning("Irregular cycles are commonly associated with PCOS due to hormonal imbalances.")
             
@@ -138,7 +138,7 @@ def results_page():
         reg_exercise = user_data["symptom_analysis"].get("Reg.Exercise(Y/N)", 1)
 
         if weight_gain == 1 or fast_food == 1 or reg_exercise == 0:
-            st.subheader("Lifestyle Factors")
+            st.subheader("3. Lifestyle Factors")
             
             st.warning("Lifestyle factors can significantly impact PCOS risk.")
             st.info("""
@@ -148,7 +148,7 @@ def results_page():
             """)
 
         # Next Steps Based on Prediction
-        st.subheader("Next Steps")
+        st.subheader("4. Next Steps")
         if predicted_pcos == "You are likely to have PCOS":
             st.warning("""
                 We strongly recommend seeking medical advice for further evaluation.
@@ -190,15 +190,15 @@ def results_page():
 
     # Place the buttons in the center column
     with col1:
-        if st.button("Learn More About PCOS"):
+        if st.button("📚 Learn More About PCOS"):
             st.session_state.page = "PCOS Information"
         
     with col2:    
-        if st.button("Take the Simple Risk Assessment"):
+        if st.button("⚠️ Take the Simple Risk Assessment"):
             st.session_state.page = "Simple Risk Assessment"
 
     with col3:    
-        if st.button("Take the Enhanced Risk Assessment"):
+        if st.button("⚠️ Take the Enhanced Risk Assessment"):
             st.session_state.page = "Enhanced Risk Assessment"  
 
     # st.markdown("TO ADD - disclaimer, references")
