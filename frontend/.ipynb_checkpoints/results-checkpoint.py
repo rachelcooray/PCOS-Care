@@ -169,7 +169,7 @@ def results_page():
         else:
             custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#5A9")   # Greenish-blue
 
-         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+        st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         
         # Disclaimer Section
         st.markdown("""
