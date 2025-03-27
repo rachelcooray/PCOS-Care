@@ -106,6 +106,8 @@ def results_page():
                     st.markdown("Waist-Hip Ratio data unavailable")
                     
 
+        st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+        
         # Adding the overall message
         custom_alert("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.", "#5A9")   # Greenish-blue
 
