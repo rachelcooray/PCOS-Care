@@ -153,6 +153,7 @@ def results_page():
         reg_exercise = user_data["symptom_analysis"].get("Reg.Exercise(Y/N)", 1)
 
         if weight_gain == 1 or fast_food == 1 or reg_exercise == 0:
+            st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             st.subheader("Lifestyle Factors")
             
             custom_alert("Lifestyle factors can significantly impact PCOS risk.", "#5A9")   # Greenish-blue
