@@ -129,23 +129,39 @@ def main():
             "container": {
                 "padding": "0!important", 
                 "background-color": "#f0f0f0",  # Light background color
-                "border": "none"
+                "border": "none",
+                "display": "flex",  # Ensures even spacing
+                "align-items": "center"  # Aligns items properly
             },
             "icon": {
-                "color": "#ac7ccf",  # Soft purple color for icons
+                "color": "#c19edb",  # Soft purple color for icons
                 "font-size": "25px"
             },
             "nav-link": {
                 "font-size": "18px", 
-                "text-align": "left",
+                "text-align": "center",
                 "margin": "0px",
+                "padding": "12px 24px",  # Adjust padding to ensure full height
+                "border-radius": "8px",  # Rounded corners
                 "color": "#ac7ccf",  # Soft purple color for text
+                "display": "flex",
+                "align-items": "center",
+                "justify-content": "center",
+                "height": "100%"  # Ensure full height coverage
             },
             "nav-link-selected": {
                 "background-color": "#ac7ccf",  # Soft purple for selected item
-                "color": "white"  # Text color for selected item
+                "color": "white",  # Text color for selected item
+                "border-radius": "8px",  # Rounded edges
+                "padding": "12px 24px",  # Adjusted padding for full height
+                "display": "flex",
+                "align-items": "center",
+                "justify-content": "center",
+                "height": "100%",  # Ensures full coverage
+                "width": "100%"  # Ensures full button width
             },
         }
+
     )
 
     # Update session state to the selected page
