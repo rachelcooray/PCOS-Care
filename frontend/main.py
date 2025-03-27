@@ -46,6 +46,7 @@ hide_st_style = """
             justify-content: space-between;
             background-color: #ac7ccf;
             padding: 10px;
+            position: -webkit-sticky; /* For Safari */
             position: sticky;  /* Make navbar sticky */
             top: 0;  /* Stick it to the top when scrolling */
             left: 0;

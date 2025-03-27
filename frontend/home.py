@@ -73,6 +73,7 @@ def home_page():
 
     # Features Overview Section
     st.subheader("Overview of the Features")
+    st.markdown("<br>", unsafe_allow_html=True)
 
     col1, col2, col3, col4 = st.columns(4)
 

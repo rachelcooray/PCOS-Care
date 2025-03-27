@@ -47,10 +47,19 @@ def pcos_info_page():
         </div>
     """, unsafe_allow_html=True)
 
-    if os.path.exists(pcos_image_path):
-        st.image(pcos_image_path, use_column_width=True, caption="PCOS Effects on Health")
-    else:
-        st.error("PCOS image not found.")
+    # Image Section with Centering in 3 Columns
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Create 3 columns, with equal width
+    col1, col2, col3 = st.columns([1, 2, 1])  # The middle column (col2) will be wider
+    
+    # Place the hero image in the center column (col2)
+    with col2:
+        if os.path.exists(pcos_image_path):
+            st.image(pcos_image_path, use_column_width=True, caption="PCOS Effects on Health")
+        else:
+            st.error("PCOS image not found.")
+    
     st.markdown("""
                 </div>
             </div>
