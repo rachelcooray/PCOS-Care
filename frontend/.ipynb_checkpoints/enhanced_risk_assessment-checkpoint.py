@@ -659,7 +659,9 @@ def enhanced_risk_assessment_page():
                 }
                 
                 download_pdf(data, prediction)
-                st.session_state.page = "Your Results"
+                # st.session_state.page = "Your Results"
                 
             except Exception as e:
                 custom_alert("We encountered an issue while processing your request. Please try again later.", "#5A9")   # Greenish-blue
+
+    st.write("Please go to the Results page to view detailed insights.")

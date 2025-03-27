@@ -43,24 +43,32 @@ pages = ["Home", "PCOS Information", "Simple Risk Assessment", "Enhanced Risk As
 
 styles = {
     "nav": {
-        "background-color": "rgb(170, 124, 207)",  # Purple background for the navbar
+        "background-color": "#CDC1FF",  # Keep the purple background
         "height": "75px",
+        "width": "100%",  # Ensure it stretches fully
+        "display": "flex",
+        "justify-content": "center",  # Center items if needed
+        "align-items": "center",
     },
     "div": {
-        "max-width": "32rem",  # Adjust the width if needed
+        "max-width": "100%",  # Make it full-width
+        "display": "flex",
+        "justify-content": "center",  # Ensure items are spaced properly
+        "padding": "0 2rem",  # Add some padding on the sides
     },
     "span": {
         "border-radius": "0.5rem",
-        "color": "rgb(97, 59, 156)",  # Purple text color for the navbar links
+        "color": "#6E39A7",  # Purple text color for the navbar links
         "margin": "0 0.125rem",
         "padding": "0.4375rem 0.625rem",
+        "font-size": "1.05rem",
     },
     "active": {
-        "background-color": "rgba(170, 124, 207, 0.6)",  # Lighter purple background when active
+        "background-color": "#AD99FF",  # Lighter purple background when active
         "color": "white",  # White text when active
     },
     "hover": {
-        "background-color": "rgba(170, 124, 207, 0.4)",  # Light purple background when hovered
+        "background-color": "#AD99FF",  # Light purple background when hovered
         "color": "white",
     },
 }
