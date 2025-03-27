@@ -26,6 +26,13 @@ def get_prediction(input_data):
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 
+def custom_alert(message, color):
+    """Creates a custom-styled alert box."""
+    st.markdown(f"""
+        <div style='padding: 15px; border-radius: 10px; background-color: {color}; color: white; font-weight: bold;'>
+            {message}
+        </div>
+    """, unsafe_allow_html=True)
 
 # PDF Version of all data and result
 def generate_pdf(data, prediction):
@@ -379,12 +386,14 @@ def simple_risk_assessment_page():
             if weight and height:
                 bmi = calculate_bmi(weight, height)  
             else:
-                st.error("Weight and Height are required and must be numeric.")
-            
+                custom_alert("Weight and Height are required and must be numeric.", "#5A9")   # Greenish-blue
+                st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+                    
             if waist and hip:
                 waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
             else:
-                st.error("Waist and Hip measurements are required and must be numeric.")
+                custom_alert("Waist and Hip measurements are required and must be numeric.", "#5A9")   # Greenish-blue
+                st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         
             age_valid = validate_age(age)
             weight_valid = validate_weight(weight)
@@ -423,9 +432,12 @@ def simple_risk_assessment_page():
             # Show errors if any
             if errors:
                 for error in errors:
-                    st.error(error)
+                    # st.error(error)
+                    custom_alert(error, "#5A9")   # Greenish-blue
+                    st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             else:
-                st.success("All inputs are valid! Form submitted successfully.")
+                custom_alert("All inputs are valid! Form submitted successfully.", "#5A9")   # Greenish-blue
+                st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
                 
                 data = {
                     " Age (yrs)": age,
@@ -470,4 +482,4 @@ def simple_risk_assessment_page():
                 st.session_state.page = "Your Results"
                     
             except Exception as e:
-                st.error("We encountered an issue while processing your request. Please try again later.")
+                custom_alert("We encountered an issue while processing your request. Please try again later.", "#5A9")   # Greenish-blue

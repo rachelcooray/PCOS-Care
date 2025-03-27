@@ -58,9 +58,9 @@ def results_page():
         """, unsafe_allow_html=True)
 
         if predicted_pcos == "You are likely to have PCOS":
-            st.warning("This suggests a possibility of PCOS. Please consult a healthcare professional.")
+            custom_alert("This suggests a possibility of PCOS. Please consult a healthcare professional.", "#5A9")   # Greenish-blue
         else:
-            st.success("No PCOS detected. However, if symptoms persist, consider consulting a doctor.")
+            custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#5A9")   # Greenish-blue
 
 
         # Section Break
@@ -140,11 +140,11 @@ def results_page():
         
             # Display additional information based on LH/FSH ratio
             if lh > fsh:
-                st.info("Your LH is higher than FSH, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.")
+                custom_alert("Your LH is higher than FSH, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.", "#5A9")   # Greenish-blue
             elif lh == fsh:
-                st.info("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.")
+                custom_alert("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.", "#5A9")   # Greenish-blue
             else:
-                st.info("Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.")
+                custom_alert("Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.", "#5A9")   # Greenish-blue
 
 
         # **3. Lifestyle Factors (Weight Gain, Fast Food, No Exercise)**
@@ -155,7 +155,7 @@ def results_page():
         if weight_gain == 1 or fast_food == 1 or reg_exercise == 0:
             st.subheader("Lifestyle Factors")
             
-            st.warning("Lifestyle factors can significantly impact PCOS risk.")
+            custom_alert("Lifestyle factors can significantly impact PCOS risk.", "#5A9")   # Greenish-blue
             st.info("""
             - **Weight Gain:** Excess weight can worsen insulin resistance, a key PCOS factor.
             - **Fast Food Consumption:** Processed foods may contribute to hormone imbalances.
@@ -169,6 +169,7 @@ def results_page():
         else:
             custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#5A9")   # Greenish-blue
 
+         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         
         # Disclaimer Section
         st.markdown("""
@@ -192,7 +193,7 @@ def results_page():
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
     else:
-        st.error("No assessment data found. Please complete the assessment first.")
+        custom_alert("No assessment data found. Please complete the assessment first.", "#5A9")   # Greenish-blue
 
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
