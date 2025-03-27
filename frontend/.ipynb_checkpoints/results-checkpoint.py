@@ -157,6 +157,9 @@ def results_page():
             st.subheader("Lifestyle Factors")
             
             custom_alert("Lifestyle factors can significantly impact PCOS risk.", "#5A9")   # Greenish-blue
+            
+            st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+            
             st.info("""
             - **Weight Gain:** Excess weight can worsen insulin resistance, a key PCOS factor.
             - **Fast Food Consumption:** Processed foods may contribute to hormone imbalances.
@@ -164,6 +167,7 @@ def results_page():
             """)
 
         # Next Steps Based on Prediction
+        st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         st.subheader("Next Steps")
         if predicted_pcos == "You are likely to have PCOS":
             custom_alert("We strongly recommend seeking medical advice for further evaluation.You can download your data as a PDF to share with your healthcare provider.", "#5A9")   # Greenish-blue
