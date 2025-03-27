@@ -10,10 +10,16 @@ from contact_help import contact_help_page
 # Hide default Streamlit UI components and custom styling
 hide_st_style = """
     <style>
+        /* Hide default Streamlit UI components */
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
         header {visibility: hidden;}
         .stDeployButton {visibility: hidden !important;}
+
+        /* Apply Poppins font globally */
+        * {
+            font-family: "Poppins", sans-serif !important;
+        }
 
         /* Custom landscape layout */
         .block-container {
@@ -26,11 +32,12 @@ hide_st_style = """
         .main {
             max-width: 100% !important;
             padding: 0 !important;
+            margin-top: 0;  /* Reset any previous margins */
         }
 
         /* Adjust the sidebar to take more space */
         .css-1d391kg {
-            max-width: 300px;  /* You can adjust this for more space */
+            max-width: 300px;  /* Adjust sidebar width */
         }
 
         /* Horizontal Navigation Bar */
@@ -39,6 +46,13 @@ hide_st_style = """
             justify-content: space-between;
             background-color: #ac7ccf;
             padding: 10px;
+            position: sticky;  /* Make navbar sticky */
+            top: 0;  /* Stick it to the top when scrolling */
+            left: 0;
+            width: 100%;
+            height: 60px;  /* Set a fixed height for the navbar */
+            z-index: 1000;  /* Ensure it stays above other elements */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
         }
 
         .navbar a {
@@ -46,12 +60,19 @@ hide_st_style = """
             text-decoration: none;
             font-size: 18px;
             margin-right: 20px;
+            font-family: "Poppins", sans-serif !important;
         }
 
         /* Global font size for readability */
         body {
-            font-size: 20px;  /* Increase font size globally */
+            font-size: 20px;
             line-height: 1.6;
+            font-family: "Poppins", sans-serif !important;
+        }
+
+        /* Ensure navigation items have correct font */
+        .nav-link, .nav-link-selected {
+            font-family: "Poppins", sans-serif !important;
         }
 
         /* Media Queries for different screen sizes */
@@ -150,6 +171,7 @@ def main():
                 "height": "100%"  # Ensure full height coverage
             },
             "nav-link-selected": {
+                "font-family": "Poppins, sans-serif",
                 "background-color": "#ac7ccf",  # Soft purple for selected item
                 "color": "white",  # Text color for selected item
                 "border-radius": "8px",  # Rounded edges
@@ -161,7 +183,6 @@ def main():
                 "width": "100%"  # Ensures full button width
             },
         }
-
     )
 
     # Update session state to the selected page
