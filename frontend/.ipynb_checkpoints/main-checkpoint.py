@@ -48,6 +48,12 @@ hide_st_style = """
             margin-right: 20px;
         }
 
+        /* Global font size for readability */
+        body {
+            font-size: 20px;  /* Increase font size globally */
+            line-height: 1.6;
+        }
+
         /* Media Queries for different screen sizes */
         @media (max-width: 768px) {
             .navbar {
