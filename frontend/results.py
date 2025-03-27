@@ -93,16 +93,18 @@ def results_page():
             with col1:
                 if bmi is not None:
                     st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
+                    custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#5A9")   # Greenish-blue
                 else:
                     st.markdown("BMI data unavailable")
-                    custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#5A9")   # Greenish-blue
+                    
             
             with col3:
                 if waist_hip_ratio is not None:
                     st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
+                    custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#5A9")   # Greenish-blue
                 else:
                     st.markdown("Waist-Hip Ratio data unavailable")
-                    custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#5A9")   # Greenish-blue
+                    
 
         # Adding the overall message
         st.info("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.")
@@ -113,7 +115,7 @@ def results_page():
         if cycle == 4:  # Assuming 4 means Irregular
             st.subheader("Cycle Irregularities")
             
-            st.warning("Irregular cycles are commonly associated with PCOS due to hormonal imbalances.")
+            custom_alert("Irregular cycles are commonly associated with PCOS due to hormonal imbalances.", "#5A9")   # Greenish-blue
             
             # Retrieve FSH and LH values
             fsh = float(user_data["symptom_analysis"].get("FSH(mIU/mL)", 0))
@@ -161,13 +163,9 @@ def results_page():
         # Next Steps Based on Prediction
         st.subheader("Next Steps")
         if predicted_pcos == "You are likely to have PCOS":
-            st.warning("""
-                We strongly recommend seeking medical advice for further evaluation.
-                
-                You can download your data as a PDF to share with your healthcare provider.
-            """)
+            custom_alert("We strongly recommend seeking medical advice for further evaluation.You can download your data as a PDF to share with your healthcare provider.", "#5A9")   # Greenish-blue
         else:
-            st.success("Maintain a healthy lifestyle and monitor symptoms over time.")
+            custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#5A9")   # Greenish-blue
 
         
         # Disclaimer Section
@@ -204,15 +202,15 @@ def results_page():
 
     # Place the buttons in the center column
     with col1:
-        if st.button("📚 Learn More About PCOS"):
+        if st.button("Learn More About PCOS"):
             st.session_state.page = "PCOS Information"
         
     with col2:    
-        if st.button("⚠️ Take the Simple Risk Assessment"):
+        if st.button("Take the Simple Risk Assessment"):
             st.session_state.page = "Simple Risk Assessment"
 
     with col3:    
-        if st.button("⚠️ Take the Enhanced Risk Assessment"):
+        if st.button("Take the Enhanced Risk Assessment"):
             st.session_state.page = "Enhanced Risk Assessment"  
 
     # st.markdown("TO ADD - disclaimer, references")

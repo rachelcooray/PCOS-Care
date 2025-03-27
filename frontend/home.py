@@ -14,7 +14,7 @@ feature_images = {
     "results": os.path.join(current_directory, "images/results.png")
 }
 
-def load_and_resize_image(image_path, size=(150, 150)):
+def load_and_resize_image(image_path, size=(70, 70)):
     """Load an image and resize it to a fixed size."""
     if os.path.exists(image_path):
         image = Image.open(image_path)
@@ -81,31 +81,31 @@ def home_page():
     expander_height_style = "min-height: 140px; padding: 10px; text-align: center;"
 
     with col1:
-        img = load_and_resize_image(feature_images["info"])
+        img = load_and_resize_image(feature_images["info"], size=(80, 80))
         if img:
-            st.image(img, caption="PCOS Information", use_column_width=True)
-        with st.expander("📚 PCOS Information"):
+            st.image(img, caption="PCOS Information", width=100)
+        with st.expander("PCOS Information"):
             st.markdown(f"<div style='{expander_height_style}'>Learn about the symptoms, causes, and management strategies.</div>", unsafe_allow_html=True)
 
     with col2:
-        img = load_and_resize_image(feature_images["assessment"])
+        img = load_and_resize_image(feature_images["assessment"], size=(80, 80))
         if img:
-            st.image(img, caption="Simple Risk Assessment", use_column_width=True)
-        with st.expander("⚠️ Simple Risk Assessment"):
+            st.image(img, caption="Simple Risk Assessment", width=100)
+        with st.expander("Simple Risk Assessment"):
             st.markdown(f"<div style='{expander_height_style}'>Quickly assess your risk based on key symptoms.</div>", unsafe_allow_html=True)
 
     with col3:
-        img = load_and_resize_image(feature_images["enhanced"])
+        img = load_and_resize_image(feature_images["enhanced"], size=(80, 80))
         if img:
-            st.image(img, caption="Enhanced Risk Assessment", use_column_width=True)
-        with st.expander("🔍 Enhanced Risk Assessment"):
+            st.image(img, caption="Enhanced Risk Assessment", width=100)
+        with st.expander("Enhanced Risk Assessment"):
             st.markdown(f"<div style='{expander_height_style}'>Provide more detailed health data for an in-depth risk evaluation.</div>", unsafe_allow_html=True)
 
     with col4:
-        img = load_and_resize_image(feature_images["results"])
+        img = load_and_resize_image(feature_images["results"], size=(80, 80))
         if img:
-            st.image(img, caption="Results Visualization", use_column_width=True)
-        with st.expander("📊 Results Visualization"):
+            st.image(img, caption="Results Visualization", width=100)
+        with st.expander("Results Visualization"):
             st.markdown(f"<div style='{expander_height_style}'>View your risk level with intuitive graphs and visualizations.</div>", unsafe_allow_html=True)
 
     # Call to Action
@@ -118,11 +118,11 @@ def home_page():
 
     # Place the buttons in the center column
     with col1:
-        if st.button("📚 Learn More About PCOS"):
+        if st.button("Learn More About PCOS"):
             st.session_state.page = "PCOS Information"
     
     with col3:    
-        if st.button("⚠️ Take the Risk Assessment"):
+        if st.button("Take the Risk Assessment"):
             st.session_state.page = "Simple Risk Assessment"   
 
     st.markdown("""

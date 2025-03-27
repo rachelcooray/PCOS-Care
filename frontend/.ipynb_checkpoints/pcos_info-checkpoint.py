@@ -2,13 +2,13 @@ import streamlit as st
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+from PIL import Image
 
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 pcos_image_path = os.path.join(current_directory, "images/pcos.jpg")
 visuals_directory = os.path.join(current_directory, "../pcos_visuals")
-
 
 def pcos_info_page():
     # Layout for logo and title
@@ -96,6 +96,9 @@ def pcos_info_page():
                     """, unsafe_allow_html=True)
 
 
+    # 🏥 **Header Section with Logo**
+    st.markdown("<div class='dashboard-container'><h1 class='dashboard-title'>PCOS Dashboard</h1></div>", unsafe_allow_html=True)
+    
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
     
@@ -128,7 +131,7 @@ def pcos_info_page():
     for image_file, caption, description in image_details:
         image_path = os.path.join(visuals_directory, image_file)
         if os.path.exists(image_path):
-            st.image(image_path, use_column_width=True, caption=caption)
+            st.image(image_path, width=700, caption=caption)
             
             # Adding a box around the description
             st.markdown(f"""
@@ -143,7 +146,7 @@ def pcos_info_page():
             st.error(f"⚠️ {image_file} not found.")
     
     # Expander for deeper insights
-    with st.expander("📌 Insights from Data", expanded=False):
+    with st.expander("Insights from Data", expanded=False):
         st.markdown("""
             - **PCOS Prevalence Distribution** – Shows the percentage of diagnosed vs undiagnosed cases.
             - **Symptom Breakdown** – Visualizes the most commonly reported PCOS symptoms.
