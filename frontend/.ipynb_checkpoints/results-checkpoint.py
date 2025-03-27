@@ -203,22 +203,22 @@ def results_page():
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-    # Call to Action
-    st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Explore More</h3>", unsafe_allow_html=True)
+    # # Call to Action
+    # st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Explore More</h3>", unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns([1, 1, 1])
+    # col1, col2, col3 = st.columns([1, 1, 1])
 
-    # Place the buttons in the center column
-    with col1:
-        if st.button("Learn More About PCOS"):
-            st.session_state.page = "PCOS Information"
+    # # Place the buttons in the center column
+    # with col1:
+    #     if st.button("Learn More About PCOS"):
+    #         st.session_state.page = "PCOS Information"
         
-    with col2:    
-        if st.button("Take the Simple Risk Assessment"):
-            st.session_state.page = "Simple Risk Assessment"
+    # with col2:    
+    #     if st.button("Take the Simple Risk Assessment"):
+    #         st.session_state.page = "Simple Risk Assessment"
 
-    with col3:    
-        if st.button("Take the Enhanced Risk Assessment"):
-            st.session_state.page = "Enhanced Risk Assessment"  
+    # with col3:    
+    #     if st.button("Take the Enhanced Risk Assessment"):
+    #         st.session_state.page = "Enhanced Risk Assessment"  
 
     # st.markdown("TO ADD - disclaimer, references")

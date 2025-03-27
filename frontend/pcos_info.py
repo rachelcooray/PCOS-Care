@@ -146,7 +146,7 @@ def pcos_info_page():
             st.error(f"⚠️ {image_file} not found.")
     
     # Expander for deeper insights
-    with st.expander("Insights from Data", expanded=False):
+    with st.expander("Find out the Insights gathered from the Data", expanded=False):
         st.markdown("""
             - **PCOS Prevalence Distribution** – Shows the percentage of diagnosed vs undiagnosed cases.
             - **Symptom Breakdown** – Visualizes the most commonly reported PCOS symptoms.
@@ -167,12 +167,12 @@ def pcos_info_page():
     # Add space between markdown and button
     st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space
 
-    col1, col2, col3 = st.columns([1, 1, 1])
+    # col1, col2, col3 = st.columns([1, 1, 1])
 
-    # Place the buttons in the center column
-    with col2:
-        if st.button("Try the Simple Risk Assessment"):
-            st.session_state.page = "Simple Risk Assessment"
+    # # Place the buttons in the center column
+    # with col2:
+    #     if st.button("Try the Simple Risk Assessment"):
+    #         st.session_state.page = "Simple Risk Assessment"
 
     st.markdown("</div>", unsafe_allow_html=True)
 
