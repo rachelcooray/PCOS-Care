@@ -48,7 +48,7 @@ def home_page():
 
     # Introduction
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+        <div style='background-color: #E9E0F4; padding: 20px; border-radius: 10px;'>
             <h3 style='text-align: center;'>Welcome to PCOS Care</h3>
             <p>Our AI-driven <strong>PCOS Risk Assessment tool</strong> helps women understand their health better through data-driven insights. This tool <strong>does not provide a medical diagnosis</strong>, but it serves as an informative resource.</p>
             <p><strong>Early detection and awareness are key to managing PCOS effectively.</strong></p>
@@ -126,7 +126,7 @@ def home_page():
     #         st.session_state.page = "Simple Risk Assessment"   
 
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px;'>
             <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
             <ul style='list-style-type: disc; padding-left: 20px;'>
                 <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>

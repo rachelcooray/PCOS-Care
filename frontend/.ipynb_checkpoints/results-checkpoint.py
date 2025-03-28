@@ -122,29 +122,31 @@ def results_page():
             # Retrieve FSH and LH values
             fsh = float(user_data["symptom_analysis"].get("FSH(mIU/mL)", 0))
             lh = float(user_data["symptom_analysis"].get("LH(mIU/mL)", 0))
+
+            if fsh > 0 and lh > 0:
         
-            # Create a DataFrame for Altair
-            df = pd.DataFrame({
-                "Hormone": ["FSH (mIU/mL)", "LH (mIU/mL)"],
-                "Value": [fsh, lh]
-            })
-        
-            # Create a slimmer bar chart with Altair
-            chart = alt.Chart(df).mark_bar(width=40).encode(
-                x=alt.X("Hormone", sort=None),  # Keeps order as given
-                y="Value",
-                color=alt.Color("Hormone", legend=None)
-            ).properties(height=300)
-        
-            st.altair_chart(chart, use_container_width=True)
-        
-            # Display additional information based on LH/FSH ratio
-            if lh > fsh:
-                custom_alert("Your LH is higher than FSH, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.", "#5A9")   # Greenish-blue
-            elif lh == fsh:
-                custom_alert("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.", "#5A9")   # Greenish-blue
-            else:
-                custom_alert("Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.", "#5A9")   # Greenish-blue
+                # Create a DataFrame for Altair
+                df = pd.DataFrame({
+                    "Hormone": ["FSH (mIU/mL)", "LH (mIU/mL)"],
+                    "Value": [fsh, lh]
+                })
+            
+                # Create a slimmer bar chart with Altair
+                chart = alt.Chart(df).mark_bar(width=40).encode(
+                    x=alt.X("Hormone", sort=None),  # Keeps order as given
+                    y="Value",
+                    color=alt.Color("Hormone", legend=None)
+                ).properties(height=300)
+            
+                st.altair_chart(chart, use_container_width=True)
+            
+                # Display additional information based on LH/FSH ratio
+                if lh > fsh:
+                    custom_alert("Your LH is higher than FSH, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.", "#5A9")   # Greenish-blue
+                elif lh == fsh:
+                    custom_alert("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.", "#5A9")   # Greenish-blue
+                else:
+                    custom_alert("Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.", "#5A9")   # Greenish-blue
 
 
         # **3. Lifestyle Factors (Weight Gain, Fast Food, No Exercise)**

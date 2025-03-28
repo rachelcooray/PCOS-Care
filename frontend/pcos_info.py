@@ -26,7 +26,7 @@ def pcos_info_page():
 
     # Section: What is PCOS?
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>What is PCOS?</h2>
             <p>Polycystic Ovary Syndrome (PCOS) is a <strong>hormonal disorder</strong> that affects women of reproductive age. It can lead to <strong>irregular periods, excessive hair growth, acne, weight gain, and fertility issues</strong>. PCOS is also linked to insulin resistance and hormonal imbalances.</p>
         </div>
@@ -34,7 +34,7 @@ def pcos_info_page():
 
     # PCOS Symptoms
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>Common Symptoms</h2>
             <ul>
                 <li><strong>Irregular menstrual cycles</strong></li>
@@ -68,7 +68,7 @@ def pcos_info_page():
 
     # Section: Why Early Detection Matters
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>Why Early Detection Matters?</h2>
             <p>Early detection and lifestyle changes can <strong>help manage symptoms and prevent long-term complications</strong>.</p>
             <p><strong>Without treatment, PCOS can increase the risk of:</strong></p>
@@ -84,7 +84,7 @@ def pcos_info_page():
 
     # Section: How PCOS Affects Health
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>How PCOS Affects Health?</h2>
                <p>PCOS affects multiple systems in the body, leading to:</p>
                     <ul>
@@ -157,15 +157,15 @@ def pcos_info_page():
     
     st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
 
-    # Call to Action
-    st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;'>
-            <h2 style='color: #6a0dad;'>Take the Next Step</h2>
-            <p>Ready to take control of your health? Start by taking the Simple Assessment.</p>
-    """, unsafe_allow_html=True)
+    # # Call to Action
+    # st.markdown("""
+    #     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;'>
+    #         <h2 style='color: #6a0dad;'>Take the Next Step</h2>
+    #         <p>Ready to take control of your health? Start by taking the Simple Assessment.</p>
+    # """, unsafe_allow_html=True)
 
-    # Add space between markdown and button
-    st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space
+    # # Add space between markdown and button
+    # st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space
 
     # col1, col2, col3 = st.columns([1, 1, 1])
 
@@ -178,7 +178,7 @@ def pcos_info_page():
 
     # Disclaimer Section
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px;'>
            <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
             <ul style='list-style-type: disc; padding-left: 20px;'>
                 <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>

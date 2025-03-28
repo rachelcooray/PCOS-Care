@@ -10,10 +10,10 @@ from contact_help import contact_help_page
 hide_st_style = """
     <style>
         /* Hide default Streamlit UI components */
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-        .stDeployButton {visibility: hidden !important;}
+        # #MainMenu {visibility: hidden;}
+        # footer {visibility: hidden;}
+        # header {visibility: hidden;}
+        # .stDeployButton {visibility: hidden !important;}
 
         /* Apply Poppins font globally */
         * {
