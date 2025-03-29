@@ -414,13 +414,13 @@ def simple_risk_assessment_page():
             if weight and height:
                 bmi = calculate_bmi(weight, height)  
             else:
-                custom_alert("Weight and Height are required and must be numeric.", "#5A9")   # Greenish-blue
+                custom_alert("Weight and Height are required and must be numeric.", "#F0A693")   # Greenish-blue
                 st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
                     
             if waist and hip:
                 waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
             else:
-                custom_alert("Waist and Hip measurements are required and must be numeric.", "#5A9")   # Greenish-blue
+                custom_alert("Waist and Hip measurements are required and must be numeric.", "#F0A693")   # Greenish-blue
                 st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         
             age_valid = validate_age(age)
@@ -461,7 +461,7 @@ def simple_risk_assessment_page():
             if errors:
                 for error in errors:
                     # st.error(error)
-                    custom_alert(error, "#5A9")   # Greenish-blue
+                    custom_alert(error, "#F0A693")   # Greenish-blue
                     st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             else:
                 custom_alert("All inputs are valid! Form submitted successfully.", "#5A9")   # Greenish-blue
@@ -510,6 +510,6 @@ def simple_risk_assessment_page():
                 # st.session_state.page = "Your Results"
                     
             except Exception as e:
-                custom_alert("We encountered an issue while processing your request. Please try again later.", "#5A9")   # Greenish-blue
+                custom_alert("We encountered an issue while processing your request. Please try again later.", "#51A199")   # Greenish-blue
 
     st.write("Please go to the Results page to view detailed insights.")
