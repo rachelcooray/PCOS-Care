@@ -252,6 +252,34 @@ def calculate_fsh_lh_ratio(fsh, lh):
     return (fsh / lh)
     
 def enhanced_risk_assessment_page():
+
+    st.markdown(
+        """
+        <style>
+            /* Apply border to text inputs */
+            div[data-baseweb="input"] > div {
+                border: 2px solid #CBB2E6 !important; /* Green border */
+                border-radius: 5px;
+                padding: 5px;
+            }
+            
+            /* Apply border to select box */
+            div[data-baseweb="select"] > div {
+                border: 2px solid #CBB2E6 !important; /* Green border */
+                border-radius: 5px;
+            }
+    
+            /* Apply border to radio buttons */
+            div[data-baseweb="radio"] {
+                border: 2px solid #CBB2E6 !important;
+                padding: 10px;
+                border-radius: 5px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
     col1, col2 = st.columns([1, 4])  
 
     with col1:
