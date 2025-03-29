@@ -8,7 +8,7 @@ from fpdf import FPDF
 def get_prediction(input_data):
     # url = "http://127.0.0.1:5000/predict-enhanced"  # Flask API endpoint - localhost
     url = "https://pcos-care.onrender.com/predict-enhanced" # render
-    # url = "https://rachelcooray.pythonanywhere.com/predict-enhanced"
+    
     headers = {'Content-Type': 'application/json'}
     
     try:
@@ -341,50 +341,6 @@ def enhanced_risk_assessment_page():
 
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-    # st.write("### Symptoms")
-    # weight_gain = st.radio(
-    #     "Have you experienced unusual or excessive weight gain recently?", 
-    #     ["Yes", "No"], 
-    #     index=None, 
-    #     help="Select 'Yes' if you have experienced unusual or excessive weight gain recently."
-    # )
-    # hair_growth = st.radio(
-    #     "Have you observed abnormal or excessive hair growth?", 
-    #     ["Yes", "No"], 
-    #     index=None, 
-    #     help="Select 'Yes' if you have observed abnormal or excessive hair growth."
-    # )
-    # skin_darkening = st.radio(
-    #     "Have you experienced any skin darkening?", 
-    #     ["Yes", "No"], 
-    #     index=None, 
-    #     help="Select 'Yes' if you have noticed dark patches on your skin."
-    # )
-    # hair_loss = st.radio(
-    #     "Have you observed abnormal or excessive hair loss?", 
-    #     ["Yes", "No"], 
-    #     index=None, 
-    #     help="Select 'Yes' if you have observed abnormal or excessive hair loss."
-    # )
-    # pimples = st.radio(
-    #     "Do you have frequent or severe acne outbreaks?", 
-    #     ["Yes", "No"], 
-    #     index=None, 
-    #     help="Select 'Yes' if you have frequent or severe acne outbreaks."
-    # )
-    # fast_food = st.radio(
-    #     "Do you eat alot of fast food", 
-    #     ["Yes", "No"], 
-    #     index=None, 
-    #     help="Select 'Yes' if you eat alot of fast food."
-    # )
-    # reg_exercise = st.radio(
-    #     "Do you exercise regularly?", 
-    #     ["Yes", "No"], 
-    #     index=None, 
-    #     help="Select 'Yes' if you exercise regularly (at least 3 times a week)."
-    # )
-
     # Ensure session state has initial values
     if "weight_gain" not in st.session_state:
         st.session_state.weight_gain = None
@@ -487,12 +443,7 @@ def enhanced_risk_assessment_page():
         help="Enter the number of days your menstrual period typically lasts (not the entire cycle)."
     )
     
-    # marriage_years = st.text_input(
-    #     "Marriage Status (Yrs):", 
-    #     placeholder="0", 
-    #     help="Enter the number of years of marriage."
-    # )
-
+    
     if "pregnancy_status" not in st.session_state:
         st.session_state.pregnancy_status = None
     
@@ -740,7 +691,6 @@ def enhanced_risk_assessment_page():
             rr_valid = validate_respiratory_rate(rr_rate)
             cycle_valid = validate_cycle(cycle)
             cycle_length_valid = validate_cycle_length(cycle_length)
-            # marriage_years_valid = validate_marriage_years(marriage_years)
             no_of_abortions_valid = validate_number_of_abortions(no_of_abortions)
             hip_valid = validate_hip(hip)
             waist_valid = validate_waist(waist)
@@ -758,7 +708,6 @@ def enhanced_risk_assessment_page():
             if not rr_valid: errors.append("Respiratory rate must be between 12 and 30 breaths per minute.")
             if not cycle_valid: errors.append("Cycle must be either 'R' (regular) or 'I' (irregular).")
             if not cycle_length_valid: errors.append("Cycle length must be between 21 and 35 days.")
-            # if not marriage_years_valid: errors.append("Years of marriage must be between 0 and 60.")
             if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 10.")
             if not hip_valid: errors.append("Hip measurement must be between 20 and 70 inches.")
             if not waist_valid: errors.append("Waist measurement must be between 20 and 60 inches.")
@@ -806,7 +755,6 @@ def enhanced_risk_assessment_page():
                     "RR (breaths/min)": rr_rate,
                     "Cycle(R/I)": convert_cycle(cycle),
                     "Cycle length(days)": cycle_length,
-                    # "Marraige Status (Yrs)": marriage_years,
                     "Pregnant(Y/N)": convert_yes_no(pregnancy_status),
                     "No. of aborptions": no_of_abortions,
                     "Hip(inch)": hip,

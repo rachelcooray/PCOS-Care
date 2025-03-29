@@ -252,8 +252,6 @@ def results_page():
         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
 
         st.subheader("Download your Report:")
-        # user_data = st.session_state.risk_assessment_data
-        # predicted_pcos = user_data.get("predicted_pcos", "Unknown")  # result from assessment
         download_pdf(user_data, predicted_pcos)
         
         # Disclaimer Section
@@ -276,23 +274,5 @@ def results_page():
 
     else:
         custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4")   # Greenish-blue
-
-    # # Call to Action
-    # st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Explore More</h3>", unsafe_allow_html=True)
-
-    # col1, col2, col3 = st.columns([1, 1, 1])
-
-    # # Place the buttons in the center column
-    # with col1:
-    #     if st.button("Learn More About PCOS"):
-    #         st.session_state.page = "PCOS Information"
-        
-    # with col2:    
-    #     if st.button("Take the Simple Risk Assessment"):
-    #         st.session_state.page = "Simple Risk Assessment"
-
-    # with col3:    
-    #     if st.button("Take the Enhanced Risk Assessment"):
-    #         st.session_state.page = "Enhanced Risk Assessment"  
 
     # st.markdown("TO ADD - disclaimer, references")

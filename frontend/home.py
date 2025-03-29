@@ -113,18 +113,7 @@ def home_page():
         st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Start your journey towards better health!</h3>", unsafe_allow_html=True)
     
         # Add space between markdown and button
-        st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space
-    
-        # col1, col2, col3 = st.columns([1, 1, 1])
-    
-        # # Place the buttons in the center column
-        # with col1:
-        #     if st.button("Learn More About PCOS"):
-        #         st.session_state.page = "PCOS Information"
-        
-        # with col3:    
-        #     if st.button("Take the Risk Assessment"):
-        #         st.session_state.page = "Simple Risk Assessment"   
+        st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space  
     
         st.markdown("""
             <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
