@@ -6,6 +6,7 @@ from simple_risk_assessment import simple_risk_assessment_page
 from enhanced_risk_assessment import enhanced_risk_assessment_page
 from results import results_page
 from contact_help import contact_help_page
+from pcos_dashboard import pcos_dashboard_page
 
 hide_st_style = """
     <style>
@@ -39,7 +40,7 @@ hide_st_style = """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Define pages and custom styles for the navbar
-pages = ["Home", "PCOS Information", "Simple Risk Assessment", "Enhanced Risk Assessment", "Your Results", "Help & Contact"]
+pages = ["Home", "PCOS Information", "Insights From Data", "Simple Risk Assessment", "Enhanced Risk Assessment", "Your Results", "Help & Contact"]
 
 styles = {
     "nav": {
@@ -81,6 +82,8 @@ if page == "Home":
     home_page()
 elif page == "PCOS Information":
     pcos_info_page()
+elif page == "PCOS Dashboard":
+    pcos_dashboard_page()
 elif page == "Simple Risk Assessment":
     simple_risk_assessment_page()
 elif page == "Enhanced Risk Assessment":

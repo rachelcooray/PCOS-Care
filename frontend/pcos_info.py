@@ -9,7 +9,6 @@ import base64
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 pcos_image_path = os.path.join(current_directory, "images/pcos.jpg")
-visuals_directory = os.path.join(current_directory, "../pcos_visuals")
 
 def get_base64(image_path):
     with open(image_path, "rb") as img_file:
@@ -33,7 +32,7 @@ def pcos_info_page():
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>What is PCOS?</h2>
-            <p>Polycystic Ovary Syndrome (PCOS) is a <strong>hormonal disorder</strong> that affects women of reproductive age. It can lead to <strong>irregular periods, excessive hair growth, acne, weight gain, and fertility issues</strong>. PCOS is also linked to insulin resistance and hormonal imbalances.</p>
+            <p>Polycystic Ovary Syndrome (PCOS) is a <strong>hormonal disorder</strong> that affects women of reproductive age. It can lead to <strong>irregular periods, excessive hair growth, acne, weight gain, and fertility issues</strong>. PCOS is also linked to insulin resistance, increasing the risk of diabetes, heart disease, and other metabolic disorders.</p>
         </div>
     """, unsafe_allow_html=True)
 
@@ -74,125 +73,76 @@ def pcos_info_page():
     # Section: Why Early Detection Matters
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
-            <h2 style='color: #6a0dad;'>Why Early Detection Matters?</h2>
+            <h2 style='color: #6a0dad;'>Why Early Detection Matters</h2>
             <p>Early detection and lifestyle changes can <strong>help manage symptoms and prevent long-term complications</strong>.</p>
             <p><strong>Without treatment, PCOS can increase the risk of:</strong></p>
             <ul>
-                <li><strong>Type 2 Diabetes</strong></li>
-                <li><strong>Heart Disease & High Blood Pressure</strong></li>
-                <li><strong>Infertility or Pregnancy Complications</strong></li>
-                <li><strong>Depression & Anxiety</strong></li>
+                <li><strong>Type 2 Diabetes:</strong> Due to insulin resistance.</li>
+                <li><strong>Cardiovascular Disease:</strong> Increased risk of high cholesterol and hypertension.</li>
+                <li><strong>Infertility & Pregnancy Complications:</strong> Affecting ovulation and hormone balance.</li>
+                <li><strong>Mental Health Challenges:</strong> Anxiety and depression are common among those with PCOS.</li>
             </ul>
-            <p><em>Taking action early helps improve overall health and quality of life.</em></p>
+            <p>Taking action early helps improve overall health and quality of life.</p>
         </div>
     """, unsafe_allow_html=True)
-
+    
     # Section: How PCOS Affects Health
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
-            <h2 style='color: #6a0dad;'>How PCOS Affects Health?</h2>
-               <p>PCOS affects multiple systems in the body, leading to:</p>
-                    <ul>
-                        <li><strong>Hormonal imbalances</strong></li>
-                        <li><strong>Metabolic issues (insulin resistance, weight gain)</strong></li>
-                        <li><strong>Increased risk of cardiovascular disease</strong></li>
-                        <li><strong>Complications in pregnancy and fertility</strong></li>
-                    </ul> 
-                    """, unsafe_allow_html=True)
-
+            <h2 style='color: #6a0dad;'>How PCOS Affects Health</h2>
+            <p>PCOS affects multiple systems in the body, leading to:</p>
+            <ul>
+                <li><strong>Hormonal Imbalances:</strong> Excess androgen levels leading to acne and hair growth.</li>
+                <li><strong>Metabolic Issues:</strong> Increased insulin resistance, causing weight gain and high blood sugar.</li>
+                <li><strong>Fertility Challenges:</strong> Irregular ovulation affecting pregnancy.</li>
+                <li><strong>Increased Risk of Chronic Diseases:</strong> Heart disease, diabetes, and depression.</li>
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+    
     # Section: PCOS Management Tips
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>PCOS Management Tips</h2>
+            <p>Managing PCOS involves lifestyle modifications, medical treatments, and self-care. Here are some key tips:</p>
             <ul>
                 <li><strong>Regular Exercise:</strong> Aim for at least 150 minutes of moderate activity per week.</li>
-                <li><strong>Manage Stress:</strong> Practice yoga, meditation, or deep breathing exercises.</li>
-                <li><strong>Healthy Sleep:</strong> Maintain a consistent sleep schedule with 7-9 hours of rest.</li>
-                <li><strong>Consult a Doctor:</strong> Regular check-ups and medications if prescribed.</li>
+                <li><strong>Balanced Nutrition:</strong> Focus on whole grains, lean proteins, and healthy fats.</li>
+                <li><strong>Stress Management:</strong> Practice yoga, meditation, or deep breathing.</li>
+                <li><strong>Quality Sleep:</strong> Ensure 7-9 hours of sleep per night.</li>
+                <li><strong>Medical Support:</strong> Consult a doctor for medications and hormone management if needed.</li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
-
+    
     # Section: PCOS Diet Tips
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>Dietary Recommendations for PCOS</h2>
             <ul>
-                <li><strong>Foods to Include:</strong> Whole grains, lean protein, healthy fats, and fiber-rich foods.</li>
-                <li><strong>Foods to Avoid:</strong> Refined carbs, processed foods, and excessive sugar intake.</li>
+                <li><strong>Foods to Include:</strong></li>
+                    <ul>
+                        <li> Whole grains (quinoa, brown rice)</li>
+                        <li> Healthy fats (avocado, olive oil)</li>
+                        <li> Lean proteins (chicken, tofu, fish)</li>
+                        <li> Fiber-rich vegetables (broccoli, spinach)</li>
+                    </ul>  
+                <br>
+                <li><strong>Foods to Avoid:</strong></li>
+                    <ul>
+                        <li> Processed foods and sugary snacks</li>
+                        <li> Excessive dairy and refined carbohydrates</li>
+                        <li> Fried and fast foods</li>
+                    </ul>
+                <br>
                 <li><strong>Hydration:</strong> Drink plenty of water to support metabolism and digestion.</li>
                 <li><strong>Meal Timing:</strong> Balanced meals with controlled portions to maintain blood sugar levels.</li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
 
-    # **Header Section with Logo**
-    st.markdown("<div class='dashboard-container'><h1 class='dashboard-title'>PCOS Dashboard</h1></div>", unsafe_allow_html=True)
-    
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-    
-    st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
-            <h2 style='color: #6a0dad;'>Visualizing Key Trends: Insights from PCOS Data Analysis</h2>
-            <p style='text-align: center;'>Explore key visualizations that provide insights into PCOS trends and factors.</p>
-        </div>
-    """, unsafe_allow_html=True)
-
-    # List of images with captions and descriptions in a box
-    image_details = [
-        ("undiagnosed_pcos_distribution.png", "Undiagnosed PCOS Cases Distribution", 
-         "This chart shows the percentage of people who have PCOS but remain undiagnosed, highlighting the need for better awareness and screening."),
-        
-        ("pcos_distribution_donut_chart.png", "PCOS Prevalence Donut Chart", 
-         "A donut chart representing the proportion of diagnosed versus undiagnosed PCOS cases among the surveyed population."),
-        
-        ("pcos_symptoms_percentage.png", "Common PCOS Symptoms Breakdown", 
-         "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."),
-        
-        ("exercise_vs_pcos_symptoms.png", "Impact of Exercise on PCOS Symptoms", 
-         "A comparative analysis of how different levels of physical activity influence the severity of PCOS symptoms."),
-        
-        ("fast_food_vs_pcos_symptoms.png", "Fast Food Consumption & PCOS Symptoms", 
-         "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS symptoms.")
-    ]
-    
-    # Display images with captions and descriptions inside a box
-    for image_file, caption, description in image_details:
-        image_path = os.path.join(visuals_directory, image_file)
-        if os.path.exists(image_path):
-            st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-            # Add proper centering for images by using st.columns
-            col1, col2, col3 = st.columns([1, 4, 1])  # Center the image in the second column
-            with col2:
-                st.image(image_path, width=700, caption=caption)
-            st.markdown("</div>", unsafe_allow_html=True)
-            
-            # Adding a box around the description
-            st.markdown(f"""
-                <div style='background-color: #f1f1f1; border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin-top: 5px;'>
-                    <p style='text-align: center; font-size: 14px; color: #555;'>{description}</p>
-                </div>
-            """, unsafe_allow_html=True)  # Description in a box
-            
-            st.markdown("<br>", unsafe_allow_html=True)  # Adds space between images
-            st.markdown("<br>", unsafe_allow_html=True) 
-        else:
-            st.error(f"⚠️ {image_file} not found.")
-    
-    # Expander for deeper insights
-    with st.expander("Find out the Insights gathered from the Data", expanded=False):
-        st.markdown("""
-            - **PCOS Prevalence Distribution** – Shows the percentage of diagnosed vs undiagnosed cases.
-            - **Symptom Breakdown** – Visualizes the most commonly reported PCOS symptoms.
-            - **Undiagnosed PCOS Cases** – Highlights how many individuals have PCOS but remain undiagnosed (*Alda et al., 2024*).
-            - **Exercise vs PCOS Symptoms** – Demonstrates the effects of physical activity on symptom severity.
-            - **Fast Food Consumption & PCOS** – Analyzes the link between fast food intake and PCOS symptoms.
-        """, unsafe_allow_html=True)
-    
-    st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
-
-    st.markdown("</div>", unsafe_allow_html=True)
 
     # Section: References & Resources 
     st.markdown("""
