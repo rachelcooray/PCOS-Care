@@ -5,6 +5,7 @@ from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 
+# reference
 ## https://flask.palletsprojects.com/en/stable/errorhandling/
 
 # Load the trained SVM model and scaler
