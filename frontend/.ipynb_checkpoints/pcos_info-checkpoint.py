@@ -95,8 +95,33 @@ def pcos_info_page():
                     </ul> 
                     """, unsafe_allow_html=True)
 
+    # Section: PCOS Management Tips
+    st.markdown("""
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>PCOS Management Tips</h2>
+            <ul>
+                <li><strong>Regular Exercise:</strong> Aim for at least 150 minutes of moderate activity per week.</li>
+                <li><strong>Manage Stress:</strong> Practice yoga, meditation, or deep breathing exercises.</li>
+                <li><strong>Healthy Sleep:</strong> Maintain a consistent sleep schedule with 7-9 hours of rest.</li>
+                <li><strong>Consult a Doctor:</strong> Regular check-ups and medications if prescribed.</li>
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
 
-    # 🏥 **Header Section with Logo**
+    # Section: PCOS Diet Tips
+    st.markdown("""
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>Dietary Recommendations for PCOS</h2>
+            <ul>
+                <li><strong>Foods to Include:</strong> Whole grains, lean protein, healthy fats, and fiber-rich foods.</li>
+                <li><strong>Foods to Avoid:</strong> Refined carbs, processed foods, and excessive sugar intake.</li>
+                <li><strong>Hydration:</strong> Drink plenty of water to support metabolism and digestion.</li>
+                <li><strong>Meal Timing:</strong> Balanced meals with controlled portions to maintain blood sugar levels.</li>
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # **Header Section with Logo**
     st.markdown("<div class='dashboard-container'><h1 class='dashboard-title'>PCOS Dashboard</h1></div>", unsafe_allow_html=True)
     
     # Section Break
@@ -131,7 +156,12 @@ def pcos_info_page():
     for image_file, caption, description in image_details:
         image_path = os.path.join(visuals_directory, image_file)
         if os.path.exists(image_path):
-            st.image(image_path, width=700, caption=caption)
+            st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+            # Add proper centering for images by using st.columns
+            col1, col2, col3 = st.columns([1, 4, 1])  # Center the image in the second column
+            with col2:
+                st.image(image_path, width=700, caption=caption)
+            st.markdown("</div>", unsafe_allow_html=True)
             
             # Adding a box around the description
             st.markdown(f"""
@@ -157,25 +187,22 @@ def pcos_info_page():
     
     st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
 
-    # # Call to Action
-    # st.markdown("""
-    #     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;'>
-    #         <h2 style='color: #6a0dad;'>Take the Next Step</h2>
-    #         <p>Ready to take control of your health? Start by taking the Simple Assessment.</p>
-    # """, unsafe_allow_html=True)
-
-    # # Add space between markdown and button
-    # st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space
-
-    # col1, col2, col3 = st.columns([1, 1, 1])
-
-    # # Place the buttons in the center column
-    # with col2:
-    #     if st.button("Try the Simple Risk Assessment"):
-    #         st.session_state.page = "Simple Risk Assessment"
-
     st.markdown("</div>", unsafe_allow_html=True)
 
+    # Section: References
+    st.markdown("""
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px;'>
+            <h3 style='color: #6a0dad;'>References & Resources</h3>
+            <ul>
+                <li>World Health Organization (WHO) - PCOS Guidelines</li>
+                <li>Mayo Clinic - Polycystic Ovary Syndrome Overview</li>
+                <li>Research Article: PCOS and Lifestyle Changes (Alda et al., 2024)</li>
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+    
     # Disclaimer Section
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
