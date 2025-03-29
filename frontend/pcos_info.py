@@ -189,17 +189,34 @@ def pcos_info_page():
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # Section: References
+    # Section: References & Resources 
     st.markdown("""
+        <style>
+            .resource-list {
+                list-style-type: disc; 
+                padding-left: 0;
+            }
+            .resource-link {
+                color: #6a0dad; 
+                text-decoration: none; 
+                font-weight: bold;
+                transition: color 0.3s ease-in-out;
+            }
+            .resource-link:hover {
+                color: #a166c5; /* Lighter shade on hover */
+            }
+        </style>
+
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px;'>
-            <h3 style='color: #6a0dad;'>References & Resources</h3>
-            <ul>
-                <li>World Health Organization (WHO) - PCOS Guidelines</li>
-                <li>Mayo Clinic - Polycystic Ovary Syndrome Overview</li>
-                <li>Research Article: PCOS and Lifestyle Changes (Alda et al., 2024)</li>
+            <h3 style='color: #6a0dad; text-align: center;'>References & Resources</h3>
+            <ul class='resource-list'>
+                <li><a href='https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome' target='_blank' class='resource-link'>World Health Organization - PCOS Guidelines</a></li>
+                <li><a href='https://www.nhs.uk/conditions/polycystic-ovary-syndrome-pcos/' target='_blank' class='resource-link'>NHS - PCOS Overview</a></li>
+                <li><a href='https://www.bda.uk.com/resource/polycystic-ovary-syndrome-pcos-diet.html' target='_blank' class='resource-link'>British Dietetic Association - Polycystic Ovary Syndrome (PCOS) and Diet</a></li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
+
 
     st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
     

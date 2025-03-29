@@ -43,7 +43,7 @@ def home_page():
     
         # Welcome Message
         st.markdown(
-            "<h2 style='text-align: center; color: #bb8ade;'>Empowering Women’s Health!</h2>", 
+            "<h2 style='text-align: center; color: #bb8ade;'>Empowering Women’s Health with Technology</h2>", 
             unsafe_allow_html=True
         )
     
@@ -51,10 +51,10 @@ def home_page():
         st.markdown("""
             <div style='background-color: #E9E0F4; padding: 20px; border-radius: 10px;'>
                 <h3 style='text-align: center;'>Welcome to PCOS Care</h3>
-                <p>Our AI-driven <strong>PCOS Risk Assessment tool</strong> helps women understand their health better through data-driven insights. This tool <strong>does not provide a medical diagnosis</strong>, but it serves as an informative resource.</p>
-                <p><strong>Early detection and awareness are key to managing PCOS effectively.</strong></p>
-                <p><strong>Use this platform to assess your risk, gain knowledge, and take informed actions.</strong></p>
-                <p style='text-align: center;'><em>Always consult a healthcare professional for medical advice.</em></p>
+                <p>Our AI-driven <strong>PCOS Risk Assessment tool</strong> helps women understand their health better with data-driven insights. This tool <strong>does not provide a medical diagnosis</strong>, but it serves as an informative resource.</p>
+                <p>Early detection and awareness are key to managing PCOS effectively.</p>
+                <p>Use this platform to assess your risk, gain knowledge, and take informed actions.</p>
+                <p style='text-align: center;'><strong>Always consult a healthcare professional for medical advice.</strong></p>
             </div>
         """, unsafe_allow_html=True)
     
@@ -107,24 +107,25 @@ def home_page():
             if img:
                 st.image(img, caption="Results Visualization", width=100)
             with st.expander("Results Visualization"):
-                st.markdown(f"<div style='{expander_height_style}'>View your risk level with intuitive graphs and visualizations.</div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='{expander_height_style}'>View your risk prediction and result with visualizations.</div>", unsafe_allow_html=True)
     
         # Call to Action
-        st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Start your journey towards better health!</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Start your journey towards better health...</h3>", unsafe_allow_html=True)
     
         # Add space between markdown and button
-        st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space  
-    
+        st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space 
+
         st.markdown("""
-            <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
-                <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
-                <ul style='list-style-type: disc; padding-left: 20px;'>
-                    <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>
-                    <li><strong>This is not a medical diagnosis.</strong> It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.</li>
-                    <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not generalize to all populations.</li>
-                </ul>
-            </div>
-        """, unsafe_allow_html=True)
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
+            <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
+            <p style='text-align: center; font-weight: bold;'>This tool is for informational purposes only and does not provide a medical diagnosis.</p>
+            <ul style='list-style-type: disc; padding-left: 20px;'>
+                <li>Predictions are based on available data from a dataset of <strong>patients in Kerala, India</strong>.</li>
+                <li>The assessment is <strong>not a substitute for a professional medical evaluation or diagnosis</strong>. Always consult a doctor for diagnosis and treatment.</li>
+                <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not apply to everyone.</li>
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
 
     except Exception as e:
         st.error("No internet connection detected. Please check your network and try again.")
