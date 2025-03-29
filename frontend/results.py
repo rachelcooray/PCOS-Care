@@ -60,7 +60,7 @@ def results_page():
         if predicted_pcos == "You are likely to have PCOS":
             custom_alert("This suggests a possibility of having PCOS. Please consult a healthcare professional.", "#E76F51")   # Greenish-blue
         else:
-            custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#F4A261")   # Greenish-blue
+            custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#9DC3D2")   # Greenish-blue
 
 
         # Section Break
