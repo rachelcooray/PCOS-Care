@@ -198,9 +198,6 @@ def results_page():
         </div>
     """, unsafe_allow_html=True)
 
-        # Section Break
-        st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
     else:
         custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4")   # Greenish-blue
 
