@@ -212,6 +212,10 @@ def calculate_waist_hip_ratio(waist, hip):
         return None
     
 def simple_risk_assessment_page():
+
+    # Initialize session state variables if not already present
+    if "form_data" not in st.session_state:
+        st.session_state.form_data = {}
     
     st.markdown(
         """
@@ -239,8 +243,7 @@ def simple_risk_assessment_page():
         """,
         unsafe_allow_html=True
     )
-
-    
+   
     col1, col2 = st.columns([1, 4])  
 
     with col1:
@@ -266,11 +269,13 @@ def simple_risk_assessment_page():
     st.write("### General Information")
     age = st.text_input(
         "Age (years):", 
+        value=st.session_state.form_data.get("age", ""),
         placeholder="25", 
         help="Enter your age as a whole number between 18 and 50."
     )
     weight = st.text_input(
         "Weight (Kg):", 
+        value=st.session_state.form_data.get("height", ""),
         placeholder="60.5", 
         help="Enter your weight in kilograms. Decimals are allowed."
     )
