@@ -5,10 +5,79 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go  # For gauge charts
 import altair as alt  # For bar charts
 import numpy as np
+from fpdf import FPDF
 
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
+
+# PDF Version of all data and result
+def generate_pdf(data, prediction):
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+    
+    # Title
+    pdf.set_font("Arial", style='B', size=16)
+    pdf.cell(200, 10, "PCOS Simple Risk Assessment Report", ln=True, align='C')
+    pdf.ln(10)
+    
+    # Section: User Input Data
+    pdf.set_font("Arial", style='B', size=12)
+    pdf.cell(200, 10, "Your Data:", ln=True)
+    pdf.ln(5)
+    pdf.set_font("Arial", size=10)
+    
+    # Create Table
+    col_width = 80  # Column width
+    row_height = 7  # Row height
+    
+    # Convert 'Yes/No' answers from 1/0 to 'Yes'/'No' for display in the PDF
+    for key, value in data.items():
+        display_value = value
+        if isinstance(value, int) and value == 1:
+            display_value = "Yes"
+        elif isinstance(value, int) and value == 0:
+            display_value = "No"
+        
+        pdf.set_font("Arial", style='B', size=10)
+        pdf.cell(col_width, row_height, f"{key}", border=1)
+        pdf.set_font("Arial", size=10)
+        pdf.cell(col_width, row_height, f"{display_value}", border=1)
+        pdf.ln(row_height)
+    pdf.ln(5)
+    
+    # Section: Prediction
+    pdf.set_font("Arial", style='B', size=12)
+    pdf.cell(200, 10, "Prediction:", ln=True)
+    pdf.ln(5)
+    pdf.set_font("Arial", style='B', size=14)
+    pdf.set_text_color(255, 0, 0)  # Red color for emphasis
+    pdf.cell(200, 10, f"{prediction}", ln=True)
+    
+    # Disclaimer Section
+    pdf.ln(10)
+    pdf.set_font("Arial", size=10)
+    pdf.set_text_color(0, 0, 0)  # Reset text color to black
+    disclaimer_text = (
+        "Disclaimer: The PCOSCare web app provides a prediction based on the data you entered. "
+        "This prediction is derived from a dataset of 541 patients from Kerala, India, and is intended for informational purposes only. "
+        "It is not a medical diagnosis and should not be used as a substitute for clinical evaluation. "
+        "The accuracy of the prediction is limited by the dataset's scope and quality, and the results may not be applicable to all populations. "
+        "Always consult a healthcare professional for a comprehensive diagnosis."
+    )
+    pdf.multi_cell(0, 10, disclaimer_text)
+    
+    # Save PDF
+    pdf_file_path = "pcos_assessment_report.pdf"
+    pdf.output(pdf_file_path)
+    return pdf_file_path
+
+def download_pdf(data, prediction):
+    pdf_path = generate_pdf(data, prediction)
+    with open(pdf_path, "rb") as file:
+        st.download_button(label="Download Report as PDF", data=file, file_name="PCOS_Risk_Assessment.pdf", mime="application/pdf")
+
 
 def create_gauge(value, title, min_val, max_val, color="blue"):
     """ Creates a simple gauge chart using Plotly. """
@@ -179,6 +248,11 @@ def results_page():
             custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#9DC3D2")   # Greenish-blue
 
         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+
+        st.subheader("Download your Report:")
+        # user_data = st.session_state.risk_assessment_data
+        # predicted_pcos = user_data.get("predicted_pcos", "Unknown")  # result from assessment
+        download_pdf(user_data, predicted_pcos)
         
         # Disclaimer Section
         st.markdown("""
