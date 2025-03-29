@@ -82,7 +82,7 @@ if page == "Home":
     home_page()
 elif page == "PCOS Information":
     pcos_info_page()
-elif page == "PCOS Dashboard":
+elif page == "Insights From Data":
     pcos_dashboard_page()
 elif page == "Simple Risk Assessment":
     simple_risk_assessment_page()
