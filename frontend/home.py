@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 from PIL import Image
+import base64
 
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
@@ -23,23 +24,24 @@ def load_and_resize_image(image_path, size=(70, 70)):
     else:
         return None
 
+def get_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+
 def home_page():
     try:
-        # Layout for logo and title
-        st.markdown("<div style='text-align: center; margin-bottom: 20px;'>", unsafe_allow_html=True)
-            
-        st.markdown("<div style='text-align: center; margin-bottom: 20px;'>", unsafe_allow_html=True)
-        
-        col1, col2 = st.columns([1, 4])  
-    
-        with col1:
-            if os.path.exists(logo_path):
-                st.image(logo_path, width=100)  
-            else:
-                st.error("Logo image not found.")
-    
-        with col2:
-            st.title("PCOS Care")
+        # Logo and Title
+        st.markdown(
+            f"""
+            <div style='text-align: center;'>
+                <img src='data:image/png;base64,{get_base64(logo_path)}' width='100'/> 
+                <h1>PCOS Care</h1>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
     
         # Welcome Message
         st.markdown(
@@ -115,6 +117,7 @@ def home_page():
         # Add space between markdown and button
         st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space 
 
+        # Disclaimer Section
         st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
             <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
