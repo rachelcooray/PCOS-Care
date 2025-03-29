@@ -23,7 +23,7 @@ def contact_help_page():
     st.subheader("Help & Contact")
     
     st.markdown("""
-    <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+    <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
         <h3 style='text-align: center; color: #b179d9;'>Need Assistance?</h3>
         <p>If you have any questions or encounter issues while using the app, feel free to reach out to us:</p>
         <p><strong>Email:</strong> <a href='mailto:w1956444@my.westminster.ac.uk'>w1956444@my.westminster.ac.uk</a></p>
@@ -35,7 +35,7 @@ def contact_help_page():
 
     # Feedback Section with a background color
     st.markdown("""
-    <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+    <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
         <h3 style='text-align: center; color: #b179d9;'>Feedback & Suggestions</h3>
         <p>We value your feedback! Please share your experience or suggestions with us via email at:</p>
         <p><strong>Email:</strong> <a href='mailto:w1956444@my.westminster.ac.uk'>w1956444@my.westminster.ac.uk</a></p>
@@ -46,7 +46,7 @@ def contact_help_page():
 
     # Privacy and Data Handling Section
     st.markdown("""
-    <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+    <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
         <h3 style='text-align: center; color: #b179d9;'>Privacy & Data Handling</h3>
         <p>We respect your privacy. All data provided will not be stored for future use or shared with third parties.</p>
     </div>
@@ -99,7 +99,7 @@ def contact_help_page():
 
     # Disclaimer Section
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+        <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
             <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
             <ul style='list-style-type: disc; padding-left: 20px;'>
                 <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>

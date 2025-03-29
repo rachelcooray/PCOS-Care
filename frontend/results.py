@@ -182,7 +182,7 @@ def results_page():
         
         # Disclaimer Section
         st.markdown("""
-            <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px;'>
+            <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
                 <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
                 <ul style='list-style-type: disc; padding-left: 20px;'>
                     <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>
