@@ -464,7 +464,7 @@ def simple_risk_assessment_page():
                     custom_alert(error, "#F0A693")   # Greenish-blue
                     st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             else:
-                custom_alert("All inputs are valid! Form submitted successfully.", "#5A9")   # Greenish-blue
+                custom_alert("All inputs are valid! Form submitted successfully.", "#51A199")   # Greenish-blue
                 st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
                 
                 data = {
