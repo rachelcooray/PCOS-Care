@@ -89,11 +89,3 @@ elif page == "Your Results":
     results_page()
 elif page == "Help & Contact":
     contact_help_page()
-
-
-
-
-
-
-
-
