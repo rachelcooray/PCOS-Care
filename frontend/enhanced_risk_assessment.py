@@ -253,6 +253,10 @@ def calculate_fsh_lh_ratio(fsh, lh):
     
 def enhanced_risk_assessment_page():
 
+    # Initialize session state variables if not already present
+    if "form_data" not in st.session_state:
+        st.session_state.form_data = {}
+
     st.markdown(
         """
         <style>
@@ -305,76 +309,158 @@ def enhanced_risk_assessment_page():
     st.write("### General Information")
     age = st.text_input(
         "Age (years):", 
+        value=st.session_state.form_data.get("age", ""),
         placeholder="25", 
         help="Enter your age as a whole number between 18 and 50."
     )
     weight = st.text_input(
         "Weight (Kg):", 
+        value=st.session_state.form_data.get("weight", ""),
         placeholder="60.5", 
         help="Enter your weight in kilograms. Decimals are allowed."
     )
     height = st.text_input(
         "Height (Cm):", 
+        value=st.session_state.form_data.get("height", ""),
         placeholder="160.5", 
         help="Enter your height in centimeters. Decimals are allowed."
     )
     blood_group = st.selectbox(
         "Blood Group:", 
         ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"], 
-        placeholder="Enter your Blood Group",
+        index=["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"].index(st.session_state.form_data.get("blood_group", "A+")),
         help="Select your blood group."
     )
     pulse_rate = st.text_input(
         "Pulse Rate (bpm):", 
+        value=st.session_state.form_data.get("pulse_rate", ""),
         placeholder="72.0", 
         help="Enter your pulse rate in beats per minute. Decimals are allowed."
     )
 
+
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
+    # st.write("### Symptoms")
+    # weight_gain = st.radio(
+    #     "Have you experienced unusual or excessive weight gain recently?", 
+    #     ["Yes", "No"], 
+    #     index=None, 
+    #     help="Select 'Yes' if you have experienced unusual or excessive weight gain recently."
+    # )
+    # hair_growth = st.radio(
+    #     "Have you observed abnormal or excessive hair growth?", 
+    #     ["Yes", "No"], 
+    #     index=None, 
+    #     help="Select 'Yes' if you have observed abnormal or excessive hair growth."
+    # )
+    # skin_darkening = st.radio(
+    #     "Have you experienced any skin darkening?", 
+    #     ["Yes", "No"], 
+    #     index=None, 
+    #     help="Select 'Yes' if you have noticed dark patches on your skin."
+    # )
+    # hair_loss = st.radio(
+    #     "Have you observed abnormal or excessive hair loss?", 
+    #     ["Yes", "No"], 
+    #     index=None, 
+    #     help="Select 'Yes' if you have observed abnormal or excessive hair loss."
+    # )
+    # pimples = st.radio(
+    #     "Do you have frequent or severe acne outbreaks?", 
+    #     ["Yes", "No"], 
+    #     index=None, 
+    #     help="Select 'Yes' if you have frequent or severe acne outbreaks."
+    # )
+    # fast_food = st.radio(
+    #     "Do you eat alot of fast food", 
+    #     ["Yes", "No"], 
+    #     index=None, 
+    #     help="Select 'Yes' if you eat alot of fast food."
+    # )
+    # reg_exercise = st.radio(
+    #     "Do you exercise regularly?", 
+    #     ["Yes", "No"], 
+    #     index=None, 
+    #     help="Select 'Yes' if you exercise regularly (at least 3 times a week)."
+    # )
+
+    # Ensure session state has initial values
+    if "weight_gain" not in st.session_state:
+        st.session_state.weight_gain = None
+    if "hair_growth" not in st.session_state:
+        st.session_state.hair_growth = None
+    if "skin_darkening" not in st.session_state:
+        st.session_state.skin_darkening = None
+    if "hair_loss" not in st.session_state:
+        st.session_state.hair_loss = None
+    if "pimples" not in st.session_state:
+        st.session_state.pimples = None
+    if "fast_food" not in st.session_state:
+        st.session_state.fast_food = None
+    if "reg_exercise" not in st.session_state:
+        st.session_state.reg_exercise = None
+    
     st.write("### Symptoms")
+    
+    # Using `index=None` and managing state with `session_state`
     weight_gain = st.radio(
         "Have you experienced unusual or excessive weight gain recently?", 
         ["Yes", "No"], 
-        index=None, 
+        index=None if st.session_state.weight_gain is None else ["Yes", "No"].index(st.session_state.weight_gain),
         help="Select 'Yes' if you have experienced unusual or excessive weight gain recently."
     )
+    
     hair_growth = st.radio(
         "Have you observed abnormal or excessive hair growth?", 
         ["Yes", "No"], 
-        index=None, 
+        index=None if st.session_state.hair_growth is None else ["Yes", "No"].index(st.session_state.hair_growth),
         help="Select 'Yes' if you have observed abnormal or excessive hair growth."
     )
+    
     skin_darkening = st.radio(
         "Have you experienced any skin darkening?", 
         ["Yes", "No"], 
-        index=None, 
+        index=None if st.session_state.skin_darkening is None else ["Yes", "No"].index(st.session_state.skin_darkening),
         help="Select 'Yes' if you have noticed dark patches on your skin."
     )
+    
     hair_loss = st.radio(
         "Have you observed abnormal or excessive hair loss?", 
         ["Yes", "No"], 
-        index=None, 
+        index=None if st.session_state.hair_loss is None else ["Yes", "No"].index(st.session_state.hair_loss),
         help="Select 'Yes' if you have observed abnormal or excessive hair loss."
     )
+    
     pimples = st.radio(
         "Do you have frequent or severe acne outbreaks?", 
         ["Yes", "No"], 
-        index=None, 
+        index=None if st.session_state.pimples is None else ["Yes", "No"].index(st.session_state.pimples),
         help="Select 'Yes' if you have frequent or severe acne outbreaks."
     )
+    
     fast_food = st.radio(
-        "Do you eat alot of fast food", 
+        "Do you eat a lot of fast food?", 
         ["Yes", "No"], 
-        index=None, 
-        help="Select 'Yes' if you eat alot of fast food."
+        index=None if st.session_state.fast_food is None else ["Yes", "No"].index(st.session_state.fast_food),
+        help="Select 'Yes' if you eat a lot of fast food."
     )
+    
     reg_exercise = st.radio(
         "Do you exercise regularly?", 
         ["Yes", "No"], 
-        index=None, 
+        index=None if st.session_state.reg_exercise is None else ["Yes", "No"].index(st.session_state.reg_exercise),
         help="Select 'Yes' if you exercise regularly (at least 3 times a week)."
     )
+    
+    # Update session state with the selected values
+    st.session_state.weight_gain = weight_gain
+    st.session_state.hair_growth = hair_growth
+    st.session_state.skin_darkening = skin_darkening
+    st.session_state.hair_loss = hair_loss
+    st.session_state.pimples = pimples
+    st.session_state.fast_food = fast_food
+    st.session_state.reg_exercise = reg_exercise
 
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
@@ -382,54 +468,67 @@ def enhanced_risk_assessment_page():
     
     rr_rate = st.text_input(
         "Respiratory Rate (breaths/min):", 
-         placeholder="18", 
-         help="Enter your respiratory rate in breaths per minute. Typical adult respiratory rate is between 12–20 breaths per minute. Count how many times you breathe in 1 minute."
+        value=st.session_state.form_data.get("rr_rate", ""),
+        placeholder="18", 
+        help="Enter your respiratory rate in breaths per minute. Typical adult respiratory rate is between 12–20 breaths per minute. Count how many times you breathe in 1 minute."
     )
     
     cycle = st.selectbox(
         "Cycle Regularity:", 
         ["Regular", "Irregular"], 
+        index=["Regular", "Irregular"].index(st.session_state.form_data.get("cycle", "Regular")),
         help="Select the cycle type as regular or irregular."
     )
     
     cycle_length = st.text_input(
         "Cycle length (days):", 
+        value=st.session_state.form_data.get("cycle_length", ""),
         placeholder="7", 
-         help="Enter the number of days your menstrual period typically lasts (not the entire cycle)."
+        help="Enter the number of days your menstrual period typically lasts (not the entire cycle)."
     )
     
     # marriage_years = st.text_input(
     #     "Marriage Status (Yrs):", 
     #     placeholder="0", 
-    #     help="Enter the number of years of marriage. Whole numbers only."    
+    #     help="Enter the number of years of marriage."
     # )
+
+    if "pregnancy_status" not in st.session_state:
+        st.session_state.pregnancy_status = None
     
     pregnancy_status = st.radio(
         "Have you ever been pregnant?", 
         ["Yes", "No"], 
-        index=None, 
-        help="Select if pregnant (Yes) or not (No)."
+        index=None if st.session_state.pregnancy_status is None else ["Yes", "No"].index(st.session_state.pregnancy_status),
+        help="Select if pregnant (Y) or not (N)."
     )
+
+    st.session_state.pregnancy_status = pregnancy_status
 
     no_of_abortions = st.text_input(
         "No. of Abortions:", 
+        value=st.session_state.form_data.get("no_of_abortions", ""),
         placeholder="0", 
         help="Enter the number of abortions (if any)."
     )
     
     hip = st.text_input(
         "Hip (inch):", 
+        value=st.session_state.form_data.get("hip", ""),
         placeholder="36", 
         help="Enter the hip measurement in inches."
     )
     
     waist = st.text_input(
         "Waist (inch):", 
+        value=st.session_state.form_data.get("waist", ""),
         placeholder="32", 
         help="Enter the waist measurement in inches."
     )
+    
     hemoglobin = st.text_input(
         "Hemoglobin Level",
+        value=st.session_state.form_data.get("hemoglobin", ""),
         placeholder="12", 
         help="Enter your hemoglobin level. Decimals are allowed."
     )
@@ -439,12 +538,14 @@ def enhanced_risk_assessment_page():
     st.write("### Blood Pressure")
     bp_systolic = st.text_input(
         "Systolic Blood Pressure (mmHg):", 
+        value=st.session_state.form_data.get("bp_systolic", ""),
         placeholder="120", 
         help="Enter your systolic blood pressure as a whole number between 80 and 200. Systolic is the top number of your blood pressure reading, measured when the heart beats."
     )
     
     bp_diastolic = st.text_input(
         "Diastolic Blood Pressure (mmHg):", 
+        value=st.session_state.form_data.get("bp_diastolic", ""),
         placeholder="80", 
         help="Enter your diastolic blood pressure as a whole number between 50 and 120. Diastolic is the bottom number of your blood pressure reading, measured between heartbeats."
     )
@@ -455,60 +556,70 @@ def enhanced_risk_assessment_page():
 
     beta_hcg_1 = st.text_input(
         "Beta-HCG (I) (mIU/mL):",
+        value=st.session_state.form_data.get("beta_hcg_1", ""),
         placeholder="25", 
         help="Beta-HCG (Human Chorionic Gonadotropin) is a hormone produced during pregnancy. The (I) refers to the initial measurement, typically done early in pregnancy to confirm pregnancy. Enter your Beta-HCG level in mIU/mL. Decimals are allowed."
     )
     
     beta_hcg_2 = st.text_input(
         "Beta-HCG (II) (mIU/mL):",
+        value=st.session_state.form_data.get("beta_hcg_2", ""),
         placeholder="25", 
         help="Beta-HCG (II) refers to a follow-up measurement of the hormone, typically taken a few days or weeks after the initial test to track pregnancy progress. Enter the follow-up Beta-HCG level in mIU/mL. Decimals are allowed."
     )
     
     fsh = st.text_input(
         "Follicle-Stimulating Hormone (FSH) (mIU/mL):",
+        value=st.session_state.form_data.get("fsh", ""),
         placeholder="5.5", 
         help="Follicle-Stimulating Hormone (FSH) is a hormone that helps regulate the menstrual cycle and promotes the growth of eggs in the ovaries. Enter the follicle-stimulating hormone level in mIU/mL. Decimals are allowed."
     )
     
     lh = st.text_input(
         "Luteinizing Hormone (LH) (mIU/mL):",
+        value=st.session_state.form_data.get("lh", ""),
         placeholder="6.2", 
         help="Luteinizing Hormone (LH) plays a key role in the menstrual cycle and the release of eggs from the ovaries (ovulation). Enter your LH level in mIU/mL. Decimals are allowed."
     )
     
     tsh = st.text_input(
         "Thyroid-Stimulating Hormone (TSH) (mIU/L):",
+        value=st.session_state.form_data.get("tsh", ""),
         placeholder="2.0",
         help="Thyroid-Stimulating Hormone (TSH) regulates thyroid function. High or low levels can indicate thyroid disorders. Enter the thyroid-stimulating hormone level in mIU/L. Decimals are allowed."
     )
     
     amh = st.text_input(
         "Anti-Müllerian Hormone (AMH) (ng/mL):",
+        value=st.session_state.form_data.get("amh", ""),
         placeholder="3.1",
         help="Anti-Müllerian Hormone (AMH) is a marker of ovarian reserve (the number of eggs remaining in the ovaries). Higher levels usually indicate more eggs. Enter the Anti-Müllerian hormone level in ng/mL. Decimals are allowed."
     )
     
     prl = st.text_input(
         "Prolactin (PRL) (ng/mL):",
+        value=st.session_state.form_data.get("prl", ""),
         placeholder="15.5",
         help="Prolactin is a hormone involved in milk production and reproductive health. Elevated levels can affect ovulation. Enter the Prolactin level in ng/mL. Decimals are allowed."
     )
     
     vit_d3 = st.text_input(
         "Vitamin D3 (ng/mL):",
+        value=st.session_state.form_data.get("vit_d3", ""),
         placeholder="30",
         help="Vitamin D3 is important for calcium absorption and overall health. Low levels can impact fertility. Enter the Vitamin D3 level in ng/mL. Decimals are allowed."
     )
     
     prg = st.text_input(
         "Progesterone (PRG) (ng/mL):",
+        value=st.session_state.form_data.get("prg", ""),
         placeholder="10.2",
         help="Progesterone is a hormone that helps regulate the menstrual cycle and supports pregnancy. Enter the Progesterone level in ng/mL. Decimals are allowed."
     )
     
     rbs = st.text_input(
         "Random Blood Sugar (RBS) (mg/dl):",
+        value=st.session_state.form_data.get("rbs", ""),
         placeholder="110",
         help="Random Blood Sugar (RBS) measures your blood sugar levels at any time of the day. Enter the Random Blood Sugar level in mg/dL. Decimals are allowed."
     )
@@ -519,33 +630,79 @@ def enhanced_risk_assessment_page():
     
     follicle_number_left = st.text_input(
         "Follicle Count (Left Ovary):",
+        value=st.session_state.form_data.get("follicle_number_left", ""),
         placeholder="5",
         help="Follicles are small sacs in the ovaries that contain eggs. The follicle count indicates the number of follicles in your left ovary. Whole numbers only."
     )
     
     follicle_number_right = st.text_input(
         "Follicle Count (Right Ovary):",
+        value=st.session_state.form_data.get("follicle_number_right", ""),
         placeholder="6",
         help="Follicles are small sacs in the ovaries that contain eggs. The follicle count indicates the number of follicles in your right ovary. Whole numbers only."
     )
     
     follicle_size_left = st.text_input(
         "Average Follicle Size (Left) (mm):",
+        value=st.session_state.form_data.get("follicle_size_left", ""),
         placeholder="12.5",
         help="Enter the average follicle size in the left ovary in mm. Decimals are allowed. This is typically measured during an ultrasound."
     )
     
     follicle_size_right = st.text_input(
         "Average Follicle Size (Right) (mm):",
+        value=st.session_state.form_data.get("follicle_size_right", ""),
         placeholder="13.2",
         help="Enter the average follicle size in the right ovary in mm. Decimals are allowed. This is typically measured during an ultrasound."
     )
     
     endometrium_thickness = st.text_input(
         "Endometrium Thickness (mm):",
+        value=st.session_state.form_data.get("endometrium_thickness", ""),
         placeholder="8.0",
         help="Endometrium thickness refers to the thickness of the uterine lining, which thickens during the menstrual cycle in preparation for pregnancy. Enter the thickness of the endometrial lining in mm. Decimals are allowed."
     )
+
+    # Save the form data to session state
+    st.session_state.form_data = {
+        "age": age,
+        "weight": weight,
+        "height": height,
+        "blood_group": blood_group,
+        "pulse_rate": pulse_rate,
+        "weight_gain": weight_gain,
+        "hair_growth": hair_growth,
+        "skin_darkening": skin_darkening,
+        "hair_loss": hair_loss,
+        "pimples": pimples,
+        "fast_food": fast_food,
+        "reg_exercise": reg_exercise,
+        "rr_rate": rr_rate,
+        "cycle": cycle,
+        "cycle_length": cycle_length,
+        "pregnancy_status": pregnancy_status,
+        "no_of_abortions": no_of_abortions,
+        "hip": hip,
+        "waist": waist,
+        "hemoglobin": hemoglobin,
+        "bp_systolic": bp_systolic,
+        "bp_diastolic": bp_diastolic,
+        "beta_hcg_1": beta_hcg_1,
+        "beta_hcg_2": beta_hcg_2,
+        "fsh": fsh,
+        "lh": lh,
+        "tsh": tsh,
+        "amh": amh,
+        "prl": prl,
+        "vit_d3": vit_d3,
+        "prg": prg,
+        "rbs": rbs,
+        "follicle_number_left": follicle_number_left,
+        "follicle_number_right": follicle_number_right,
+        "follicle_size_left": follicle_size_left,
+        "follicle_size_right": follicle_size_right,
+        "endometrium_thickness": endometrium_thickness
+    }
 
     
     # Validate inputs
