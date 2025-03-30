@@ -1,0 +1,494 @@
+2025-03-30 02:53:32,038 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 02:53:32,039 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 02:53:32,039 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:53:32,039 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 02:53:32,040 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:53:32,046 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 02:53:32,047 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:53:32,047 - ERROR - Missing numerical feature: BMI
+2025-03-30 02:53:32,047 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:53:32,054 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 'N', 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:53:32,058 - ERROR - Unexpected error occurred
+Traceback (most recent call last):
+  File "/Users/rachelcooray/Desktop/PCOS-Care/app.py", line 120, in predict_simple
+    prediction = loaded_svm.predict(final_inputs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 451, in predict
+    scores = self.decision_function(X)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 432, in decision_function
+    X = self._validate_data(X, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/utils/validation.py", line 915, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 380, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'N'
+2025-03-30 02:56:07,986 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 02:56:07,987 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 02:56:08,001 - INFO -  * Restarting with watchdog (fsevents)
+2025-03-30 02:56:09,151 - WARNING -  * Debugger is active!
+2025-03-30 02:56:09,165 - INFO -  * Debugger PIN: 579-819-217
+2025-03-30 02:56:24,760 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 02:56:24,760 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 02:56:24,761 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:56:24,761 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 02:56:24,762 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:56:24,764 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 02:56:24,765 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:56:24,765 - ERROR - Missing numerical feature: BMI
+2025-03-30 02:56:24,765 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:56:24,770 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 'N', 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:56:24,773 - ERROR - Unexpected error occurred
+Traceback (most recent call last):
+  File "/Users/rachelcooray/Desktop/PCOS-Care/app.py", line 120, in predict_simple
+    prediction = loaded_svm.predict(final_inputs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 451, in predict
+    scores = self.decision_function(X)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 432, in decision_function
+    X = self._validate_data(X, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/utils/validation.py", line 915, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 380, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'N'
+2025-03-30 02:56:24,908 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/app.log", inode=95072442, flags=11000, id=135613206): is_file, is_modified
+2025-03-30 02:56:24,909 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/app.log', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:20,022 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/test_app.py", inode=95067472, flags=11400, id=135615493): is_file, is_inode_meta_mod, is_modified
+2025-03-30 02:57:20,023 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/.~test_app.py", inode=95073133, flags=15700, id=135615496): is_coalesced, is_created, is_file, is_inode_meta_mod, is_modified, is_owner_change, is_removed
+2025-03-30 02:57:20,023 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/test_app.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:20,023 - DEBUG - queue_event FileCreatedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/.~test_app.py', dest_path='', event_type='created', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:20,024 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 02:57:20,025 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/tests/test_app.py', reloading
+2025-03-30 02:57:20,025 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/.~test_app.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:20,025 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/tests/.~test_app.py', reloading
+2025-03-30 02:57:20,025 - DEBUG - queue_event FileDeletedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/.~test_app.py', dest_path='', event_type='deleted', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:20,025 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/tests/.~test_app.py', reloading
+2025-03-30 02:57:20,025 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 02:57:20,025 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/tests/.~test_app.py', reloading
+2025-03-30 02:57:20,085 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/.ipynb_checkpoints/test_app-checkpoint.py", inode=95067476, flags=15400, id=135615508): is_file, is_inode_meta_mod, is_modified, is_owner_change
+2025-03-30 02:57:20,085 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/.ipynb_checkpoints/test_app-checkpoint.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:20,086 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/tests/.ipynb_checkpoints/test_app-checkpoint.py', reloading
+2025-03-30 02:57:20,102 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/.ipynb_checkpoints/test_app-checkpoint.py", inode=95067476, flags=15400, id=135615514): is_file, is_inode_meta_mod, is_modified, is_owner_change
+2025-03-30 02:57:20,102 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/.ipynb_checkpoints/test_app-checkpoint.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:20,102 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/tests/.ipynb_checkpoints/test_app-checkpoint.py', reloading
+2025-03-30 02:57:20,838 - INFO -  * Restarting with watchdog (fsevents)
+2025-03-30 02:57:22,290 - WARNING -  * Debugger is active!
+2025-03-30 02:57:22,300 - INFO -  * Debugger PIN: 579-819-217
+2025-03-30 02:57:26,911 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc.4353306800", inode=95073163, flags=11900, id=135615858): is_coalesced, is_created, is_file, is_modified, is_renamed
+2025-03-30 02:57:26,911 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc", inode=95073163, flags=10800, id=135615859): is_file, is_renamed
+2025-03-30 02:57:26,911 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc", inode=95072440, flags=10800, id=135615860): is_file, is_renamed
+2025-03-30 02:57:26,911 - DEBUG - queue_event FileCreatedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc.4353306800', dest_path='', event_type='created', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:26,911 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 02:57:26,911 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc.4353306800', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:26,911 - DEBUG - Destination event for rename is NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc", inode=95073163, flags=10800, id=135615859)
+2025-03-30 02:57:26,911 - DEBUG - queue_event FileMovedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc.4353306800', dest_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc', event_type='moved', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:26,912 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 02:57:26,912 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 02:57:26,913 - DEBUG - queue_event FileDeletedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__/test_app.cpython-312.pyc', dest_path='', event_type='deleted', is_directory=False, is_synthetic=False)
+2025-03-30 02:57:26,913 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/tests/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 02:57:27,894 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 02:57:27,894 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 02:57:27,895 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:57:27,895 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 02:57:27,896 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:57:27,898 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 02:57:27,899 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:57:27,899 - ERROR - Missing numerical feature: BMI
+2025-03-30 02:57:27,900 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:57:27,904 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:57:27,919 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/app.log", inode=95072442, flags=11000, id=135615863): is_file, is_modified
+2025-03-30 02:57:27,919 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/app.log', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 02:59:15,672 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 02:59:15,672 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 02:59:15,673 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:59:15,673 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 02:59:15,673 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:59:15,679 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 02:59:15,679 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:59:15,680 - ERROR - Missing numerical feature: BMI
+2025-03-30 02:59:15,680 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 02:59:15,686 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:05:55,117 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:05:55,118 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:05:55,120 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:05:55,121 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:05:55,133 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:05:55,133 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:05:55,133 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:05:55,133 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:05:55,134 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:05:55,136 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:05:55,136 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:05:55,136 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:05:55,137 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:05:55,141 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:08:28,897 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:08:28,898 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:08:28,900 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:08:28,900 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:08:28,909 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:08:28,909 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:08:28,909 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:08:28,909 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:08:28,910 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:08:28,911 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:08:28,912 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:08:28,912 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:08:28,913 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:08:28,916 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:09:03,098 - ERROR - Unexpected error occurred
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 608, in get_json
+    rv = self.json_module.loads(data)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/json/provider.py", line 187, in loads
+    return json.loads(s, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/wrappers.py", line 131, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 642, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rachelcooray/Desktop/PCOS-Care/app.py", line 84, in predict_simple
+    data = request.json
+           ^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 557, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 617, in get_json
+    rv = self.on_json_loading_failed(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/wrappers.py", line 136, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2025-03-30 03:09:03,104 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:09:03,105 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:09:03,107 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:09:03,108 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:09:03,116 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:09:03,116 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:09:03,117 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:09:03,117 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:09:03,118 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:09:03,119 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:09:03,120 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:09:03,120 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:09:03,120 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:09:03,124 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:11:24,259 - DEBUG - Received data: {'Age': 25}
+2025-03-30 03:11:24,260 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:11:24,261 - ERROR - Unexpected error occurred
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 608, in get_json
+    rv = self.json_module.loads(data)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/json/provider.py", line 187, in loads
+    return json.loads(s, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/wrappers.py", line 131, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 642, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rachelcooray/Desktop/PCOS-Care/app.py", line 84, in predict_simple
+    data = request.json
+           ^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 557, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/wrappers/request.py", line 617, in get_json
+    rv = self.on_json_loading_failed(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/wrappers.py", line 136, in on_json_loading_failed
+    raise BadRequest() from e
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2025-03-30 03:11:24,267 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:11:24,268 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:11:24,270 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:11:24,270 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:11:24,280 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:11:24,280 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:11:24,280 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:11:24,280 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:11:24,281 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:11:24,283 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:11:24,283 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:11:24,283 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:11:24,284 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:11:24,288 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:13:11,860 - DEBUG - Received data: {'Age': 25}
+2025-03-30 03:13:11,861 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:13:11,865 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:13:11,866 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:13:11,868 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:13:11,868 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:13:11,876 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:13:11,876 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:13:11,877 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:13:11,877 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:13:11,877 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:13:11,879 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:13:11,879 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:13:11,879 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:13:11,879 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:13:11,883 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:16:02,250 - DEBUG - Received data: {'Age': 25}
+2025-03-30 03:16:02,250 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:16:02,255 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:16:02,256 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:16:02,258 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:16:02,258 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:16:02,267 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:16:02,267 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:16:02,267 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:16:02,267 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:16:02,268 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:16:02,270 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:16:02,270 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:16:02,270 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:16:02,270 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:16:02,274 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:17:42,907 - DEBUG - Received data: {'Age': 25}
+2025-03-30 03:17:42,907 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:17:42,910 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:17:42,910 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:17:42,910 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:17:42,913 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:17:42,914 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:17:42,916 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:17:42,917 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:17:42,926 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:17:42,926 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:17:42,927 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:17:42,927 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:17:42,928 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:17:42,929 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:17:42,930 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:17:42,930 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:17:42,930 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:17:42,934 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:19:10,060 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:19:10,061 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:19:10,063 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:19:10,063 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:19:10,063 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:19:10,066 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:19:10,067 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:19:10,069 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:19:10,069 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:19:10,079 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:19:10,079 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:19:10,079 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:19:10,079 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:19:10,080 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:19:10,082 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:19:10,082 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:19:10,082 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:19:10,083 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:19:10,086 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:20:26,970 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:20:26,970 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:20:26,972 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:20:26,973 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:20:26,973 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:20:26,976 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:20:26,976 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:20:26,978 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:20:26,979 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:20:26,988 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:20:26,988 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:20:26,989 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:20:26,989 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:20:26,989 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:20:26,991 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:20:26,991 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:20:26,991 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:20:26,992 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:20:26,995 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:21:26,735 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:21:26,735 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:21:26,738 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:21:26,738 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:21:26,739 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:21:26,742 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:21:26,742 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:21:26,745 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:21:26,746 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:21:26,754 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:21:26,754 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:21:26,755 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:21:26,755 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:21:26,756 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:21:26,757 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:21:26,758 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:21:26,758 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:21:26,758 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:21:26,762 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:29,145 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:22:29,146 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:22:29,150 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:22:29,151 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:22:29,153 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:22:29,153 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:22:29,162 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:22:29,162 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:22:29,163 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:29,163 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:22:29,163 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:29,166 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:22:29,166 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:29,166 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:22:29,167 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:29,170 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:50,383 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:22:50,383 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:22:50,385 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:22:50,386 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:22:50,386 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:22:50,388 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:22:50,389 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:22:50,391 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:22:50,391 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:22:50,400 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:22:50,400 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:22:50,400 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:50,400 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:22:50,401 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:50,403 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:22:50,403 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:50,403 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:22:50,404 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:22:50,407 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:00,020 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:24:00,020 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:24:00,022 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:24:00,023 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:24:00,023 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:24:00,026 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:24:00,026 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:24:00,028 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:24:00,029 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:24:00,038 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:24:00,038 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:24:00,038 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:00,038 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:24:00,039 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:00,041 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:24:00,041 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:00,041 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:24:00,041 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:00,045 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:29,800 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:24:29,800 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:24:29,802 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:24:29,803 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:24:29,803 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:24:29,806 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:24:29,807 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:24:29,809 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:24:29,810 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:24:29,819 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:24:29,819 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:24:29,819 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:29,820 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:24:29,820 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:29,822 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:24:29,823 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:29,823 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:24:29,823 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:24:29,827 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:26:48,707 - DEBUG - Received data: {'Age (yrs)': 25}
+2025-03-30 03:26:48,707 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,710 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,710 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Weight (Kg)': 60}
+2025-03-30 03:26:48,710 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,714 - ERROR - Missing categorical feature: Weight gain(Y/N)
+2025-03-30 03:26:48,715 - ERROR - Missing numerical feature:   I   beta-HCG(mIU/mL)
+2025-03-30 03:26:48,717 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:26:48,718 - ERROR - Missing numerical feature: Hb(g/dl)
+2025-03-30 03:26:48,728 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,729 - DEBUG - Received data: {'Age (yrs)': -1, 'BMI': 0, 'Pulse rate(bpm)': 200, 'Weight (Kg)': 999}
+2025-03-30 03:26:48,729 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,730 - DEBUG - Received data: {'Age (yrs)': 18, 'BMI': 19.5, 'Weight (Kg)': 45}
+2025-03-30 03:26:48,730 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,731 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Pulse rate(bpm)': 75, 'Weight (Kg)': 60}
+2025-03-30 03:26:48,731 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,732 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Pulse rate(bpm)': 75, 'Weight (Kg)': 60}
+2025-03-30 03:26:48,732 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,732 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Pulse rate(bpm)': 75, 'Weight (Kg)': 60}
+2025-03-30 03:26:48,732 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,733 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Pulse rate(bpm)': 75, 'Weight (Kg)': 60}
+2025-03-30 03:26:48,733 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,733 - DEBUG - Received data: {'Age (yrs)': 'Twenty-five'}
+2025-03-30 03:26:48,733 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,734 - DEBUG - Received data: {'Age (yrs)': 25, 'BMI': 22.5, 'Pulse rate(bpm)': 75, 'Weight (Kg)': 60}
+2025-03-30 03:26:48,734 - ERROR - Missing numerical feature:  Age (yrs)
+2025-03-30 03:26:48,735 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0}
+2025-03-30 03:26:48,735 - ERROR - Missing numerical feature: BP _Diastolic (mmHg)
+2025-03-30 03:26:48,736 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:26:48,736 - ERROR - Missing numerical feature: Hip(inch)
+2025-03-30 03:26:48,737 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:26:48,739 - ERROR - Missing categorical feature: Pregnant(Y/N)
+2025-03-30 03:26:48,739 - DEBUG - Received data: {' Age (yrs)': 25, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:26:48,739 - ERROR - Missing numerical feature: BMI
+2025-03-30 03:26:48,740 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:26:48,744 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}

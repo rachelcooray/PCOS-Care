@@ -2,17 +2,20 @@ from flask import Flask, request, jsonify
 import pickle
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import logging
 
 app = Flask(__name__)
+
+logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # reference
 ## https://flask.palletsprojects.com/en/stable/errorhandling/
 
-# Load the trained SVM model and scaler
+# Load the trained Logistic Regression model 
 with open("best_logistic_reg_simple_smote.pkl", "rb") as model_file:
     loaded_svm = pickle.load(model_file)
 
-# Load the trained Random Forest model and scaler
+# Load the trained Logistic Regression model for enhanced
 with open("best_logistic_reg_enhanced_smote.pkl", "rb") as model_file:
     loaded_random_forest = pickle.load(model_file)
 
@@ -79,6 +82,7 @@ def predict_simple():
             return jsonify({"error": "Unsupported Media Type. Only JSON requests are allowed."}), 415
         
         data = request.json
+        logging.debug(f"Received data: {data}")
 
         # Get user input for numerical columns
         user_inputs = []
@@ -86,6 +90,7 @@ def predict_simple():
             if col in data:
                 user_inputs.append(data[col])
             else:
+                logging.error(f"Missing numerical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
         # Prepare the DataFrame with numerical inputs (before scaling)
@@ -101,6 +106,7 @@ def predict_simple():
             if col in data:
                 categorical_inputs.append(data[col])
             else:
+                logging.error(f"Missing categorical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
         # Combine scaled numerical inputs and categorical inputs into a final DataFrame
@@ -117,8 +123,10 @@ def predict_simple():
         result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
         return jsonify({"prediction": result})
 
+    except ValueError as e:
+        return jsonify({"error": "Bad Request", "message": str(e)}), 400
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": "Internal Server Error", "message": str(e)}), 500
 
 
 # Endpoint for enhanced prediction
@@ -135,6 +143,7 @@ def predict_enhanced():
             if col in data:
                 user_inputs.append(data[col])
             else:
+                logging.error(f"Missing numerical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
         numerical_inputs_df = pd.DataFrame([user_inputs], columns=numerical_columns_scan)
@@ -147,6 +156,7 @@ def predict_enhanced():
             if col in data:
                 categorical_inputs.append(data[col])
             else:
+                logging.error(f"Missing categorical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
         final_inputs = pd.DataFrame(scaled_numerical_inputs, columns=numerical_columns_scan)
@@ -159,8 +169,10 @@ def predict_enhanced():
         result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
         return jsonify({"prediction": result})
 
+    except ValueError as e:
+        return jsonify({"error": "Bad Request", "message": str(e)}), 400
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": "Internal Server Error", "message": str(e)}), 500
 
 
 @app.errorhandler(404)
