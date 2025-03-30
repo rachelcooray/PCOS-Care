@@ -11,13 +11,17 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s
 # reference
 ## https://flask.palletsprojects.com/en/stable/errorhandling/
 
-# Load the trained Logistic Regression model 
-with open("best_logistic_reg_simple_smote.pkl", "rb") as model_file:
-    loaded_simple = pickle.load(model_file)
-
-# Load the trained Logistic Regression model for enhanced
-with open("best_logistic_reg_enhanced_smote.pkl", "rb") as model_file:
-    loaded_enhanced = pickle.load(model_file)
+# Load models safely
+try:
+    with open("best_logistic_reg_simple_smote.pkl", "rb") as model_file:
+        loaded_simple = pickle.load(model_file)
+    with open("best_logistic_reg_enhanced_smote.pkl", "rb") as model_file:
+        loaded_enhanced = pickle.load(model_file)
+    logging.info("Models loaded successfully.")
+except Exception as e:
+    logging.error(f"Error loading models: {e}")
+    loaded_simple = None
+    loaded_enhanced = None
 
 
 # Features

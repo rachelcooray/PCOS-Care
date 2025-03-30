@@ -1,6 +1,6 @@
 import unittest
 import json
-from app import app  # Assuming your Flask app is in a file named app.py
+from app import app  
 
 class TestPCOSPredictionEnhanced(unittest.TestCase):
     
