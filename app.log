@@ -648,3 +648,86 @@ werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a r
 2025-03-30 03:45:02,394 - ERROR - Missing numerical feature: BMI
 2025-03-30 03:45:02,394 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
 2025-03-30 03:45:02,398 - DEBUG - Received data: {' Age (yrs)': 25, 'BMI': 23.4, 'BP _Diastolic (mmHg)': 80, 'BP _Systolic (mmHg)': 120, 'Blood Group': 11, 'Cycle length(days)': 30, 'Cycle(R/I)': 2, 'Fast food (Y/N)': 1, 'Hair loss(Y/N)': 0, 'Height(Cm) ': 160, 'Hip(inch)': 36, 'No. of aborptions': 0, 'Pimples(Y/N)': 0, 'Pregnant(Y/N)': 0, 'Pulse rate(bpm) ': 72, 'RR (breaths/min)': 16, 'Reg.Exercise(Y/N)': 1, 'Skin darkening (Y/N)': 0, 'Waist(inch)': 28, 'Waist:Hip Ratio': 0.78, 'Weight (Kg)': 60, 'Weight gain(Y/N)': 0, 'hair growth(Y/N)': 0}
+2025-03-30 03:47:17,988 - INFO - Models loaded successfully.
+2025-03-30 03:47:18,004 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 03:47:18,004 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-30 03:47:18,012 - INFO -  * Restarting with watchdog (fsevents)
+2025-03-30 03:47:19,367 - INFO - Models loaded successfully.
+2025-03-30 03:47:19,378 - WARNING -  * Debugger is active!
+2025-03-30 03:47:19,394 - INFO -  * Debugger PIN: 579-819-217
+2025-03-30 03:47:31,037 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py", inode=95084738, flags=15500, id=135754875): is_created, is_file, is_inode_meta_mod, is_modified, is_owner_change
+2025-03-30 03:47:31,038 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py", inode=91625718, flags=10400, id=135754878): is_file, is_inode_meta_mod
+2025-03-30 03:47:31,038 - DEBUG - queue_event FileCreatedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='created', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,038 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:47:31,039 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:47:31,040 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,040 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:47:31,040 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,040 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', reloading
+2025-03-30 03:47:31,057 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py", inode=91625718, flags=11400, id=135754881): is_file, is_inode_meta_mod, is_modified
+2025-03-30 03:47:31,057 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py", inode=95084738, flags=15700, id=135754884): is_coalesced, is_created, is_file, is_inode_meta_mod, is_modified, is_owner_change, is_removed
+2025-03-30 03:47:31,057 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,057 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', reloading
+2025-03-30 03:47:31,057 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,057 - DEBUG - queue_event FileDeletedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='deleted', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,057 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:47:31,058 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:47:31,058 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:47:31,174 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py", inode=91625705, flags=10400, id=135754887): is_file, is_inode_meta_mod
+2025-03-30 03:47:31,174 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,174 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py', reloading
+2025-03-30 03:47:31,185 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py", inode=91625705, flags=15400, id=135754899): is_file, is_inode_meta_mod, is_modified, is_owner_change
+2025-03-30 03:47:31,185 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,186 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py', reloading
+2025-03-30 03:47:31,218 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py", inode=91625705, flags=15400, id=135754905): is_file, is_inode_meta_mod, is_modified, is_owner_change
+2025-03-30 03:47:31,218 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:31,218 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.ipynb_checkpoints/simple_risk_assessment-checkpoint.py', reloading
+2025-03-30 03:47:31,630 - INFO -  * Restarting with watchdog (fsevents)
+2025-03-30 03:47:33,087 - INFO - Models loaded successfully.
+2025-03-30 03:47:33,102 - WARNING -  * Debugger is active!
+2025-03-30 03:47:33,113 - INFO -  * Debugger PIN: 579-819-217
+2025-03-30 03:47:34,502 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc.5609698000", inode=95084744, flags=11900, id=135754998): is_coalesced, is_created, is_file, is_modified, is_renamed
+2025-03-30 03:47:34,502 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc", inode=95084744, flags=10800, id=135754999): is_file, is_renamed
+2025-03-30 03:47:34,502 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc", inode=95060101, flags=10800, id=135755000): is_file, is_renamed
+2025-03-30 03:47:34,503 - DEBUG - queue_event FileCreatedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc.5609698000', dest_path='', event_type='created', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:34,503 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:47:34,504 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc.5609698000', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:34,504 - DEBUG - Destination event for rename is NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc", inode=95084744, flags=10800, id=135754999)
+2025-03-30 03:47:34,504 - DEBUG - queue_event FileMovedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc.5609698000', dest_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc', event_type='moved', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:34,504 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:47:34,505 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:47:34,505 - DEBUG - queue_event FileDeletedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__/simple_risk_assessment.cpython-312.pyc', dest_path='', event_type='deleted', is_directory=False, is_synthetic=False)
+2025-03-30 03:47:34,505 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/__pycache__', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:48:19,742 - DEBUG - Received data: {' Age (yrs)': '25', 'Weight (Kg)': '65', 'Height(Cm) ': '167', 'BMI': 23.306680053067517, 'Blood Group': 11, 'Pulse rate(bpm) ': '76', 'Weight gain(Y/N)': 1, 'hair growth(Y/N)': 1, 'Skin darkening (Y/N)': 1, 'Hair loss(Y/N)': 1, 'Pimples(Y/N)': 1, 'Fast food (Y/N)': 1, 'Reg.Exercise(Y/N)': 0, 'RR (breaths/min)': '16', 'Cycle(R/I)': 2, 'Cycle length(days)': '5', 'Pregnant(Y/N)': 0, 'No. of aborptions': '0', 'Hip(inch)': '38', 'Waist(inch)': '32', 'Waist:Hip Ratio': 0.8421052631578947, 'BP _Systolic (mmHg)': '120', 'BP _Diastolic (mmHg)': '80'}
+2025-03-30 03:48:19,755 - INFO - 127.0.0.1 - - [30/Mar/2025 03:48:19] "POST /predict-simple HTTP/1.1" 200 -
+2025-03-30 03:48:20,302 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/pcos_simple_assessment_report.pdf", inode=95084858, flags=11100, id=135756214): is_created, is_file, is_modified
+2025-03-30 03:48:20,303 - DEBUG - queue_event FileCreatedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/pcos_simple_assessment_report.pdf', dest_path='', event_type='created', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:20,303 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:48:20,304 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/pcos_simple_assessment_report.pdf', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:22,657 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/pcos_assessment_report.pdf", inode=95084861, flags=11100, id=135756257): is_created, is_file, is_modified
+2025-03-30 03:48:22,657 - DEBUG - queue_event FileCreatedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/pcos_assessment_report.pdf', dest_path='', event_type='created', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:22,657 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:48:22,657 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/pcos_assessment_report.pdf', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:35,497 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py", inode=95084920, flags=15500, id=135756921): is_created, is_file, is_inode_meta_mod, is_modified, is_owner_change
+2025-03-30 03:48:35,498 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py", inode=91625718, flags=10400, id=135756924): is_file, is_inode_meta_mod
+2025-03-30 03:48:35,498 - DEBUG - queue_event FileCreatedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='created', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:35,498 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:48:35,500 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:48:35,500 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:35,500 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:48:35,500 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:35,500 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', reloading
+2025-03-30 03:48:35,517 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py", inode=91625718, flags=11400, id=135756927): is_file, is_inode_meta_mod, is_modified
+2025-03-30 03:48:35,517 - DEBUG - NativeEvent(path="/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py", inode=95084920, flags=15700, id=135756930): is_coalesced, is_created, is_file, is_inode_meta_mod, is_modified, is_owner_change, is_removed
+2025-03-30 03:48:35,517 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:35,517 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/simple_risk_assessment.py', reloading
+2025-03-30 03:48:35,517 - DEBUG - queue_event FileModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='modified', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:35,517 - DEBUG - queue_event FileDeletedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', dest_path='', event_type='deleted', is_directory=False, is_synthetic=False)
+2025-03-30 03:48:35,517 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:48:35,517 - DEBUG - queue_event DirModifiedEvent(src_path='/Users/rachelcooray/Desktop/PCOS-Care/frontend', dest_path='', event_type='modified', is_directory=True, is_synthetic=False)
+2025-03-30 03:48:35,518 - INFO -  * Detected change in '/Users/rachelcooray/Desktop/PCOS-Care/frontend/.~simple_risk_assessment.py', reloading
+2025-03-30 03:48:35,695 - INFO -  * Restarting with watchdog (fsevents)
+2025-03-30 03:48:37,164 - INFO - Models loaded successfully.
+2025-03-30 03:48:37,172 - WARNING -  * Debugger is active!
+2025-03-30 03:48:37,182 - INFO -  * Debugger PIN: 579-819-217
