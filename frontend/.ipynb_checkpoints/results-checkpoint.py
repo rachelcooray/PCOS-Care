@@ -6,6 +6,11 @@ import plotly.graph_objects as go  # For gauge charts
 import altair as alt  # For bar charts
 import numpy as np
 from fpdf import FPDF
+import base64
+
+def get_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
 
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
@@ -100,17 +105,16 @@ def custom_alert(message, color):
     """, unsafe_allow_html=True)
 
 def results_page():
-    # Layout for logo and title
-    col1, col2 = st.columns([1, 4]) 
-
-    with col1:
-        if os.path.exists(logo_path):
-            st.image(logo_path, width=100)  
-        else:
-            st.error("Logo image not found.")
-
-    with col2:
-        st.title("PCOS Care")
+    # Logo and Title
+    st.markdown(
+        f"""
+        <div style='text-align: center;'>
+            <img src='data:image/png;base64,{get_base64(logo_path)}' width='100'/> 
+            <h1>PCOS Care</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
         
 
     st.subheader("Your PCOS Risk Assessment Results")
@@ -129,9 +133,9 @@ def results_page():
         """, unsafe_allow_html=True)
 
         if predicted_pcos == "You are likely to have PCOS":
-            custom_alert("This suggests a possibility of having PCOS. Please consult a healthcare professional.", "#E76F51")   # Greenish-blue
+            custom_alert("This suggests a possibility of having PCOS. Please consult a healthcare professional.", "#E76F51")  
         else:
-            custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#9DC3D2")   # Greenish-blue
+            custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#9DC3D2")   
 
 
         # Section Break
@@ -150,21 +154,21 @@ def results_page():
         if fsh_lh_ratio is not None:
             with col1:
                 st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-                custom_alert("A Body Mass Index (BMI) of over 25 may indicate a risk factor for PCOS.", "#9DC3D2")   # Greenish-blue
+                custom_alert("A Body Mass Index (BMI) of over 25 may indicate a risk factor for PCOS.", "#9DC3D2")   
                 
             with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-                custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2")   # Greenish-blue
+                custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2")   
 
             with col3:
                 st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
-                custom_alert("A lower FSH than LH may indicate hormonal imbalance, a key PCOS marker.", "#9DC3D2")   # Greenish-blue
+                custom_alert("A lower FSH than LH may indicate hormonal imbalance, a key PCOS marker.", "#9DC3D2")   
 
         else:
             with col1:
                 if bmi is not None:
                     st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-                    custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#9DC3D2")   # Greenish-blue
+                    custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#9DC3D2")   
                 else:
                     st.markdown("BMI data unavailable")
                     
@@ -172,7 +176,7 @@ def results_page():
             with col3:
                 if waist_hip_ratio is not None:
                     st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-                    custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2")   # Greenish-blue
+                    custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2")   
                 else:
                     st.markdown("Waist-Hip Ratio data unavailable")
                     
@@ -180,7 +184,7 @@ def results_page():
         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         
         # Adding the overall message
-        custom_alert("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.", "#9F90FA")   # Greenish-blue
+        custom_alert("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.", "#9F90FA")   
 
 
         # **2. Cycle Irregularities (If Selected)**
@@ -215,7 +219,7 @@ def results_page():
             
                 # Display additional information based on LH/FSH ratio
                 if lh > fsh:
-                    custom_alert("Your LH Level is higher than  the FSH Level, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.", "#E76F51")   # Greenish-blue
+                    custom_alert("Your LH Level is higher than  the FSH Level, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.", "#E76F51")   
                 elif lh == fsh:
                     custom_alert("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.", "#F4A261")   # Greenish-blue
                 else:
@@ -231,7 +235,7 @@ def results_page():
             st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             st.subheader("Lifestyle Factors")
             
-            custom_alert("Lifestyle factors can significantly impact PCOS risk.", "#5A4CA4")   # Greenish-blue
+            custom_alert("Lifestyle factors can significantly impact PCOS risk.", "#5A4CA4")   
             
             st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             
@@ -247,7 +251,7 @@ def results_page():
         if predicted_pcos == "You are likely to have PCOS":
             custom_alert("We strongly recommend seeking medical advice for further evaluation.You can download your data as a PDF to share with your healthcare provider.", "#5A4CA4")   # Greenish-blue
         else:
-            custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#9DC3D2")   # Greenish-blue
+            custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#9DC3D2")   
 
         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
 
@@ -256,23 +260,22 @@ def results_page():
         
         # Disclaimer Section
         st.markdown("""
-            <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
+            <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
                 <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
+                <p style='text-align: center; font-weight: bold;'>This tool is for informational purposes only and does not provide a medical diagnosis.</p>
                 <ul style='list-style-type: disc; padding-left: 20px;'>
-                    <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>
-                    <li><strong>This is not a medical diagnosis.</strong> It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.</li>
-                    <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not generalize to all populations.</li>
+                    <li>Predictions are based on available data from a dataset of <strong>patients in Kerala, India</strong>.</li>
+                    <li>The assessment is <strong>not a substitute for a professional medical evaluation or diagnosis</strong>. Always consult a doctor for diagnosis and treatment.</li>
+                    <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not apply to everyone.</li>
                 </ul>
             </div>
         """, unsafe_allow_html=True)
 
         st.markdown("""
-        <p><em>Data from a sample of 541 PCOS patients in Kerala.</em></p>
-        <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
-        </div>
-    """, unsafe_allow_html=True)
+            <p><em>Data from a sample of 541 PCOS patients in Kerala.</em></p>
+            <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
+            </div>
+        """, unsafe_allow_html=True)
 
     else:
-        custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4")   # Greenish-blue
-
-    # st.markdown("TO ADD - disclaimer, references")
+        custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4")   

@@ -3,6 +3,11 @@ import os
 import requests
 import json
 from fpdf import FPDF
+import base64
+
+def get_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
 
 # Function to send data to Flask API and get prediction
 def get_prediction(input_data):
@@ -244,16 +249,16 @@ def simple_risk_assessment_page():
         unsafe_allow_html=True
     )
    
-    col1, col2 = st.columns([1, 4])  
-
-    with col1:
-        if os.path.exists(logo_path):
-            st.image(logo_path, width=100)  
-        else:
-            st.error("Logo image not found.")
-
-    with col2:
-        st.title("PCOS Care")
+    # Logo and Title
+    st.markdown(
+        f"""
+         <div style='text-align: center;'>
+            <img src='data:image/png;base64,{get_base64(logo_path)}' width='100'/> 
+            <h1>PCOS Care</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     st.subheader("Simple Risk Assessment")
     st.markdown("""

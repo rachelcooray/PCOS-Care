@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-from PIL import Image
+from PIL import Image, ImageEnhance
 import base64
 
 # Update paths to be relative to the current file location
@@ -15,80 +15,164 @@ def get_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
+# Image details with filenames, captions, and explanations
+image_details = [
+    ("undiagnosed_pcos_distribution.png", "Undiagnosed PCOS Cases Distribution", 
+     "This chart shows the percentage of people who have PCOS but remain undiagnosed, highlighting the need for better awareness and screening."),
+    
+    ("pcos_distribution_donut_chart.png", "PCOS Prevalence Donut Chart", 
+     "A donut chart representing the proportion of diagnosed versus undiagnosed PCOS cases among the surveyed population."),
+    
+    ("pcos_symptoms_percentage.png", "Common PCOS Symptoms Breakdown", 
+     "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."),
+    
+    ("exercise_vs_pcos_symptoms.png", "Impact of Exercise on PCOS Symptoms", 
+     "A comparative analysis of how different levels of physical activity influence the severity of PCOS symptoms."),
+    
+    ("fast_food_vs_pcos_symptoms.png", "Fast Food Consumption & PCOS Symptoms", 
+     "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS symptoms.")
+]
+
+# Function to display the images and their explanations 
+def display_image_and_explanation(image_filename, caption, explanation):
+    image_path = os.path.join(visuals_directory, image_filename)
+    if os.path.exists(image_path):
+        # HTML to center the image
+        st.markdown(f"""
+            <div style="display: flex; justify-content: center;">
+                <img src="data:image/png;base64,{get_base64(image_path)}" width="700" alt="{caption}">
+            </div>
+        """, unsafe_allow_html=True)
+        
+        # Caption and explanation
+        st.markdown(f"<p style='text-align: center; font-weight: bold;'>{caption}</p>", unsafe_allow_html=True)
+        
+        # Explanation within an expander
+        with st.expander(f"Learn more about {caption}"):
+            st.markdown(f"""
+                <div style='background-color: #f0f8ff; padding: 15px; border-radius: 10px;'>
+                    <p style='color: #333; font-size: 14px; line-height: 1.6;'>{explanation}</p>
+                </div>
+            """, unsafe_allow_html=True)
+
+
+# Function to display images with larger size and enhanced quality
+def display_image_and_explanation_large(image_filename, caption, explanation):
+    image_path = os.path.join(visuals_directory, image_filename)
+    
+    # Open and enhance image for quality (sharpness adjustment)
+    img = Image.open(image_path)
+    enhancer = ImageEnhance.Sharpness(img)
+    img = enhancer.enhance(2.0)  # Increase sharpness by a factor of 2.0 (adjust as needed)
+    
+    # Display the enhanced image in Streamlit
+    st.image(img, caption=caption, use_column_width=True)  # Using column width to scale appropriately
+    
+    with st.expander(f"Learn more about {caption}"):
+        st.markdown(f"""
+                <div style='background-color: #f0f8ff; padding: 15px; border-radius: 10px;'>
+                    <p style='color: #333; font-size: 14px; line-height: 1.6;'>{explanation}</p>
+                </div>
+            """, unsafe_allow_html=True)
+
+
+# PCOS Dashboard Page with Storytelling Approach
 def pcos_dashboard_page():
-    # Layout for logo and title
+    # Logo and Title
     st.markdown(
         f"""
         <div style='text-align: center;'>
-            <img src='data:image/png;base64,{get_base64(logo_path)}' width='100'/>
+            <img src='data:image/png;base64,{get_base64(logo_path)}' width='100'/> 
             <h1>PCOS Care</h1>
         </div>
-        """,
-        unsafe_allow_html=True
-    )        
+        """,unsafe_allow_html=True)
     
-    # **Header Section with Logo**
-    st.markdown("<div class='dashboard-container'><h1 class='dashboard-title'>PCOS Dashboard</h1></div>", unsafe_allow_html=True)
-        
+    # Introductory Overview of PCOS
     st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
-            <h2 style='color: #6a0dad;'>Visualizing Key Trends: Insights from Analysis of PCOS Data</h2>
+        <div style='background-color: #f0f8ff; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h1 style='color: #6a0dad;'>Welcome to Your PCOS Journey</h1>
+            <p>In this section, you will be taken through the impact of Polycystic Ovary Syndrome (PCOS), how it affects millions of people, and the ways you can manage it effectively. You will have a deeper understanding of how PCOS can shape your life, along with practical insights on symptoms and the role of exercise.</p>
         </div>
     """, unsafe_allow_html=True)
 
-    # List of images with captions and descriptions in a box
-    image_details = [
-        ("undiagnosed_pcos_distribution.png", "Undiagnosed PCOS Cases Distribution", 
-         "This chart shows the percentage of people who have PCOS but remain undiagnosed, highlighting the need for better awareness and screening."),
-        
-        ("pcos_distribution_donut_chart.png", "PCOS Prevalence Donut Chart", 
-         "A donut chart representing the proportion of diagnosed versus undiagnosed PCOS cases among the surveyed population."),
-        
-        ("pcos_symptoms_percentage.png", "Common PCOS Symptoms Breakdown", 
-         "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."),
-        
-        ("exercise_vs_pcos_symptoms.png", "Impact of Exercise on PCOS Symptoms", 
-         "A comparative analysis of how different levels of physical activity influence the severity of PCOS symptoms."),
-        
-        ("fast_food_vs_pcos_symptoms.png", "Fast Food Consumption & PCOS Symptoms", 
-         "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS symptoms.")
-    ]
+    # 1: The Growing Challenge - PCOS Prevalence
+    st.markdown("""
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>Insight 1: The Growing Challenge - PCOS Prevalence</h2>
+            <p>PCOS affects millions of people worldwide, yet it remains widely underdiagnosed. The first step toward better management of this condition is understanding its prevalence. This shows the alarming number of undiagnosed cases.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Display the first graph: Undiagnosed PCOS Cases Distribution
+    display_image_and_explanation(
+        "undiagnosed_pcos_distribution.png", 
+        "Undiagnosed PCOS Cases Distribution", 
+        "This chart shows the percentage of people who have PCOS but remain undiagnosed as 70%, highlighting the need for better awareness and screening. This insight was gathered from the research conducted by Adla et al. (2021)."
+    )
+
+
+    # 2: The Faces of PCOS - Symptoms Breakdown
+    st.markdown("""
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>Insight 2: The Faces of PCOS - Common Symptoms</h2>
+            <p>PCOS affects a significant number of individuals worldwide, but many are still undiagnosed. Despite its prevalence, awareness remains low, making it challenging for people to seek the help they need. This section, shows the widespread nature of PCOS, shedding light on how common it is and the importance of early diagnosis and intervention. Understanding its impact is the first step toward effective management and care.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Display the second graph: PCOS Prevalence Donut Chart
+    display_image_and_explanation(
+        "pcos_distribution_donut_chart.png", 
+        "PCOS Prevalence Donut Chart", 
+        "A donut chart illustrating the proportion of diagnosed versus undiagnosed PCOS cases in the surveyed population, where around 33% of the population was found to have PCOS. This highlights the importance of awareness and early detection of PCOS."
+
+    )
     
-    # Display images with captions and descriptions inside a box
-    for image_file, caption, description in image_details:
-        image_path = os.path.join(visuals_directory, image_file)
-        if os.path.exists(image_path):
-            st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-            # Add proper centering for images by using st.columns
-            col1, col2, col3 = st.columns([1, 4, 1])  # Center the image in the second column
-            with col2:
-                st.image(image_path, width=700, caption=caption)
-            st.markdown("</div>", unsafe_allow_html=True)
-            
-            # Adding a box around the description
-            st.markdown(f"""
-                <div style='background-color: #f1f1f1; border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin-top: 5px;'>
-                    <p style='text-align: center; font-size: 14px; color: #555;'>{description}</p>
-                </div>
-            """, unsafe_allow_html=True)  # Description in a box
-            
-            st.markdown("<br>", unsafe_allow_html=True)  # Adds space between images
-            st.markdown("<br>", unsafe_allow_html=True) 
-        else:
-            st.error(f"{image_file} not found.")
-    
-    # Expander for deeper insights
-    with st.expander("Find out the Insights gathered from the Data", expanded=False):
-        st.markdown("""
-            - **PCOS Prevalence Distribution** – Shows the percentage of diagnosed vs undiagnosed cases.
-            - **Symptom Breakdown** – Visualizes the most commonly reported PCOS symptoms.
-            - **Undiagnosed PCOS Cases** – Highlights how many individuals have PCOS but remain undiagnosed (*Alda et al., 2024*).
-            - **Exercise vs PCOS Symptoms** – Demonstrates the effects of physical activity on symptom severity.
-            - **Fast Food Consumption & PCOS** – Analyzes the link between fast food intake and PCOS symptoms.
-        """, unsafe_allow_html=True)
-    
-    st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
-    
+
+    # 3: The Faces of PCOS - Symptoms Breakdown (contd.)
+    st.markdown("""
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>Insight 3: The Faces of PCOS - Common Symptoms Breakdown</h2>
+            <p>PCOS presents itself through a variety of symptoms that can significantly affect the quality of life. Among the most frequently reported symptoms are pimples, weight gain, skin darkening, hair loss, and excessive hair growth. Understanding these symptoms is crucial for individuals to seek the appropriate treatment. Lifestyle changes, including diet and exercise, can help manage these symptoms and improve overall well-being.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Display the third graph: Common PCOS Symptoms Breakdown
+    display_image_and_explanation(
+        "pcos_symptoms_percentage.png", 
+        "Common PCOS Symptoms Breakdown", 
+        "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."
+    )
+
+    # 4: Managing PCOS - The Role of Exercise
+    st.markdown("""
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>Insight 4: Managing PCOS - The Role of Exercise</h2>
+            <p>Physical activity is one of the most powerful tools in managing PCOS. In this we see how different levels of exercise can positively impact the severity of symptoms.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Display the fourth graph: Impact of Exercise on PCOS Symptoms
+    display_image_and_explanation_large(
+        "exercise_vs_pcos_symptoms.png", 
+        "Impact of Exercise on PCOS Symptoms", 
+        "A comparative analysis of how different levels of physical activity influence the severity of PCOS and its symptoms."
+    )
+
+    # Chapter 5: The Impact of Diet - Fast Food and PCOS Symptoms
+    st.markdown("""
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+            <h2 style='color: #6a0dad;'>Insight 5: The Impact of Diet - Fast Food and PCOS Symptoms</h2>
+            <p>Diet plays a key role in managing PCOS. In this we can see how a diet rich in fast food may contribute to the worsening of PCOS symptoms.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Display the fifth graph: Fast Food Consumption & PCOS Symptoms
+    display_image_and_explanation_large(
+        "fast_food_vs_pcos_symptoms.png", 
+        "Fast Food Consumption & PCOS Symptoms", 
+        "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS and its symptoms."
+    )
+
     # Disclaimer Section
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>

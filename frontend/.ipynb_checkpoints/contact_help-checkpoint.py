@@ -1,25 +1,27 @@
 import streamlit as st
 import os
+import base64
+
+def get_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
 
 # Update paths to be relative to the current file location
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 
 def contact_help_page():
-    # Layout for logo and title
-    col1, col2 = st.columns([1, 4])
+    # Logo and Title
+    st.markdown(
+        f"""
+        <div style='text-align: center;'>
+            <img src='data:image/png;base64,{get_base64(logo_path)}' width='100'/> 
+            <h1>PCOS Care</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-    with col1:
-        if os.path.exists(logo_path):
-            st.image(logo_path, width=100)  
-        else:
-            st.error("Logo image not found.")
-
-    with col2:
-        st.title("PCOS Care")
-
-    # Contact & Help Section with better formatting and structure
-    st.markdown("<hr style='border: 1px solid #ccc;'>", unsafe_allow_html=True)
     st.subheader("Help & Contact")
     
     st.markdown("""
@@ -101,10 +103,11 @@ def contact_help_page():
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
             <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
+            <p style='text-align: center; font-weight: bold;'>This tool is for informational purposes only and does not provide a medical diagnosis.</p>
             <ul style='list-style-type: disc; padding-left: 20px;'>
-                <li>The prediction given on this platform is based on a dataset of <strong>541 patients from Kerala, India</strong>.</li>
-                <li><strong>This is not a medical diagnosis.</strong> It is similar to a preliminary assessment and should not be used as a substitute for clinical evaluation.</li>
-                <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not generalize to all populations.</li>
+                <li>Predictions are based on available data from a dataset of <strong>patients in Kerala, India</strong>.</li>
+                <li>The assessment is <strong>not a substitute for a professional medical evaluation or diagnosis</strong>. Always consult a doctor for diagnosis and treatment.</li>
+                <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not apply to everyone.</li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
