@@ -91,7 +91,7 @@ def pcos_dashboard_page():
     st.markdown("""
         <div style='background-color: #E5D9F2; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h1 style='color: #947bd6; text-align: center;'>Welcome to the Insights Dashboard</h1>
-            <p>In this section, you will be taken through the impact of Polycystic Ovary Syndrome (PCOS), how it affects millions of people, and the ways you can manage it effectively. You will have a deeper understanding of how PCOS can shape your life, along with practical insights on symptoms and the role of exercise.</p>
+            <p>In this section, you will be taken through the impact of Polycystic Ovary Syndrome (PCOS), how it affects millions of people, and the ways you can manage it effectively. You will have a deeper understanding of how you can shape your life, along with practical insights on symptoms and the role of exercise.</p>
         </div>
     """, unsafe_allow_html=True)
 
