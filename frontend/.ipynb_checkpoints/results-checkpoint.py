@@ -141,7 +141,9 @@ def results_page():
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
-        st.subheader("Insights gathered from your data")
+        st.markdown("""
+            <h3 style='text-align: center;'>Insights gathered from your data</h3>
+        """, unsafe_allow_html=True)
 
         # **1. Ratio-Based Visuals (BMI, Waist-Hip Ratio, FSH/LH)**
         st.subheader("Key Health Ratios")
