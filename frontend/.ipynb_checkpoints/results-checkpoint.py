@@ -188,7 +188,7 @@ def results_page():
         # Adding the overall message
         custom_alert("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.", "#9F90FA") 
 
-        st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+        
 
 
         # **2. Cycle Irregularities (If Selected)**

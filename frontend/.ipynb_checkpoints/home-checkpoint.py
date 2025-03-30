@@ -123,9 +123,9 @@ def home_page():
             <h3 style='text-align: center; color: #b179d9;'>Disclaimer</h3>
             <p style='text-align: center; font-weight: bold;'>This tool is for informational purposes only and does not provide a medical diagnosis.</p>
             <ul style='list-style-type: disc; padding-left: 20px;'>
-                <li>Predictions are based on available data from a dataset of <strong>patients in Kerala, India</strong>.</li>
-                <li>The assessment is <strong>not a substitute for a professional medical evaluation or diagnosis</strong>. Always consult a doctor for diagnosis and treatment.</li>
-                <li>The accuracy of predictions is <strong>limited by the dataset's scope and quality</strong>, and results may not apply to everyone.</li>
+                <li>Predictions are based on available data from a dataset of patients in Kerala, India.</li>
+                <li>The assessment is not a substitute for a professional medical evaluation or diagnosis. Always consult a doctor for diagnosis and treatment.</li>
+                <li>The accuracy of predictions is limited by the dataset's scope and quality, and results may not apply to everyone.</li>
             </ul>
         </div>
     """, unsafe_allow_html=True)

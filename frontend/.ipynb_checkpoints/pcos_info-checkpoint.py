@@ -187,7 +187,7 @@ def pcos_info_page():
             </ul>
         </div>
     """, unsafe_allow_html=True)
-
+    
 # Run the PCOS info page function when the script is executed
 if __name__ == "__main__":
     pcos_info_page()
