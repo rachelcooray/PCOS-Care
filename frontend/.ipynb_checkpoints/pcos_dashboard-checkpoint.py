@@ -35,6 +35,7 @@ image_details = [
 
 # Function to display the images and their explanations 
 def display_image_and_explanation(image_filename, caption, explanation):
+    st.write(‘#’)
     image_path = os.path.join(visuals_directory, image_filename)
     if os.path.exists(image_path):
         # HTML to center the image
