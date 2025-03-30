@@ -13,11 +13,11 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s
 
 # Load the trained Logistic Regression model 
 with open("best_logistic_reg_simple_smote.pkl", "rb") as model_file:
-    loaded_svm = pickle.load(model_file)
+    loaded_simple = pickle.load(model_file)
 
 # Load the trained Logistic Regression model for enhanced
 with open("best_logistic_reg_enhanced_smote.pkl", "rb") as model_file:
-    loaded_random_forest = pickle.load(model_file)
+    loaded_enhanced = pickle.load(model_file)
 
 
 # Features
@@ -117,7 +117,7 @@ def predict_simple():
         final_inputs = final_inputs[features_general_public]
 
         # Make prediction using the trained SVM model
-        prediction = loaded_svm.predict(final_inputs)
+        prediction = loaded_simple.predict(final_inputs)
 
         # Output the prediction result
         result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
@@ -164,7 +164,7 @@ def predict_enhanced():
 
         final_inputs = final_inputs[features_scan]
 
-        prediction = loaded_random_forest.predict(final_inputs)
+        prediction = loaded_enhanced.predict(final_inputs)
 
         result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
         return jsonify({"prediction": result})
