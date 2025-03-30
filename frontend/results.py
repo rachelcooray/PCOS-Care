@@ -68,10 +68,10 @@ def generate_pdf(data, prediction):
     pdf.set_text_color(0, 0, 0)  # Reset text color to black
     disclaimer_text = (
         "Disclaimer: The PCOSCare web app provides a prediction based on the data you entered. "
-        "This prediction is derived from a dataset of 541 patients from Kerala, India, and is intended for informational purposes only. "
-        "It is not a medical diagnosis and should not be used as a substitute for clinical evaluation. "
-        "The accuracy of the prediction is limited by the dataset's scope and quality, and the results may not be applicable to all populations. "
-        "Always consult a healthcare professional for a comprehensive diagnosis."
+        "This tool is for informational purposes only and does not provide a medical diagnosis." 
+        "Predictions are based on available data from a dataset of patients in Kerala, India."
+        "The assessment is not a substitute for a professional medical evaluation or diagnosis. Always consult a doctor for diagnosis and treatment."
+        "The accuracy of predictions is limited by the dataset's scope and quality, and results may not apply to everyone."
     )
     pdf.multi_cell(0, 10, disclaimer_text)
     
