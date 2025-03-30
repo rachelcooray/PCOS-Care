@@ -129,7 +129,7 @@ def results_page():
         
         # Display Prediction
         st.markdown(f"""
-            <h3 style='text-align: center; color: #6a0dad;'>We predict that: {predicted_pcos}</h3>  
+            <h3 style='text-align: center; color: #6a0dad;'>Our prediction is that: {predicted_pcos}</h3>  
         """, unsafe_allow_html=True)
 
         if predicted_pcos == "You are likely to have PCOS":
@@ -271,11 +271,13 @@ def results_page():
         </div>
     """, unsafe_allow_html=True)
 
-        st.markdown("""
-            <p><em>Data from a sample of 541 PCOS patients in Kerala.</em></p>
-            <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
-            </div>
-        """, unsafe_allow_html=True)
+        # st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+
+        # st.markdown("""
+        #     <p><em>Data from a sample of 541 PCOS patients in Kerala.</em></p>
+        #     <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
+        #     </div>
+        # """, unsafe_allow_html=True)
 
     else:
         custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4")   
