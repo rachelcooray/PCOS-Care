@@ -78,7 +78,7 @@ def display_image_and_explanation_large(image_filename, caption, explanation):
 
 # PCOS Dashboard Page with Storytelling Approach
 def pcos_dashboard_page():
-    st.write(‘#’)
+    st.write("#")
     # Logo and Title
     st.markdown(
         f"""
