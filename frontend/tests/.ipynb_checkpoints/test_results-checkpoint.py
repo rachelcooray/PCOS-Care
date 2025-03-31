@@ -1,7 +1,7 @@
 import streamlit as st
-from home import home_page
+from results import results_page
 
-def test_home_page(monkeypatch):
+def test_results_page(monkeypatch):
     # Mock Streamlit functions
     def mock_markdown(*args, **kwargs):
         pass
@@ -21,4 +21,4 @@ def test_home_page(monkeypatch):
     monkeypatch.setattr(st, "columns", mock_columns)
     
     # Call the function
-    home_page()
+    results_page()

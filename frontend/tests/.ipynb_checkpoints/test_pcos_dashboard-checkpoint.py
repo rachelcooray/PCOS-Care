@@ -1,7 +1,7 @@
 import streamlit as st
-from home import home_page
+from pcos_dashboard import pcos_dashboard_page
 
-def test_home_page(monkeypatch):
+def test_pcos_dashboard_page(monkeypatch):
     # Mock Streamlit functions
     def mock_markdown(*args, **kwargs):
         pass
@@ -21,4 +21,4 @@ def test_home_page(monkeypatch):
     monkeypatch.setattr(st, "columns", mock_columns)
     
     # Call the function
-    home_page()
+    pcos_dashboard_page()
