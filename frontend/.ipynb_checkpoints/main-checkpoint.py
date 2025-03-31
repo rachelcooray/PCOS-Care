@@ -184,6 +184,8 @@ if "selected_page" not in st.session_state:
 selected_page = st_navbar(pages, styles=styles)
 st.session_state.page = selected_page
 
+scroll_to_here()
+
 # Display the selected page based on the navbar stored in session state
 if st.session_state.page == "Home":
     home_page()
