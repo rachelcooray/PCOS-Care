@@ -11,3 +11,4 @@ fpdf
 plotly
 altair
 streamlit_navigation_bar
+streamlit_scroll_to_top
