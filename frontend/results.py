@@ -96,10 +96,10 @@ def create_gauge(value, title, min_val, max_val, color="blue"):
                'bar': {'color': color}}))
     return fig
 
-def custom_alert(message, color):
+def custom_alert(message, bg_color, text_color):
     """Creates a custom-styled alert box."""
     st.markdown(f"""
-        <div style='padding: 15px; border-radius: 10px; background-color: {color}; color: white; font-weight: bold;'>
+        <div style='padding: 15px; border-radius: 10px; background-color: {bg_color}; color: {text_color}; font-weight: bold;'>
             {message}
         </div>
     """, unsafe_allow_html=True)
@@ -133,9 +133,9 @@ def results_page():
         """, unsafe_allow_html=True)
 
         if predicted_pcos == "You are likely to have PCOS":
-            custom_alert("This suggests a possibility of having PCOS. Please consult a healthcare professional.", "#E76F51")  
+            custom_alert("This suggests a possibility of having PCOS. Please consult a healthcare professional.", "#E76F51", "black")  
         else:
-            custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#9DC3D2")   
+            custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#9DC3D2", "black")   
 
 
         # Section Break
@@ -156,21 +156,21 @@ def results_page():
         if fsh_lh_ratio is not None:
             with col1:
                 st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-                custom_alert("A Body Mass Index (BMI) of over 25 may indicate a risk factor for PCOS.", "#9DC3D2")   
+                custom_alert("A Body Mass Index (BMI) of over 25 may indicate a risk factor for PCOS.", "#9DC3D2", "black")   
                 
             with col2:
                 st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-                custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2")   
+                custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2", "black")   
 
             with col3:
                 st.plotly_chart(create_gauge(fsh_lh_ratio, "FSH/LH", 0, 3, "red" if fsh_lh_ratio <= 1 else "green"))
-                custom_alert("A lower FSH than LH may indicate hormonal imbalance, a key PCOS marker.", "#9DC3D2")   
+                custom_alert("A lower FSH than LH may indicate hormonal imbalance, a key PCOS marker.", "#9DC3D2", "black")   
 
         else:
             with col1:
                 if bmi is not None:
                     st.plotly_chart(create_gauge(bmi, "BMI", 10, 50, "green" if bmi < 25 else "red"))
-                    custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#9DC3D2")   
+                    custom_alert("A BMI over 25 may indicate a risk factor for PCOS.", "#9DC3D2", "black")   
                 else:
                     st.markdown("BMI data unavailable")
                     
@@ -178,7 +178,7 @@ def results_page():
             with col3:
                 if waist_hip_ratio is not None:
                     st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
-                    custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2")   
+                    custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2", "black")   
                 else:
                     st.markdown("Waist-Hip Ratio data unavailable")
                     
@@ -186,7 +186,7 @@ def results_page():
         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         
         # Adding the overall message
-        custom_alert("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.", "#9F90FA") 
+        custom_alert("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.", "#9F90FA", "black") 
 
         
 
@@ -196,7 +196,7 @@ def results_page():
         if cycle == 4:  # Assuming 4 means Irregular
             st.subheader("Cycle Irregularities")
             
-            custom_alert("Irregular cycles are commonly associated with PCOS due to hormonal imbalances such as Follicle-stimulating hormone(FSH) and Luteinizing hormone (LH).", "#5A4CA4")   # Greenish-blue
+            custom_alert("Irregular cycles are commonly associated with PCOS due to hormonal imbalances such as Follicle-stimulating hormone(FSH) and Luteinizing hormone (LH).", "#5A4CA4", "black")   
             
             # Retrieve FSH and LH values
             fsh = float(user_data["symptom_analysis"].get("FSH(mIU/mL)", 0))
@@ -223,11 +223,11 @@ def results_page():
             
                 # Display additional information based on LH/FSH ratio
                 if lh > fsh:
-                    custom_alert("Your LH Level is higher than  the FSH Level, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.", "#E76F51")   
+                    custom_alert("Your LH Level is higher than  the FSH Level, which could indicate a hormonal imbalance often associated with PCOS. High LH relative to FSH can lead to anovulation (lack of ovulation). Consider discussing these findings with your healthcare provider.", "#E76F51", "black")   
                 elif lh == fsh:
-                    custom_alert("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.", "#F4A261")   # Greenish-blue
+                    custom_alert("Your LH and FSH levels are similar. It's important to evaluate other hormonal and clinical factors to get a clearer picture of your health.", "#F4A261", "black")   # Greenish-blue
                 else:
-                    custom_alert("Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.", "#9DC3D2")   # Greenish-blue
+                    custom_alert("Your FSH is higher than LH, which is generally considered more typical. However, it’s still important to monitor your cycle and overall health.", "#9DC3D2", "black")   # Greenish-blue
 
 
         # **3. Lifestyle Factors (Weight Gain, Fast Food, No Exercise)**
@@ -239,7 +239,7 @@ def results_page():
             st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             st.subheader("Lifestyle Factors")
             
-            custom_alert("Lifestyle factors can significantly impact PCOS risk.", "#5A4CA4")   
+            custom_alert("Lifestyle factors can significantly impact PCOS risk.", "#5A4CA4", "white")   
             
             st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
             
@@ -253,13 +253,13 @@ def results_page():
         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         st.subheader("Next Steps")
         if predicted_pcos == "You are likely to have PCOS":
-            custom_alert("We strongly recommend seeking medical advice for further evaluation.You can download your data as a PDF to share with your healthcare provider.", "#5A4CA4")   # Greenish-blue
+            custom_alert("We strongly recommend seeking medical advice for further evaluation.You can download your data as a PDF to share with your healthcare provider.", "#5A4CA4", "white")   
         else:
-            custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#9DC3D2")   
+            custom_alert("Maintain a healthy lifestyle and monitor symptoms over time.", "#9DC3D2", "black")   
 
         st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
 
-        st.subheader("Download your Report:")
+        st.subheader("Download your Report")
         download_pdf(user_data, predicted_pcos)
         
         # Disclaimer Section
@@ -284,4 +284,4 @@ def results_page():
         # """, unsafe_allow_html=True)
 
     else:
-        custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4")   
+        custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4", "black")   
