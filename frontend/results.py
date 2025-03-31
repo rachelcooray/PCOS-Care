@@ -196,7 +196,7 @@ def results_page():
         if cycle == 4:  # Assuming 4 means Irregular
             st.subheader("Cycle Irregularities")
             
-            custom_alert("Irregular cycles are commonly associated with PCOS due to hormonal imbalances such as Follicle-stimulating hormone(FSH) and Luteinizing hormone (LH).", "#5A4CA4", "black")   
+            custom_alert("Irregular cycles are commonly associated with PCOS due to hormonal imbalances such as Follicle-stimulating hormone(FSH) and Luteinizing hormone (LH).", "#5A4CA4", "white")   
             
             # Retrieve FSH and LH values
             fsh = float(user_data["symptom_analysis"].get("FSH(mIU/mL)", 0))

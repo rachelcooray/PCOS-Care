@@ -319,13 +319,13 @@ def enhanced_risk_assessment_page():
         help="Enter your age as a whole number between 18 and 50."
     )
     weight = st.text_input(
-        "Weight (Kg):", 
+        "Weight (kg):", 
         value=st.session_state.form_data.get("weight", ""),
         placeholder="60.5", 
         help="Enter your weight in kilograms. Decimals are allowed."
     )
     height = st.text_input(
-        "Height (Cm):", 
+        "Height (cm):", 
         value=st.session_state.form_data.get("height", ""),
         placeholder="160.5", 
         help="Enter your height in centimeters. Decimals are allowed."
