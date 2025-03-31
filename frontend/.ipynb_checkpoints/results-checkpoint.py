@@ -284,4 +284,4 @@ def results_page():
         # """, unsafe_allow_html=True)
 
     else:
-        custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4", "black")   
+        custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4", "white")   
