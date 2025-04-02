@@ -78,8 +78,8 @@ styles = {
 # Create the navigation bar
 page = st_navbar(pages, styles=styles)
 
-Scroll to top functionality
-scroll_to_here()
+# Scroll to top functionality
+# scroll_to_here()
 
 Display the selected page based on the navbar
 if page == "Home":
