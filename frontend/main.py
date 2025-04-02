@@ -81,7 +81,7 @@ page = st_navbar(pages, styles=styles)
 # Scroll to top functionality
 # scroll_to_here()
 
-Display the selected page based on the navbar
+# Display the selected page based on the navbar
 if page == "Home":
     home_page()
 elif page == "PCOS Information":
