@@ -7,7 +7,7 @@ from enhanced_risk_assessment import enhanced_risk_assessment_page
 from results import results_page
 from contact_help import contact_help_page
 from pcos_dashboard import pcos_dashboard_page
-from streamlit_scroll_to_top import scroll_to_here
+# from streamlit_scroll_to_top import scroll_to_here
 
 hide_st_style = """
     <style>
