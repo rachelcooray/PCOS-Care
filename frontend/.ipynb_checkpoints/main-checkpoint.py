@@ -31,7 +31,7 @@ hide_st_style = """
         /* Adjust width for the entire app */
         .main {
             max-width: 100% !important;
-            padding: 80px !important;
+            padding: 0 !important;
             margin-top: 0;  /* Reset any previous margins */
         }
     </style>
