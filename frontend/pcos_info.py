@@ -40,16 +40,21 @@ def pcos_info_page():
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h2 style='color: #6a0dad;'>Common Symptoms</h2>
-            <ul>
-                <li><strong>Irregular menstrual cycles</strong></li>
-                <li><strong>Unexplained weight gain</strong></li>
-                <li><strong>Acne and oily skin</strong></li>
-                <li><strong>Thinning hair or hair loss</strong></li>
-                <li><strong>Mood swings and fatigue</strong></li>
-                <li><strong>Dark patches of skin</strong> (especially around the neck or underarms)</li>
-            </ul>
+            <div>
+                <ul>
+                    <li><strong>Irregular periods or no periods at all</strong></li>
+                    <li><strong>Difficulty getting pregnant</strong> due to irregular ovulation or no ovulation</li>
+                    <li><strong>Excessive hair growth (hirsutism)</strong> – usually on the face, chest, back, or buttocks</li>
+                    <li><strong>Weight gain</strong></li>
+                    <li><strong>Thinning hair and hair loss</strong> from the head</li>
+                    <li><strong>Oily skin or acne</strong></li>
+                </ul>
+                <p>PCOS is also associated with an increased risk of developing health problems later in life, such as <strong>type 2 diabetes</strong> and <strong>high cholesterol levels</strong>.</p>
+                <p><strong>Based on information from:</strong> <a href='https://www.nhs.uk/conditions/polycystic-ovary-syndrome-pcos/' target='_blank'>NHS</a></p>
+            </div>
         </div>
     """, unsafe_allow_html=True)
+
 
     # Image Section with Centering in 3 Columns
     st.markdown("<br>", unsafe_allow_html=True)
@@ -64,12 +69,6 @@ def pcos_info_page():
         else:
             st.error("PCOS image not found.")
     
-    st.markdown("""
-                </div>
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
-
     # Section: Why Early Detection Matters
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
@@ -83,9 +82,10 @@ def pcos_info_page():
                 <li><strong>Mental Health Challenges:</strong> Anxiety and depression are common among those with PCOS.</li>
             </ul>
             <p>Taking action early helps improve overall health and quality of life.</p>
+            <p><strong>Based on information from:</strong> <a href='https://www.nhs.uk/conditions/polycystic-ovary-syndrome-pcos/treatment/' target='_blank'>NHS - Treatment for PCOS</a></p>
         </div>
     """, unsafe_allow_html=True)
-    
+
     # Section: How PCOS Affects Health
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
@@ -97,9 +97,10 @@ def pcos_info_page():
                 <li><strong>Fertility Challenges:</strong> Irregular ovulation affecting pregnancy.</li>
                 <li><strong>Increased Risk of Chronic Diseases:</strong> Heart disease, diabetes, and depression.</li>
             </ul>
+            <p><strong>Based on information from:</strong> <a href='https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome' target='_blank'>World Health Organization (WHO)</a></p>
         </div>
     """, unsafe_allow_html=True)
-    
+
     # Section: PCOS Management Tips
     st.markdown("""
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
@@ -112,8 +113,10 @@ def pcos_info_page():
                 <li><strong>Quality Sleep:</strong> Ensure 7-9 hours of sleep per night.</li>
                 <li><strong>Medical Support:</strong> Consult a doctor for medications and hormone management if needed.</li>
             </ul>
+            <p><strong>Based on information from:</strong> <a href='https://www.bda.uk.com/resource/polycystic-ovary-syndrome-pcos-diet.html' target='_blank'>British Dietetic Association (BDA)</a></p>
         </div>
     """, unsafe_allow_html=True)
+
     
     # Section: PCOS Diet Tips
     st.markdown("""
@@ -122,24 +125,26 @@ def pcos_info_page():
             <ul>
                 <li><strong>Foods to Include:</strong></li>
                     <ul>
-                        <li> Whole grains (quinoa, brown rice)</li>
-                        <li> Healthy fats (avocado, olive oil)</li>
-                        <li> Lean proteins (chicken, tofu, fish)</li>
-                        <li> Fiber-rich vegetables (broccoli, spinach)</li>
-                    </ul>  
+                        <li><strong>Whole grains:</strong> Quinoa, brown rice, and other whole grains help regulate blood sugar levels.</li>
+                        <li><strong>Healthy fats:</strong> Avocado, olive oil, and nuts can reduce inflammation and improve hormone balance.</li>
+                        <li><strong>Lean proteins:</strong> Chicken, tofu, fish, and legumes provide essential nutrients without raising insulin levels.</li>
+                        <li><strong>Fiber-rich vegetables:</strong> Broccoli, spinach, and other non-starchy vegetables help improve digestion and support weight management.</li>
+                    </ul> 
                 <br>
                 <li><strong>Foods to Avoid:</strong></li>
                     <ul>
-                        <li> Processed foods and sugary snacks</li>
-                        <li> Excessive dairy and refined carbohydrates</li>
-                        <li> Fried and fast foods</li>
+                        <li>Processed foods and sugary snacks.</li>
+                        <li>Excessive dairy and refined carbohydrates.</li>
+                        <li>Fried and fast foods.</li>
                     </ul>
                 <br>
                 <li><strong>Hydration:</strong> Drink plenty of water to support metabolism and digestion.</li>
-                <li><strong>Meal Timing:</strong> Balanced meals with controlled portions to maintain blood sugar levels.</li>
+                <li><strong>Meal Timing:</strong> Aim for balanced meals with controlled portions to maintain stable blood sugar levels.</li>
             </ul>
+            <p><strong>Based on information from:</strong> <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/pcos-diet' target='_blank'>Johns Hopkins Medicine</a></p>
         </div>
     """, unsafe_allow_html=True)
+
 
     # Section Break
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
@@ -163,11 +168,12 @@ def pcos_info_page():
         </style>
 
         <div style='background-color: #EAE0F5; padding: 20px; border-radius: 10px;'>
-            <h3 style='color: #6a0dad; text-align: center;'>References & Resources</h3>
+            <h3 style='color: #6a0dad; text-align: center;'>For More Information</h3>
             <ul class='resource-list'>
                 <li><a href='https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome' target='_blank' class='resource-link'>World Health Organization - PCOS Guidelines</a></li>
                 <li><a href='https://www.nhs.uk/conditions/polycystic-ovary-syndrome-pcos/' target='_blank' class='resource-link'>NHS - PCOS Overview</a></li>
                 <li><a href='https://www.bda.uk.com/resource/polycystic-ovary-syndrome-pcos-diet.html' target='_blank' class='resource-link'>British Dietetic Association - Polycystic Ovary Syndrome (PCOS) and Diet</a></li>
+                <li><a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/pcos-diet' target='_blank' class='resource-link'>Johns Hopkins Medicine - PCOS Diet</a></li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
