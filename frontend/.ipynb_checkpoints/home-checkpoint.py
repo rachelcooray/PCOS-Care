@@ -127,7 +127,7 @@ def home_page():
                 text-align: center;
                 box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
                 transition: transform 0.3s ease-in-out;
-                min-height: 280px; /* Ensures all cards have the same height */
+                min-height: 350px; /* Ensures all cards have the same height */
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -143,22 +143,22 @@ def home_page():
         with col1:
             img = load_and_resize_image(feature_images["info"], size=(80, 80))
             image_html = f'<img src="data:image/png;base64,{get_base64(feature_images["info"])}" width="80">' if img else ""
-            st.markdown(card_style.format(image=image_html, title="PCOS Information", description="Learn about the symptoms, causes, and management strategies."), unsafe_allow_html=True)
+            st.markdown(card_style.format(image=image_html, title="PCOS Information", description="Understand what PCOS is, its symptoms, causes, and impact on women's health. Learn about common treatment options and lifestyle changes to manage symptoms effectively."), unsafe_allow_html=True)
         
         with col2:
             img = load_and_resize_image(feature_images["assessment"], size=(80, 80))
             image_html = f'<img src="data:image/png;base64,{get_base64(feature_images["assessment"])}" width="80">' if img else ""
-            st.markdown(card_style.format(image=image_html, title="Simple Risk Assessment", description="Quickly assess your risk based on key symptoms."), unsafe_allow_html=True)
+            st.markdown(card_style.format(image=image_html, title="Simple Risk Assessment", description="Take a quick questionnaire based on key PCOS symptoms like irregular periods and weight changes. Get an instant indication of potential risk."), unsafe_allow_html=True)
         
         with col3:
             img = load_and_resize_image(feature_images["enhanced"], size=(80, 80))
             image_html = f'<img src="data:image/png;base64,{get_base64(feature_images["enhanced"])}" width="80">' if img else ""
-            st.markdown(card_style.format(image=image_html, title="Enhanced Risk Assessment", description="Provide more detailed health data for an in-depth risk evaluation."), unsafe_allow_html=True)
+            st.markdown(card_style.format(image=image_html, title="Enhanced Risk Assessment", description="For a more accurate evaluation, enter detailed health data including hormonal levels, ultrasound results, and medical history. This provides better insights into potential risk."), unsafe_allow_html=True)
         
         with col4:
             img = load_and_resize_image(feature_images["results"], size=(80, 80))
             image_html = f'<img src="data:image/png;base64,{get_base64(feature_images["results"])}" width="80">' if img else ""
-            st.markdown(card_style.format(image=image_html, title="Results Visualization", description="View your risk prediction and result with visualizations."), unsafe_allow_html=True)
+            st.markdown(card_style.format(image=image_html, title="Results Visualization", description="Receive a clear and easy-to-understand visualization of your assessment results. Graphs and insights will help you interpret your risk level and guide your next steps toward better health."), unsafe_allow_html=True)
 
 
     
