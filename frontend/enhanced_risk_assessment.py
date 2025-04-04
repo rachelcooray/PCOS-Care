@@ -313,16 +313,16 @@ def enhanced_risk_assessment_page():
     - [How to measure your blood pressure (systolic and diastolic)](https://www.bloodpressureuk.org/your-blood-pressure/how-to-lower-your-blood-pressure/monitoring-your-blood-pressure-at-home/how-to-measure-your-blood-pressure-at-home/)
     
     Additionally, you will need to have data from relevant blood tests and scans to gather your hormonal levels, including tests for:
-    - **Beta-HCG**
-    - **FSH**
-    - **LH**
-    - **TSH**
-    - **AMH**
-    - **PRL**
-    - **Vitamin D3**
-    - **Progesterone**
-    - **Random Blood Sugar**
-    - **Pelvic Ultrasound Scan**
+    - **Beta-HCG ((Beta-Human Chorionic Gonadotropin))**  
+    - **FSH (Follicle-Stimulating Hormone)**  
+    - **LH (Luteinizing Hormone)**  
+    - **TSH (Thyroid-Stimulating Hormone)**  
+    - **AMH (Anti-Müllerian Hormone)**  
+    - **PRL (Prolactin)**  
+    - **Vitamin D3**  
+    - **Progesterone**  
+    - **Random Blood Sugar (RBS)**  
+    - **Pelvic Ultrasound Scan**  
     
     Now, enter the details in the fields below. Guidelines have been provided for each field.
     """)
