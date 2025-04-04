@@ -265,7 +265,7 @@ def simple_risk_assessment_page():
     Provide basic health data and symptoms for a quick PCOS risk analysis. This assessment helps you understand your potential risk for PCOS and provides early insights to guide you toward the right next steps. 
     """)
     
-    st.subheader("Before You Start)
+    st.subheader("Before You Start")
 
     st.write("""
         To ensure accurate results, you will need to gather a few health measurements: your pulse rate, respiratory rate and blood pressure (systolic and diastolic). 
