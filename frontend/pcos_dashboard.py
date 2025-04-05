@@ -99,7 +99,7 @@ def pcos_dashboard_page():
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
             <h2 style='color: #9C89FB;'>Insight 1: The Growing Challenge - PCOS Prevalence</h2>
-            <p>PCOS affects millions of people worldwide, yet it remains widely underdiagnosed. The first step toward better management of this condition is understanding its prevalence. This shows the alarming number of undiagnosed cases.</p>
+            <p>PCOS affects millions of people around the world, but many don’t even know they have it. This is because PCOS is often not diagnosed, and many people overlook the symptoms. Understanding how common PCOS is is the first step toward managing it better. This section highlights an alarming number of people with undiagnosed PCOS, which is a major issue.</p>
         </div>
     """, unsafe_allow_html=True)
 
@@ -107,15 +107,16 @@ def pcos_dashboard_page():
     display_image_and_explanation(
         "undiagnosed_pcos_distribution.png", 
         "Undiagnosed PCOS Cases Distribution", 
-        "This chart shows the percentage of people who have PCOS but remain undiagnosed as 70%, highlighting the need for better awareness and screening. This insight was gathered from the research conducted by Adla et al. (2021)."
+        "This chart shows the percentage of people who have PCOS but remain undiagnosed as 70%, highlighting the need for better awareness and screening. This insight was gathered from the research <a href='https://doi.org/10.1109/ICABME53305.2021.9604905' target='_blank'>Automated Detection of Polycystic Ovary Syndrome Using Machine Learning Techniques</a>."
+
     )
 
 
-    # 2: The Faces of PCOS - Symptoms Breakdown
+    # 2: The Impact of PCOS - Prevalence Breakdown
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
-            <h2 style='color: #9C89FB;'>Insight 2: The Faces of PCOS - Common Symptoms</h2>
-            <p>PCOS affects a significant number of individuals worldwide, but many are still undiagnosed. Despite its prevalence, awareness remains low, making it challenging for people to seek the help they need. This section, shows the widespread nature of PCOS, shedding light on how common it is and the importance of early diagnosis and intervention. Understanding its impact is the first step toward effective management and care.</p>
+            <h2 style='color: #9C89FB;'>Insight 2: The Impact of PCOS - Prevalence Breakdown</h2>
+            <p>PCOS is a common condition that affects many individuals worldwide, but many people are still undiagnosed. Its symptoms can often be easy to overlook, making it challenging for people to seek the help they need. In this section, we highlight how widespread PCOS is in the population and why it's so important to raise awareness. Understanding how common it is helps spread the word about PCOS and encourages early diagnosis and treatment, leading to better care and management.</p>
         </div>
     """, unsafe_allow_html=True)
 
@@ -123,8 +124,7 @@ def pcos_dashboard_page():
     display_image_and_explanation(
         "pcos_distribution_donut_chart.png", 
         "PCOS Prevalence Donut Chart", 
-        "A donut chart illustrating the proportion of diagnosed versus undiagnosed PCOS cases in the surveyed population, where around 33% of the population was found to have PCOS. This highlights the importance of awareness and early detection of PCOS."
-
+        "This donut chart shows the percentage of people in the survey who have PCOS compared to those who don't. About 33% of the people in the survey were found to have PCOS. This highlights how important it is to be aware of the condition and get checked early."
     )
     
 
@@ -132,7 +132,7 @@ def pcos_dashboard_page():
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
             <h2 style='color: #9C89FB;'>Insight 3: The Faces of PCOS - Common Symptoms Breakdown</h2>
-            <p>PCOS presents itself through a variety of symptoms that can significantly affect the quality of life. Among the most frequently reported symptoms are pimples, weight gain, skin darkening, hair loss, and excessive hair growth. Understanding these symptoms is crucial for individuals to seek the appropriate treatment. Lifestyle changes, including diet and exercise, can help manage these symptoms and improve overall well-being.</p>
+            <p>PCOS can cause a variety of symptoms that affect a person’s daily life. Some of the most common symptoms include pimples, weight gain, skin darkening, hair loss, and extra hair growth. It’s important to recognize these signs, as they can help people seek the right treatment. Lifestyle changes can help manage these symptoms and improve overall well-being.</p>
         </div>
     """, unsafe_allow_html=True)
 
