@@ -55,27 +55,6 @@ def display_image_and_explanation(image_filename, caption, explanation):
                 </div>
             """, unsafe_allow_html=True)
 
-
-# Function to display images with larger size and enhanced quality
-def display_image_and_explanation_large(image_filename, caption, explanation):
-    image_path = os.path.join(visuals_directory, image_filename)
-    
-    # Open and enhance image for quality (sharpness adjustment)
-    img = Image.open(image_path)
-    enhancer = ImageEnhance.Sharpness(img)
-    img = enhancer.enhance(2.0)  # Increase sharpness by a factor of 2.0 (adjust as needed)
-    
-    # Display the enhanced image in Streamlit
-    st.image(img, caption=caption, use_column_width=True)  # Using column width to scale appropriately
-    
-    with st.expander(f"More deatils about {caption}"):
-        st.markdown(f"""
-                <div style='background-color: #D6C2EA; padding: 15px; border-radius: 10px; margin-bottom: 15px;'>
-                    <p style='color: #333; font-size: 14px; line-height: 1.6;'>{explanation}</p>
-                </div>
-            """, unsafe_allow_html=True)
-
-
 # PCOS Dashboard Page with Storytelling Approach
 def pcos_dashboard_page():
     # Logo and Title
@@ -143,34 +122,34 @@ def pcos_dashboard_page():
         "This chart shows the most commonly reported symptoms in people diagnosed with PCOS. Each bar represents the percentage of individuals with PCOS who experience that symptom. The symptoms are arranged from top to bottom based on how strongly they are linked to PCOS - so those at the top are the most impactful and worth paying closer attention to."
     )
 
-    # 4: Managing PCOS - The Role of Exercise
+    # 4: The Impact of Diet - Fast Food and PCOS Symptoms
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
-            <h2 style='color: #9C89FB;'>Insight 4: Managing PCOS - The Role of Exercise</h2>
+            <h2 style='color: #9C89FB;'>Insight 4: The Impact of Diet - Fast Food and PCOS Symptoms</h2>
+            <p>Diet plays a key role in managing PCOS. In this we can see how fast food may contribute to the worsening of PCOS symptoms.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Display the fifth graph: Fast Food Consumption & PCOS Symptoms
+    display_image_and_explanation(
+        "fast_food_vs_pcos_symptoms.png", 
+        "Fast Food Consumption & PCOS Symptoms", 
+        "Our findings show a clear association between fast food consumption and PCOS diagnosis, emphasizing the importance of a balanced diet in managing the condition and suggesting that reducing fast food intake could help lower the risk of PCOS."
+    )
+
+    # 5: Managing PCOS - The Role of Exercise
+    st.markdown("""
+        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
+            <h2 style='color: #9C89FB;'>Insight 5: Managing PCOS - The Role of Exercise</h2>
             <p>Physical activity is one of the most powerful tools in managing PCOS. In this we see how different levels of exercise can positively impact the severity of symptoms.</p>
         </div>
     """, unsafe_allow_html=True)
 
     # Display the fourth graph: Impact of Exercise on PCOS Symptoms
-    display_image_and_explanation_large(
+    display_image_and_explanation(
         "exercise_vs_pcos_symptoms.png", 
         "Impact of Exercise on PCOS Symptoms", 
-        "A comparative analysis of how different levels of physical activity influence the severity of PCOS and its symptoms."
-    )
-
-    # Chapter 5: The Impact of Diet - Fast Food and PCOS Symptoms
-    st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
-            <h2 style='color: #9C89FB;'>Insight 5: The Impact of Diet - Fast Food and PCOS Symptoms</h2>
-            <p>Diet plays a key role in managing PCOS. In this we can see how a diet rich in fast food may contribute to the worsening of PCOS symptoms.</p>
-        </div>
-    """, unsafe_allow_html=True)
-
-    # Display the fifth graph: Fast Food Consumption & PCOS Symptoms
-    display_image_and_explanation_large(
-        "fast_food_vs_pcos_symptoms.png", 
-        "Fast Food Consumption & PCOS Symptoms", 
-        "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS and its symptoms."
+        "This graph compares the rate of PCOS diagnosis between those who regularly exercise and those who don’t. Although a significant relationship between regular exercise and PCOS diagnosis cannot be seen, the percentage of diagnosed cases is slightly higher among those who don’t exercise. This suggests that while exercise is beneficial for overall health."
     )
 
     # Disclaimer Section
