@@ -15,23 +15,23 @@ def get_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-# Image details with filenames, captions, and explanations
-image_details = [
-    ("undiagnosed_pcos_distribution.png", "Undiagnosed PCOS Cases Distribution", 
-     "This chart shows the percentage of people who have PCOS but remain undiagnosed, highlighting the need for better awareness and screening."),
+# # Image details with filenames, captions, and explanations
+# image_details = [
+#     ("undiagnosed_pcos_distribution.png", "Undiagnosed PCOS Cases Distribution", 
+#      "This chart shows the percentage of people who have PCOS but remain undiagnosed, highlighting the need for better awareness and screening."),
     
-    ("pcos_distribution_donut_chart.png", "PCOS Prevalence Donut Chart", 
-     "A donut chart representing the proportion of diagnosed versus undiagnosed PCOS cases among the surveyed population."),
+#     ("pcos_distribution_donut_chart.png", "PCOS Prevalence Donut Chart", 
+#      "A donut chart representing the proportion of diagnosed versus undiagnosed PCOS cases among the surveyed population."),
     
-    ("pcos_symptoms_percentage.png", "Common PCOS Symptoms Breakdown", 
-     "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."),
+#     ("pcos_symptoms_percentage.png", "Common PCOS Symptoms Breakdown", 
+#      "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."),
     
-    ("exercise_vs_pcos_symptoms.png", "Impact of Exercise on PCOS Symptoms", 
-     "A comparative analysis of how different levels of physical activity influence the severity of PCOS symptoms."),
+#     ("exercise_vs_pcos_symptoms.png", "Impact of Exercise on PCOS Symptoms", 
+#      "A comparative analysis of how different levels of physical activity influence the severity of PCOS symptoms."),
     
-    ("fast_food_vs_pcos_symptoms.png", "Fast Food Consumption & PCOS Symptoms", 
-     "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS symptoms.")
-]
+#     ("fast_food_vs_pcos_symptoms.png", "Fast Food Consumption & PCOS Symptoms", 
+#      "This graph explores the relationship between frequent fast-food consumption and the occurrence of PCOS symptoms.")
+# ]
 
 # Function to display the images and their explanations 
 def display_image_and_explanation(image_filename, caption, explanation):
@@ -140,7 +140,7 @@ def pcos_dashboard_page():
     display_image_and_explanation(
         "pcos_symptoms_percentage.png", 
         "Common PCOS Symptoms Breakdown", 
-        "This visualization presents the most frequently reported symptoms of PCOS, helping identify key health concerns."
+        "This chart shows the most commonly reported symptoms in people diagnosed with PCOS. Each bar represents the percentage of individuals with PCOS who experience that symptom. The symptoms are arranged from top to bottom based on how strongly they are linked to PCOS - so those at the top are the most impactful and worth paying closer attention to."
     )
 
     # 4: Managing PCOS - The Role of Exercise
