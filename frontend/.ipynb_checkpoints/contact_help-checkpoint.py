@@ -27,7 +27,7 @@ def contact_help_page():
     st.markdown("""
     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
         <h3 style='text-align: center; color: #b179d9;'>Need Assistance?</h3>
-        <p>If you have any questions or encounter issues while using the app, feel free to reach out to us:</p>
+        <p>If you have any questions or encounter issues while using the application, feel free to reach out to us:</p>
         <p><strong>Email:</strong> <a href='mailto:w1956444@my.westminster.ac.uk'>w1956444@my.westminster.ac.uk</a></p>
         <p><strong>Phone:</strong> +44 12 345 6789</p>
     </div>
@@ -39,7 +39,7 @@ def contact_help_page():
     st.markdown("""
     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
         <h3 style='text-align: center; color: #b179d9;'>Feedback & Suggestions</h3>
-        <p>We value your feedback! Please share your experience or suggestions with us via email at:</p>
+        <p>We’d love to hear from you! Share your thoughts or suggestions with us via email at:</p>
         <p><strong>Email:</strong> <a href='mailto:w1956444@my.westminster.ac.uk'>w1956444@my.westminster.ac.uk</a></p>
     </div>
     """, unsafe_allow_html=True)
@@ -50,7 +50,7 @@ def contact_help_page():
     st.markdown("""
     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
         <h3 style='text-align: center; color: #b179d9;'>Privacy & Data Handling</h3>
-        <p>We respect your privacy. All data provided will not be stored for future use or shared with third parties.</p>
+        <p>We take your privacy seriously. Any data you provide is only used for this risk assessment and is not stored or shared with third parties.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -61,22 +61,22 @@ def contact_help_page():
 
     with st.expander("How do I use the PCOS Risk Assessment Tool?"):
         st.markdown("""
-        Simply fill in your details in the input fields on the home page and click submit. The results will be displayed on the next page.
+        Simply fill in your details in the input fields on the Risk Assessment page and click submit. The results will be displayed on the Results page.
         """)
 
     with st.expander("Can I get a detailed report of my risk assessment?"):
         st.markdown("""
-        Yes, you can get a detailed report of your risk assessment, which includes a summary and prediction. You can also download it as a PDF for your reference.
+        Yes! You can receive a full report with a summary and prediction, and you can download it as a PDF for your reference.
         """)
 
     with st.expander("What happens if I don't fill out all the fields?"):
         st.markdown("""
-        All fields are required for an accurate risk assessment. Please ensure you fill in all the details to proceed with the analysis.
+        All fields are required for an accurate risk assessment. Make sure you complete everything to get the most accurate results.
         """)
 
     with st.expander("Is my data safe?"):
         st.markdown("""
-        Yes, privacy is taken seriously. Your data is not stored beyond the prediction session and is only used for assessment purposes.
+        Yes, privacy is taken seriously. Your data is not saved after the session, and it is only used for the assessment.
         """)
 
     with st.expander("Can I use this tool for someone else?"):
@@ -91,12 +91,12 @@ def contact_help_page():
 
     with st.expander("What is the accuracy of the prediction?"):
         st.markdown("""
-        The accuracy is limited by the quality and scope of the training data, which consists of 541 patient records from Kerala, India.
+        The accuracy is based on data from 541 patients in Kerala, India, so it may not be 100% accurate for every person.
         """)
 
     with st.expander("Does this tool integrate with healthcare systems?"):
         st.markdown("""
-        No, this is a standalone web-based tool and currently does not integrate with any electronic medical records or healthcare systems.
+        No, this is a standalone tool and currently does not link with any medical records or healthcare systems.
         """)
 
     # Disclaimer Section
