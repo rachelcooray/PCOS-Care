@@ -326,6 +326,10 @@ def enhanced_risk_assessment_page():
     
     Now, enter the details in the fields below. Guidelines have been provided for each field.
     """)
+
+    st.markdown("""
+        <p><em>Any data you enter in this form is not stored and is only used during your current session for assessment purposes. Once the session ends, all information is automatically discarded.</em></p>
+    """, unsafe_allow_html=True)
     
     # Section breaker
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
