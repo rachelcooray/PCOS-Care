@@ -101,7 +101,7 @@ def pcos_dashboard_page():
     display_image_and_explanation(
         "pcos_symptoms_percentage.png", 
         "Common PCOS Symptoms Breakdown", 
-        "This chart shows the most commonly reported symptoms in people diagnosed with PCOS. Each bar represents the percentage of individuals with PCOS who experience that symptom. The symptoms are arranged from top to bottom based on how strongly they are linked to PCOS - so those at the top are the most impactful and worth paying closer attention to."
+        "This chart shows the most commonly reported symptoms in people diagnosed with PCOS. Each bar represents how strongly each symptom is linked to PCOS. The symptoms are arranged from top to bottom, with those at the top being the most impactful and worth paying closer attention to."
     )
 
     # 4: The Impact of Diet - Fast Food and PCOS Symptoms
@@ -119,20 +119,20 @@ def pcos_dashboard_page():
         "Our findings show a clear association between fast food consumption and PCOS diagnosis, emphasizing the importance of a balanced diet in managing the condition and suggesting that reducing fast food intake could help lower the risk of PCOS."
     )
 
-    # 5: Managing PCOS - The Role of Exercise
-    st.markdown("""
-        <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
-            <h2 style='color: #9C89FB;'>Insight 5: Managing PCOS - The Role of Exercise</h2>
-            <p>Physical activity is one of the most powerful tools in managing PCOS. In this we see how different levels of exercise can positively impact the severity of symptoms.</p>
-        </div>
-    """, unsafe_allow_html=True)
+    # # 5: Managing PCOS - The Role of Exercise
+    # st.markdown("""
+    #     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
+    #         <h2 style='color: #9C89FB;'>Insight 5: Managing PCOS - The Role of Exercise</h2>
+    #         <p>Physical activity is one of the most powerful tools in managing PCOS. In this we see how different levels of exercise can positively impact the severity of symptoms.</p>
+    #     </div>
+    # """, unsafe_allow_html=True)
 
-    # Display the graph: Impact of Exercise on PCOS Symptoms
-    display_image_and_explanation(
-        "exercise_vs_pcos_symptoms.png", 
-        "Impact of Exercise on PCOS Symptoms", 
-        "This graph compares the rate of PCOS diagnosis between those who regularly exercise and those who don’t. Although a significant relationship between regular exercise and PCOS diagnosis cannot be seen, the percentage of diagnosed cases is slightly higher among those who don’t exercise. This suggests that while exercise is beneficial for overall health."
-    )
+    # # Display the graph: Impact of Exercise on PCOS Symptoms
+    # display_image_and_explanation(
+    #     "exercise_vs_pcos_symptoms.png", 
+    #     "Impact of Exercise on PCOS Symptoms", 
+    #     "This graph compares the rate of PCOS diagnosis between those who regularly exercise and those who don’t. Although a significant relationship between regular exercise and PCOS diagnosis cannot be seen, the percentage of diagnosed cases is slightly higher among those who don’t exercise. This suggests that while exercise is beneficial for overall health."
+    # )
 
     # Disclaimer Section
     st.markdown("""
