@@ -49,7 +49,7 @@ def pcos_info_page():
                     <li><strong>Thinning hair and hair loss</strong> from the head</li>
                     <li><strong>Oily skin or acne</strong></li>
                 </ul>
-                <p>PCOS is also associated with an increased risk of developing health problems later in life, such as <strong>Type 2 Diabetes</strong> and <strong>high cholesterol levels</strong>.</p>
+                <p>PCOS is also associated with an increased risk of developing health problems later in life, such as <strong>Type 2 Diabetes</strong> and <strong>high Cholesterol levels</strong>.</p>
                 <p><strong>Based on information from:</strong> <a href='https://www.nhs.uk/conditions/polycystic-ovary-syndrome-pcos/' target='_blank'>NHS</a></p>
             </div>
         </div>
