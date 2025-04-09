@@ -115,7 +115,7 @@ def pcos_dashboard_page():
     # Display the graph: Fast Food Consumption & PCOS Symptoms
     display_image_and_explanation(
         "fast_food_vs_pcos_symptoms.png", 
-        "Fast Food Consumption & PCOS Symptoms", 
+        "Fast Food Consumption & PCOS", 
         "Our findings show a clear association between fast food consumption and PCOS diagnosis, emphasizing the importance of a balanced diet in managing the condition and suggesting that reducing fast food intake could help lower the risk of PCOS."
     )
 

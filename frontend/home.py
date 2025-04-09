@@ -110,9 +110,9 @@ def home_page():
         #         st.image(img, caption="Results Visualization", width=100)
         #     with st.expander("Results Visualization"):
         #         st.markdown(f"<div style='{expander_height_style}'>View your risk prediction and result with visualizations.</div>", unsafe_allow_html=True)
-        
-        # Features Overview Section
-        st.subheader("Overview of the Features")
+
+        # Call to Action
+        st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Our features to help you start your journey towards better health</h3>", unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         
         # Create 4 equal-width columns for the feature cards
@@ -160,10 +160,6 @@ def home_page():
             image_html = f'<img src="data:image/png;base64,{get_base64(feature_images["results"])}" width="80">' if img else ""
             st.markdown(card_style.format(image=image_html, title="Results Visualization", description="Receive a clear and easy-to-understand visualization of your assessment results. Graphs and insights will help you interpret your risk level and guide your next steps toward better health."), unsafe_allow_html=True)
 
-
-    
-        # Call to Action
-        st.markdown("<h3 style='text-align: center; margin-top: 40px;'>Start your journey towards better health...</h3>", unsafe_allow_html=True)
     
         # Add space between markdown and button
         st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space 

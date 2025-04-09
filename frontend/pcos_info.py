@@ -44,7 +44,7 @@ def pcos_info_page():
                 <ul>
                     <li><strong>Irregular periods or no periods at all</strong></li>
                     <li><strong>Difficulty getting pregnant</strong> due to irregular ovulation or no ovulation</li>
-                    <li><strong>Excessive hair growth (hirsutism)</strong> – usually on the face, chest, back, or buttocks</li>
+                    <li><strong>Excessive hair growth (hirsutism)</strong> - usually on the face, chest, back, or buttocks</li>
                     <li><strong>Weight gain</strong></li>
                     <li><strong>Thinning hair and hair loss</strong> from the head</li>
                     <li><strong>Oily skin or acne</strong></li>
