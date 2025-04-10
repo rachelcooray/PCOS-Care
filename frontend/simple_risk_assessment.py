@@ -606,6 +606,6 @@ def simple_risk_assessment_page():
                 # st.session_state.page = "Your Results"
                     
             except Exception as e:
-                custom_alert("We encountered an issue while processing your request. Please try again later.", "#51A199")   # Greenish-blue
+                custom_alert("Please enter your correct details and try again.", "#51A199")   # Greenish-blue
 
     st.write("Please go to the Results page to view detailed insights.")
