@@ -340,7 +340,7 @@ def enhanced_risk_assessment_page():
         "Age (years):", 
         value=st.session_state.form_data.get("age", ""),
         placeholder="25", 
-        help="Enter your age as a whole number between 18 and 50."
+        help="Enter your age as a whole number between 18 and 55."
     )
     weight = st.text_input(
         "Weight (kg):", 
