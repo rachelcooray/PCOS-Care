@@ -306,7 +306,7 @@ def enhanced_risk_assessment_page():
     Provide more detailed health data and symptoms for an in-depth analysis of your PCOS risk. This form is ideal if you have access to hormonal data from blood tests or abdominal scans. By providing comprehensive information, you can gain a more accurate understanding of your PCOS risk and receive personalized insights and recommendations.
     
     ### Before You Start
-    To ensure accurate results, you will need to gather a few key health measurements: **your pulse rate**, **respiratory rate**, and **blood pressure** (systolic and diastolic). It's essential to be in a calm, seated position, as stress can impact these readings. Once you're ready, follow the steps below to take your measurements:
+    To ensure accurate results, you will need to gather a few key health measurements: your pulse rate, respiratory rate, and blood pressure (systolic and diastolic). It's essential to be in a calm, seated position, as stress can impact these readings. Once you're ready, follow the steps below to take your measurements:
     
     - [How to measure your pulse rate](https://www.bhf.org.uk/informationsupport/tests/checking-your-pulse)
     - [How to measure your respiratory rate](https://keepingmychesthealthy.bdct.nhs.uk/my-respiratory-rate/)
