@@ -9,7 +9,7 @@ from contact_help import contact_help_page
 from pcos_dashboard import pcos_dashboard_page
 
 st.set_page_config(
-    page_title="PCOS Risk Assessment Tool",  
+    page_title="PCOS Care",  
     page_icon="🧬",                         
     layout="wide"                           
 )
