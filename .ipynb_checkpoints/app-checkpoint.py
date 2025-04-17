@@ -4,19 +4,18 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 import logging
 
+# Initialize Flask app
 app = Flask(__name__)
 
-logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+# Configure logging to save messages to 'app.log'
+logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s') 
 
-# reference
-## https://flask.palletsprojects.com/en/stable/errorhandling/
-
-# Load models safely
+# Load pre-trained models 
 try:
     with open("best_logistic_reg_simple_smote.pkl", "rb") as model_file:
-        loaded_simple = pickle.load(model_file)
+        loaded_simple = pickle.load(model_file) # Model for Simple risk
     with open("best_logistic_reg_enhanced_smote.pkl", "rb") as model_file:
-        loaded_enhanced = pickle.load(model_file)
+        loaded_enhanced = pickle.load(model_file) # Model for Enhanced risk
     logging.info("Models loaded successfully.")
 except Exception as e:
     logging.error(f"Error loading models: {e}")
@@ -24,7 +23,7 @@ except Exception as e:
     loaded_enhanced = None
 
 
-# Features
+# Features lists
 features_general_public = [
     ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 'Blood Group', 'Pulse rate(bpm) ', 
     'RR (breaths/min)', 'Cycle(R/I)', 'Cycle length(days)', 
@@ -49,6 +48,7 @@ features_scan = [
        'Avg. F size (L) (mm)', 'Avg. F size (R) (mm)', 'Endometrium (mm)'
 ]
 
+# Separate numerical and categorical columns
 numerical_columns_gen = [
     ' Age (yrs)', 'Weight (Kg)', 'Height(Cm) ', 'BMI', 'Pulse rate(bpm) ', 
     'RR (breaths/min)', 'Cycle(R/I)', 'Cycle length(days)', 
@@ -77,11 +77,12 @@ categorical_columns_scan = [
     'Hair loss(Y/N)', 'Pimples(Y/N)', 'Fast food (Y/N)', 'Reg.Exercise(Y/N)'
 ]
 
-
+# ----- ROUTES -----
 # Endpoint for simple prediction
 @app.route("/predict-simple", methods=["POST"])
 def predict_simple():
     try:
+        # Ensure incoming request is JSON
         if not request.is_json:
             return jsonify({"error": "Unsupported Media Type. Only JSON requests are allowed."}), 415
         
@@ -97,10 +98,8 @@ def predict_simple():
                 logging.error(f"Missing numerical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
-        # Prepare the DataFrame with numerical inputs (before scaling)
+        # Convert to DataFrame and scale
         numerical_inputs_df = pd.DataFrame([user_inputs], columns=numerical_columns_gen)
-
-        # Scale only numerical features using StandardScaler
         scaler = StandardScaler()
         scaled_numerical_inputs = scaler.fit_transform(numerical_inputs_df)
 
@@ -113,17 +112,17 @@ def predict_simple():
                 logging.error(f"Missing categorical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
-        # Combine scaled numerical inputs and categorical inputs into a final DataFrame
+        # Combine scaled numerical inputs and categorical inputs 
         final_inputs = pd.DataFrame(scaled_numerical_inputs, columns=numerical_columns_gen)
         final_inputs[categorical_columns_gen] = categorical_inputs
 
-        # Ensure the column order matches the model's expectation
+        # Reorder columns to match model expectations
         final_inputs = final_inputs[features_general_public]
 
-        # Make prediction using the trained SVM model
+        # Make prediction using the trained Logistic Regression model
         prediction = loaded_simple.predict(final_inputs)
 
-        # Output the prediction result
+        # Return the prediction result
         result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
         return jsonify({"prediction": result})
 
@@ -137,11 +136,14 @@ def predict_simple():
 @app.route("/predict-enhanced", methods=["POST"])
 def predict_enhanced():
     try:
+        # Ensure incoming request is JSON
         if not request.is_json:
             return jsonify({"error": "Unsupported Media Type. Only JSON requests are allowed."}), 415
         
         data = request.json
+        logging.debug(f"Received data: {data}")
 
+        # Get user input for numerical columns
         user_inputs = []
         for col in numerical_columns_scan:
             if col in data:
@@ -150,11 +152,12 @@ def predict_enhanced():
                 logging.error(f"Missing numerical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
+        # Convert to DataFrame and scale
         numerical_inputs_df = pd.DataFrame([user_inputs], columns=numerical_columns_scan)
-
         scaler = StandardScaler()
         scaled_numerical_inputs = scaler.fit_transform(numerical_inputs_df)
 
+        # Get user input for categorical columns and append them
         categorical_inputs = []
         for col in categorical_columns_scan:
             if col in data:
@@ -163,11 +166,13 @@ def predict_enhanced():
                 logging.error(f"Missing categorical feature: {col}")
                 return jsonify({"error": f"Missing feature: {col}"}), 400
 
+        # Combine scaled numerical inputs and categorical inputs 
         final_inputs = pd.DataFrame(scaled_numerical_inputs, columns=numerical_columns_scan)
         final_inputs[categorical_columns_scan] = categorical_inputs
 
         final_inputs = final_inputs[features_scan]
 
+        # Make prediction using the trained Logistic Regression model
         prediction = loaded_enhanced.predict(final_inputs)
 
         result = "You are likely to have PCOS" if prediction[0] == 1 else "You are unlikely to have PCOS"
@@ -179,6 +184,7 @@ def predict_enhanced():
         return jsonify({"error": "Internal Server Error", "message": str(e)}), 500
 
 
+# Error Handlers
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({"error": "Not Found"}), 404
@@ -186,6 +192,10 @@ def not_found(error):
 @app.errorhandler(405)
 def method_not_allowed(error):
     return jsonify({"error": "Method Not Allowed"}), 405
-
+    
+# Run the Flask app
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+# Reference: Flask error handling docs - https://flask.palletsprojects.com/en/stable/errorhandling/
