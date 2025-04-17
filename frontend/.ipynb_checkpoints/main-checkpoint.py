@@ -8,12 +8,14 @@ from results import results_page
 from contact_help import contact_help_page
 from pcos_dashboard import pcos_dashboard_page
 
+# Set up the app's page configuration
 st.set_page_config(
     page_title="PCOS Care",  
     page_icon="🧬",                         
     layout="wide"                           
 )
 
+# CSS style to hide default Streamlit UI elements and apply custom styles
 hide_st_style = """
     <style>
         /* Hide default Streamlit UI components */
@@ -45,22 +47,22 @@ hide_st_style = """
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-# Define pages and custom styles for the navbar
+# Define pages for the navbar
 pages = ["Home", "PCOS Information", "Insights From Data", "Simple Risk Assessment", "Enhanced Risk Assessment", "Your Results", "Help & Contact"]
 
 styles = {
     "nav": {
-        "background-color": "#CDC1FF",  # Keep the purple background
+        "background-color": "#CDC1FF",  # Purple background
         "height": "75px",
-        "width": "100%",  # Ensure it stretches fully
+        "width": "100%",  # Stretches fully
         "display": "flex",
-        "justify-content": "center",  # Center items if needed
+        "justify-content": "center",  
         "align-items": "center",
     },
     "div": {
-        "max-width": "100%",  # Make it full-width
+        "max-width": "100%",  # Full width
         "display": "flex",
-        "justify-content": "center",  # Ensure items are spaced properly
+        "justify-content": "center",  
         "padding": "0 2rem",  # Add some padding on the sides
     },
     "span": {
