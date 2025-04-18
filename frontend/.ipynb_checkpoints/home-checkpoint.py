@@ -125,7 +125,7 @@ def home_page():
             image_html = f'<img src="data:image/png;base64,{get_base64(feature_images["results"])}" width="80">' if img else ""
             st.markdown(card_style.format(image=image_html, title="Results Visualization", description="Receive a clear and easy-to-understand visualization of your assessment results. Graphs and insights will help you interpret your risk level and guide your next steps toward better health."), unsafe_allow_html=True)
 
-        # Add space between markdown and button
+        # Add space 
         st.markdown("<br><br>", unsafe_allow_html=True)  
 
         # Disclaimer Section

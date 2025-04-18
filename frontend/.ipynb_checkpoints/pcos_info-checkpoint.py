@@ -10,13 +10,13 @@ current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 pcos_image_path = os.path.join(current_directory, "images/pcos.jpg")
 
+# Function to convert an image to base64 encoding for embedding in HTML
 def get_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-
+# Main function to call the page
 def pcos_info_page():
-    # Layout for logo and title
     # Logo and Title
     st.markdown(
         f"""
@@ -62,7 +62,7 @@ def pcos_info_page():
     # Create 3 columns, with equal width
     col1, col2, col3 = st.columns([1, 2, 1])  # The middle column (col2) will be wider
     
-    # Place the hero image in the center column (col2)
+    # Image in the center column
     with col2:
         if os.path.exists(pcos_image_path):
             st.image(pcos_image_path, use_column_width=True, caption="PCOS Effects on Health")
