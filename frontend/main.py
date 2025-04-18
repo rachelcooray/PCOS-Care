@@ -42,6 +42,28 @@ hide_st_style = """
             padding: 0 !important;
             margin-top: 0;  /* Reset any previous margins */
         }
+
+        /* Responsive styles for mobile screens */
+        @media only screen and (max-width: 768px) {
+            .block-container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .main {
+                padding: 0 !important;
+            }
+
+            /* Targeting nav bar spans if possible */
+            .navbar span {
+                font-size: 0.85rem !important;
+                padding: 0.3rem 0.5rem !important;
+            }
+
+            .navbar {
+                flex-wrap: wrap !important;
+                height: auto !important;
+            }
     </style>
 """
 
