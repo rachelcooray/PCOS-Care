@@ -45,20 +45,17 @@ hide_st_style = """
 
         /* Make navbar scrollable on small screens */
         @media only screen and (max-width: 768px) {
-            div[data-testid="stNavBar"] {
-                overflow-x: auto !important;
-                white-space: nowrap;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; /* Firefox */
+            body::before {
+                content: "MOBILE VIEW ACTIVE";
+                display: block;
+                background-color: red;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                font-size: 16px;
             }
+        }
 
-            div[data-testid="stNavBar"]::-webkit-scrollbar {
-                display: none; /* Chrome, Safari, Opera */
-            }
-
-            span {
-                flex: 0 0 auto !important; /* Prevent shrinking */
-            }
     </style>
 """
 
