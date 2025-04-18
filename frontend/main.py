@@ -31,7 +31,7 @@ hide_st_style = """
 
         /* Custom landscape layout */
         .block-container {
-            max-width: 90% !important;  /* Set width to 90% */
+            
             padding-left: 2rem !important;
             padding-right: 2rem !important;
         }
@@ -46,34 +46,6 @@ hide_st_style = """
 """
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
-
-responsive_css = """
-<style>
-@media only screen and (max-width: 768px) {
-    .block-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-
-    .main {
-        padding: 0 !important;
-    }
-
-    .navbar span {
-        font-size: 0.9rem !important;
-        padding: 0.3rem 0.5rem !important;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-        height: auto !important;
-    }
-}
-</style>
-"""
-
-st.markdown(responsive_css, unsafe_allow_html=True)
-
 
 # Define pages for the navbar
 pages = ["Home", "PCOS Information", "Insights From Data", "Simple Risk Assessment", "Enhanced Risk Assessment", "Your Results", "Help & Contact"]
