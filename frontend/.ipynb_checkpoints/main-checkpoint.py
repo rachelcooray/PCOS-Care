@@ -53,16 +53,11 @@ st.markdown("""
         .mobile-test {
             display: none;
         }
+        /* Mobile-specific */
         @media only screen and (max-width: 768px) {
-            .mobile-test {
-                display: block;
-                background-color: red;
-                color: white;
-                text-align: center;
-                padding: 10px;
-                font-weight: bold;
-                border-radius: 10px;
-                margin-bottom: 1rem;
+            .custom-navbar {
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch;
             }
         }
     </style>
@@ -102,13 +97,6 @@ styles = {
         "background-color": "#AD99FF",  # Light purple background when hovered
         "color": "white",
     },
-    /* Mobile-specific */
-        @media only screen and (max-width: 768px) {
-            .custom-navbar {
-                overflow-x: scroll;
-                -webkit-overflow-scrolling: touch;
-            }
-        }
 }
 
 # Create the navigation bar
