@@ -15,6 +15,10 @@ st.set_page_config(
     layout="wide"                           
 )
 
+st.markdown("""
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+""", unsafe_allow_html=True)
+
 # CSS style to hide default Streamlit UI elements and apply custom styles
 hide_st_style = """
     <style>
@@ -46,23 +50,6 @@ hide_st_style = """
 """
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
-
-st.markdown("""
-    <div class="mobile-test">📱 Mobile View Active</div>
-    <style>
-        .mobile-test {
-            display: none;
-        }
-        /* Mobile-specific */
-        @media only screen and (max-width: 768px) {
-            .custom-navbar {
-                overflow-x: scroll;
-                -webkit-overflow-scrolling: touch;
-            }
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 
 # Define pages for the navbar
 pages = ["Home", "PCOS Information", "Insights From Data", "Simple Risk Assessment", "Enhanced Risk Assessment", "Your Results", "Help & Contact"]
