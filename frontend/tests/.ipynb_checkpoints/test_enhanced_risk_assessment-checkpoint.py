@@ -16,7 +16,7 @@ def test_enhanced_risk_assessment_page(monkeypatch):
     def mock_subheader(*args, **kwargs):
         pass
 
-     def mock_text_input(*args, **kwargs):
+    def mock_text_input(*args, **kwargs):
         return ""
     
     def mock_radio(*args, **kwargs):
