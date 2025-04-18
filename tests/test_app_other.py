@@ -173,7 +173,5 @@ class TestPCOSOther(unittest.TestCase):
         response2 = self.app.post('/predict-simple', json=valid_input)
         self.assertEqual(json.loads(response1.data), json.loads(response2.data))  # Predictions should match
 
-    
-
 if __name__ == "__main__":
     unittest.main()
