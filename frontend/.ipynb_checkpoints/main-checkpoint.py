@@ -43,26 +43,21 @@ hide_st_style = """
             margin-top: 0;  /* Reset any previous margins */
         }
 
-        /* Responsive styles for mobile screens */
+        /* Make navbar scrollable on small screens */
         @media only screen and (max-width: 768px) {
-            .block-container {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
+            div[data-testid="stNavBar"] {
+                overflow-x: auto !important;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
             }
 
-            .main {
-                padding: 0 !important;
+            div[data-testid="stNavBar"]::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Opera */
             }
 
-            /* Targeting nav bar spans if possible */
-            .navbar span {
-                font-size: 0.85rem !important;
-                padding: 0.3rem 0.5rem !important;
-            }
-
-            .navbar {
-                flex-wrap: wrap !important;
-                height: auto !important;
+            span {
+                flex: 0 0 auto !important; /* Prevent shrinking */
             }
     </style>
 """
