@@ -11,6 +11,7 @@ logo_path = os.path.join(current_directory, "images/logo.png")
 pcos_image_path = os.path.join(current_directory, "images/pcos.jpg")
 visuals_directory = os.path.join(current_directory, "../pcos_visuals")
 
+# Function to convert an image to base64 encoding for embedding in HTML
 def get_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
@@ -37,7 +38,7 @@ def display_image_and_explanation(image_filename, caption, explanation):
                 </div>
             """, unsafe_allow_html=True)
 
-# PCOS Dashboard Page with Storytelling Approach
+# Function to call PCOS Dashboard Page 
 def pcos_dashboard_page():
     # Logo and Title
     st.markdown(
@@ -48,7 +49,7 @@ def pcos_dashboard_page():
         </div>
         """,unsafe_allow_html=True)
     
-    # Introductory Overview of PCOS
+    # Overview of PCOS
     st.markdown("""
         <div style='background-color: #E5D9F2; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
             <h1 style='color: #947bd6; text-align: center;'>Welcome to the Insights Dashboard</h1>
@@ -73,7 +74,6 @@ def pcos_dashboard_page():
 
     )
 
-
     # 2: The Impact of PCOS - Prevalence Breakdown
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
@@ -89,7 +89,6 @@ def pcos_dashboard_page():
         "This donut chart shows the percentage of people in the survey who have PCOS compared to those who don't. About 33% of the people in the survey were found to have PCOS. This highlights how important it is to be aware of the condition and get checked early."
     )
     
-
     # 3: The Faces of PCOS - Symptoms Breakdown (contd.)
     st.markdown("""
         <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #CDC1FF;'>
