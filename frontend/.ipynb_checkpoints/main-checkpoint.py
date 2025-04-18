@@ -31,7 +31,7 @@ hide_st_style = """
 
         /* Custom landscape layout */
         .block-container {
-            
+            max-width: 90% !important;  /* Set width to 90% */
             padding-left: 2rem !important;
             padding-right: 2rem !important;
         }
