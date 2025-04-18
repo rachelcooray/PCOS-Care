@@ -2,6 +2,12 @@ import streamlit as st
 from home import home_page
 
 def test_home_page(monkeypatch):
+    """
+    Unit test for the `home_page` function.
+    This test ensures that the function executes without error by mocking
+    Streamlit functions that require a UI context.
+    """
+    
     # Mock Streamlit functions
     def mock_markdown(*args, **kwargs):
         pass

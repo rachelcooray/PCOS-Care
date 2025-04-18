@@ -2,6 +2,12 @@ import streamlit as st
 from simple_risk_assessment import simple_risk_assessment_page
 
 def test_simple_risk_assessment_page(monkeypatch):
+    """
+    Unit test for the `simple_risk_assessment_page` function.
+    This test ensures that the page loads and executes without errors by mocking
+    Streamlit UI components like input fields, radio buttons, and dropdowns.
+    """
+    
     # Mock Streamlit functions
     def mock_markdown(*args, **kwargs):
         pass

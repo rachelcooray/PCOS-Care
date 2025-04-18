@@ -1,6 +1,7 @@
 import streamlit as st
 import pytest
 from unittest.mock import patch, MagicMock
+
 from home import home_page
 from pcos_info import pcos_info_page
 from simple_risk_assessment import simple_risk_assessment_page
@@ -9,10 +10,14 @@ from results import results_page
 from contact_help import contact_help_page
 from pcos_dashboard import pcos_dashboard_page
 
-
+# Mock Streamlit functions to prevent actual UI rendering in tests
 @pytest.fixture
 def mock_streamlit(monkeypatch):
-    """Mock key Streamlit functions to prevent actual UI rendering."""
+    """
+    This fixture mocks key Streamlit functions to prevent actual UI rendering during tests.
+    The purpose is to isolate the logic of the page navigation and session state management
+    without rendering the actual UI components.
+    """
     def mock_func(*args, **kwargs):
         return None
     
@@ -32,7 +37,11 @@ def mock_streamlit(monkeypatch):
 
 
 def test_page_navigation(mock_streamlit):
-    """Test that different pages can be selected and called correctly."""
+    """
+    Test that different pages in the app can be selected and rendered without errors.
+    This ensures that when a user selects a page, the corresponding page function runs
+    correctly and doesn't throw any exceptions.
+    """
     pages = {
         "Home": home_page,
         "PCOS Information": pcos_info_page,

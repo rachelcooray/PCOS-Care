@@ -4,6 +4,12 @@ import streamlit as st
 from pcos_info import pcos_info_page
 
 def test_pcos_info_page(monkeypatch):
+    """
+    Unit test for the `pcos_info_page` function.
+    This test checks whether the function runs without error by mocking
+    Streamlit functions that rely on the app's frontend rendering.
+    """
+    
     # Mock Streamlit functions
     def mock_markdown(*args, **kwargs):
         pass
