@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import base64
 
+# Function to convert an image to base64 encoding for embedding in HTML
 def get_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
@@ -10,6 +11,7 @@ def get_base64(image_path):
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 
+# Function to call page
 def contact_help_page():
     # Logo and Title
     st.markdown(
@@ -35,7 +37,7 @@ def contact_help_page():
 
     st.markdown("<hr style='border: 1px solid #ccc;'>", unsafe_allow_html=True)
 
-    # Feedback Section with a background color
+    # Feedback Section 
     st.markdown("""
     <div style='background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 2px solid #CDC1FF;'>
         <h3 style='text-align: center; color: #b179d9;'>Feedback & Suggestions</h3>

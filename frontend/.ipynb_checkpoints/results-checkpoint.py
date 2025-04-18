@@ -8,6 +8,7 @@ import numpy as np
 from fpdf import FPDF
 import base64
 
+# Function to convert an image to base64 encoding for embedding in HTML
 def get_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
@@ -16,7 +17,7 @@ def get_base64(image_path):
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 
-# PDF Version of all data and result
+# Function to create PDF report Version of all data and result
 def generate_pdf(data, prediction):
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
@@ -69,7 +70,7 @@ def generate_pdf(data, prediction):
     disclaimer_text = (
         "Disclaimer: The PCOSCare web app provides a prediction based on the data you entered. "
         "This tool is for informational purposes only and does not provide a medical diagnosis. " 
-        "Predictions are based on available data from a dataset of patients in Kerala, India. "
+        "Predictions are generated based on data from a specific patient dataset. "
         "The assessment is not a substitute for a professional medical evaluation or diagnosis. Always consult a doctor for diagnosis and treatment. "
         "The accuracy of predictions is limited by the dataset's scope and quality, and results may not apply to everyone. "
     )
@@ -80,12 +81,13 @@ def generate_pdf(data, prediction):
     pdf.output(pdf_file_path)
     return pdf_file_path
 
+# Function to allow users to download the generated PDF 
 def download_pdf(data, prediction):
     pdf_path = generate_pdf(data, prediction)
     with open(pdf_path, "rb") as file:
         st.download_button(label="Download Report as PDF", data=file, file_name="PCOS_Risk_Assessment.pdf", mime="application/pdf")
 
-
+# Function to create a simple gauge visualization using Plotly
 def create_gauge(value, title, min_val, max_val, color="blue"):
     """ Creates a simple gauge chart using Plotly. """
     fig = go.Figure(go.Indicator(
@@ -96,6 +98,7 @@ def create_gauge(value, title, min_val, max_val, color="blue"):
                'bar': {'color': color}}))
     return fig
 
+# Function to show a styled alert box 
 def custom_alert(message, bg_color, text_color):
     """Creates a custom-styled alert box."""
     st.markdown(f"""
@@ -104,6 +107,7 @@ def custom_alert(message, bg_color, text_color):
         </div>
     """, unsafe_allow_html=True)
 
+# Function to call results page    
 def results_page():
     # Logo and Title
     st.markdown(
@@ -115,7 +119,6 @@ def results_page():
         """,
         unsafe_allow_html=True
     )
-        
 
     st.subheader("Your PCOS Risk Assessment Results")
     st.markdown("<br>", unsafe_allow_html=True)
@@ -125,7 +128,7 @@ def results_page():
         user_data = st.session_state.risk_assessment_data
         
         # ML-based prediction: Yes or No 
-        predicted_pcos = user_data.get("predicted_pcos", "Unknown")  # result from assessment
+        predicted_pcos = user_data.get("predicted_pcos", "Unknown")  # Result from assessment
         
         # Display Prediction
         st.markdown(f"""
@@ -136,7 +139,6 @@ def results_page():
             custom_alert("This suggests a possibility of having PCOS. Please consult a healthcare professional.", "#E76F51", "black")  
         else:
             custom_alert("No PCOS detected. However, if symptoms persist, consider consulting a doctor.", "#9DC3D2", "black")   
-
 
         # Section Break
         st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
@@ -174,22 +176,17 @@ def results_page():
                 else:
                     st.markdown("BMI data unavailable")
                     
-            
             with col3:
                 if waist_hip_ratio is not None:
                     st.plotly_chart(create_gauge(waist_hip_ratio, "Waist:Hip Ratio", 0.4, 1.0, "green" if waist_hip_ratio < 0.85 else "red"))
                     custom_alert("A ratio above 0.85 may indicate a pattern associated with hormonal imbalance.", "#9DC3D2", "black")   
                 else:
                     st.markdown("Waist-Hip Ratio data unavailable")
-                    
 
-        st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+        st.markdown("<br>", unsafe_allow_html=True)  
         
         # Adding the overall message
         custom_alert("While your key health ratios show patterns that are sometimes associated with hormonal imbalance, they do not confirm PCOS on their own. It’s always best to consult a healthcare professional for a comprehensive evaluation.", "#9F90FA", "black") 
-
-        
-
 
         # **2. Cycle Irregularities (If Selected)**
         cycle = user_data["symptom_analysis"].get("Cycle(R/I)")
@@ -274,14 +271,6 @@ def results_page():
                 </ul>
             </div>
         """, unsafe_allow_html=True)
-
-        # st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
-
-        # st.markdown("""
-        #     <p><em>Data from a sample of 541 PCOS patients in Kerala.</em></p>
-        #     <p><a href='https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos' target='_blank'>Source Link</a></p>
-        #     </div>
-        # """, unsafe_allow_html=True)
 
     else:
         custom_alert("No assessment data found. Please complete the assessment first.", "#5A4CA4", "white")   
