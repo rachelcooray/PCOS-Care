@@ -47,28 +47,6 @@ hide_st_style = """
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-st.markdown("""
-    <div class="mobile-test">📱 Mobile View Active</div>
-    <style>
-        .mobile-test {
-            display: none;
-        }
-        @media only screen and (max-width: 768px) {
-            .mobile-test {
-                display: block;
-                background-color: red;
-                color: white;
-                text-align: center;
-                padding: 10px;
-                font-weight: bold;
-                border-radius: 10px;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
 # Define pages for the navbar
 pages = ["Home", "PCOS Information", "Insights From Data", "Simple Risk Assessment", "Enhanced Risk Assessment", "Your Results", "Help & Contact"]
 
