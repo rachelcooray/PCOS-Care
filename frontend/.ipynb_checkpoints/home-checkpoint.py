@@ -113,7 +113,7 @@ def home_page():
         with col2:
             img = load_and_resize_image(feature_images["assessment"], size=(80, 80))
             image_html = f'<img src="data:image/png;base64,{get_base64(feature_images["assessment"])}" width="80">' if img else ""
-            st.markdown(card_style.format(image=image_html, title="Simple Risk Assessment", description="Take a quick questionnaire based on key PCOS symptoms like irregular periods and weight changes. Get an instant indication of potential risk."), unsafe_allow_html=True)
+            st.markdown(card_style.format(image=image_html, title="Simple Risk Assessment", description="Take a quick questionnaire based on key PCOS symptoms like irregular periods and weight changes. Get an instant indication of potential PCOS risk."), unsafe_allow_html=True)
         
         with col3:
             img = load_and_resize_image(feature_images["enhanced"], size=(80, 80))
