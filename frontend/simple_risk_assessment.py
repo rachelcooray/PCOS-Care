@@ -5,6 +5,7 @@ import json
 from fpdf import FPDF
 import base64
 
+# Function to convert an image to base64 encoding for embedding in HTML
 def get_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
@@ -12,17 +13,20 @@ def get_base64(image_path):
 # Function to send data to Flask API and get prediction
 def get_prediction(input_data):
     # url = "http://127.0.0.1:5000/predict-simple"  # Flask API endpoint - localhost
-    url = "https://pcos-care.onrender.com/predict-simple" # render
+    url = "https://pcos-care.onrender.com/predict-simple" # Flask API endpoint - Render
 
     headers = {'Content-Type': 'application/json'}
     
     try:
+        # Send POST request with user data in JSON format
         response = requests.post(url, json=input_data, headers=headers)
         
         if response.status_code == 200:
+            # Extract prediction from response if successful
             prediction = response.json().get('prediction')
             return prediction
         else:
+            # Handle any exceptions during the request
             return f"Error: {response.json().get('error')}"
     except Exception as e:
         return f"Exception: {str(e)}"
@@ -31,6 +35,7 @@ def get_prediction(input_data):
 current_directory = os.path.dirname(__file__)
 logo_path = os.path.join(current_directory, "images/logo.png")
 
+# Function to show a styled alert box 
 def custom_alert(message, color):
     """Creates a custom-styled alert box."""
     st.markdown(f"""
@@ -39,7 +44,7 @@ def custom_alert(message, color):
         </div>
     """, unsafe_allow_html=True)
 
-# PDF Version of all data and result
+# Function to create PDF report Version of all data and result
 def generate_pdf(data, prediction):
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
@@ -90,7 +95,7 @@ def generate_pdf(data, prediction):
     disclaimer_text = (
         "Disclaimer: The PCOSCare web app provides a prediction based on the data you entered. "
         "This tool is for informational purposes only and does not provide a medical diagnosis. " 
-        "Predictions are based on available data from a dataset of patients in Kerala, India. "
+        "Predictions are generated based on data from a specific patient dataset. "
         "The assessment is not a substitute for a professional medical evaluation or diagnosis. Always consult a doctor for diagnosis and treatment. "
         "The accuracy of predictions is limited by the dataset's scope and quality, and results may not apply to everyone. "
     )
@@ -100,7 +105,8 @@ def generate_pdf(data, prediction):
     pdf_file_path = "pcos_simple_assessment_report.pdf"
     pdf.output(pdf_file_path)
     return pdf_file_path
-
+    
+# Function to allow users to download the generated PDF 
 def download_pdf(data, prediction):
     pdf_path = generate_pdf(data, prediction)
     with open(pdf_path, "rb") as file:
@@ -162,9 +168,6 @@ def validate_cycle(cycle):
 def validate_cycle_length(cycle_length):
     return is_valid_number(cycle_length, 0, 14)
 
-# def validate_marriage_years(marriage_years):
-#     return is_valid_number(marriage_years, 0, 37)
-
 def validate_number_of_abortions(no_of_abortions):
     return is_valid_number(no_of_abortions, 0, 5)
 
@@ -215,13 +218,15 @@ def calculate_waist_hip_ratio(waist, hip):
         return waist / hip
     except ValueError:
         return None
-    
+
+# Function to call the page
 def simple_risk_assessment_page():
 
-    # Initialize session state variables if not already present
+    # Initialize session state variables if not present
     if "form_data" not in st.session_state:
         st.session_state.form_data = {}
-    
+
+    # Custom CSS styling
     st.markdown(
         """
         <style>
@@ -260,6 +265,7 @@ def simple_risk_assessment_page():
         unsafe_allow_html=True
     )
 
+    # Introduction
     st.subheader("Simple Risk Assessment")
     st.markdown("""
     Provide basic health data and symptoms for a quick PCOS risk analysis. This assessment helps you understand your potential risk for PCOS and provides early insights to guide you toward the right next steps. 
@@ -323,7 +329,6 @@ def simple_risk_assessment_page():
     )
 
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
-
 
     # Ensure session state has initial values
     if "weight_gain" not in st.session_state:
@@ -401,7 +406,6 @@ def simple_risk_assessment_page():
     st.session_state.pimples = pimples
     st.session_state.fast_food = fast_food
     st.session_state.reg_exercise = reg_exercise
-
 
     st.markdown("<hr style='border: 1px solid #ccc; margin-top: 50px;'>", unsafe_allow_html=True)
 
@@ -513,13 +517,13 @@ def simple_risk_assessment_page():
             if weight and height:
                 bmi = calculate_bmi(weight, height)  
             else:
-                custom_alert("Weight and Height are required and must be numeric.", "#F0A693")   # Greenish-blue
+                custom_alert("Weight and Height are required and must be numeric.", "#F0A693")   
                 st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
                     
             if waist and hip:
                 waist_hip_ratio = calculate_waist_hip_ratio(waist, hip)
             else:
-                custom_alert("Waist and Hip measurements are required and must be numeric.", "#F0A693")   # Greenish-blue
+                custom_alert("Waist and Hip measurements are required and must be numeric.", "#F0A693")   
                 st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
         
             age_valid = validate_age(age)
@@ -542,7 +546,6 @@ def simple_risk_assessment_page():
             if not age_valid: errors.append("Age must be between 18 and 55.")
             if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
             if not height_valid: errors.append("Height must be between 90 and 250 cm.")
-            
             if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
             if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
             if not pulse_rate_valid: errors.append("Pulse rate must be between 15 and 120 bpm.")
@@ -552,18 +555,18 @@ def simple_risk_assessment_page():
             if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 5.")
             if not hip_valid: errors.append("Hip measurement must be between 20 and 60 inches.")
             if not waist_valid: errors.append("Waist measurement must be between 20 and 55 inches.")
-           
-    
+             
             # Show errors if any
             if errors:
                 for error in errors:
                     # st.error(error)
-                    custom_alert(error, "#F0A693")   # Greenish-blue
-                    st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
+                    custom_alert(error, "#F0A693")   
+                    st.markdown("<br>", unsafe_allow_html=True)  
             else:
-                custom_alert("All inputs are valid! Form submitted successfully.", "#51A199")   # Greenish-blue
-                st.markdown("<br>", unsafe_allow_html=True)  # Adds spacing
-                
+                custom_alert("All inputs are valid! Form submitted successfully.", "#51A199")   
+                st.markdown("<br>", unsafe_allow_html=True)  
+
+                # Data for prediction and reporting
                 data = {
                     " Age (yrs)": age,
                     "Weight (Kg)": weight,
@@ -594,18 +597,26 @@ def simple_risk_assessment_page():
                 # st.json(data)
     
             try:
+                # Make prediction using model function
                 prediction = get_prediction(data)
-                # st.write(f"Prediction: {prediction}")
                 
+                # st.markdown("TO REMOVE - for testing purposes")
+                # st.write(f"Prediction: {prediction}")
+
+                # Save result in session state to persist across pages
                 st.session_state.risk_assessment_data = {
                     "predicted_pcos": prediction,
                     "symptom_analysis": data  
                 }
-    
+
+                # Generate and offer a PDF download 
                 download_pdf(data, prediction)
+
+                # st.markdown("TO REMOVE - for testing purposes")
                 # st.session_state.page = "Your Results"
-                    
+
+            # Error handling
             except Exception as e:
-                custom_alert("Please enter your correct details and try again.", "#51A199")   # Greenish-blue
+                custom_alert("Please enter your correct details and try again.", "#51A199")   
 
     st.write("Please go to the Results page to view detailed insights.")
