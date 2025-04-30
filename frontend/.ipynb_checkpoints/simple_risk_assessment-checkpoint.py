@@ -384,7 +384,7 @@ def simple_risk_assessment_page():
         help="Select 'Yes' if you have frequent or severe acne outbreaks."
     )
     
-    st.write("### Blood Pressure")
+    st.write("### Other")
     fast_food = st.radio(
         "Do you eat a lot of fast food?", 
         ["Yes", "No"], 

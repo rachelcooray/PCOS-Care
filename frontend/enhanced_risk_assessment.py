@@ -422,7 +422,8 @@ def enhanced_risk_assessment_page():
         index=None if st.session_state.pimples is None else ["Yes", "No"].index(st.session_state.pimples),
         help="Select 'Yes' if you have frequent or severe acne outbreaks."
     )
-    
+
+    st.write("### Other")
     fast_food = st.radio(
         "Do you eat a lot of fast food?", 
         ["Yes", "No"], 
