@@ -169,7 +169,7 @@ def validate_cycle_length(cycle_length):
     return is_valid_number(cycle_length, 0, 14)
 
 def validate_number_of_abortions(no_of_abortions):
-    return is_valid_number(no_of_abortions, 0, 5)
+    return is_valid_number(no_of_abortions, 0, 55)
 
 def validate_hip(hip):
     return is_valid_number(hip, 20, 60)
@@ -545,7 +545,7 @@ def simple_risk_assessment_page():
             # Collect errors
             errors = []
             if not age_valid: errors.append("Age must be between 18 and 55.")
-            if not weight_valid: errors.append("Weight must be between 30 and 200 Kg.")
+            if not weight_valid: errors.append("Weight must be between 30 and 200 kg.")
             if not height_valid: errors.append("Height must be between 90 and 250 cm.")
             if not bp_systolic_valid: errors.append("BP systolic must be between 80 and 200 mmHg.")
             if not bp_diastolic_valid: errors.append("BP diastolic must be between 50 and 120 mmHg.")
@@ -553,7 +553,7 @@ def simple_risk_assessment_page():
             if not rr_valid: errors.append("Respiratory rate must be between 12 and 30 breaths per minute.")
             if not cycle_valid: errors.append("Cycle must be either 'Regular' or 'Irregular'.")
             if not cycle_length_valid: errors.append("Cycle length must be between 0 and 14 days.")
-            if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 5.")
+            if not no_of_abortions_valid: errors.append("Number of abortions must be between 0 and 55.")
             if not hip_valid: errors.append("Hip measurement must be between 20 and 60 inches.")
             if not waist_valid: errors.append("Waist measurement must be between 20 and 55 inches.")
              
