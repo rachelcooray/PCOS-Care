@@ -384,6 +384,7 @@ def simple_risk_assessment_page():
         help="Select 'Yes' if you have frequent or severe acne outbreaks."
     )
     
+    st.write("### Blood Pressure")
     fast_food = st.radio(
         "Do you eat a lot of fast food?", 
         ["Yes", "No"], 
@@ -593,15 +594,10 @@ def simple_risk_assessment_page():
                     "BP _Diastolic (mmHg)": bp_diastolic
                 }
                 
-                # st.markdown("TO REMOVE - for testing purposes")
-                # st.json(data)
     
             try:
                 # Make prediction using model function
                 prediction = get_prediction(data)
-                
-                # st.markdown("TO REMOVE - for testing purposes")
-                # st.write(f"Prediction: {prediction}")
 
                 # Save result in session state to persist across pages
                 st.session_state.risk_assessment_data = {
