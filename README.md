@@ -3,7 +3,7 @@
 ## **Overview**  
 PCOS Care is a web-based application that predicts the likelihood of Polycystic Ovary Syndrome (PCOS) using machine learning. The platform allows users to input their health data, receive a risk assessment, and access educational resources about PCOS.  
 
-## **Demonstration**  
+## **Access Website**  
 🔗 [PCOS Care](https://pcos-care-web-app.onrender.com)
 
 ## **Features**  
